@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Plant-Boot';
+  title = 'plantFront';
+  type: string="";
+  connected:boolean=false;
 }

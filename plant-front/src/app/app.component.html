@@ -1,1 +1,82 @@
-<router-outlet></router-outlet>
+<div class="topnav" >
+
+  <!-- A gauche -->
+  <div *ngIf="type=='Administrateur'" routerLinkActive="active">
+    <a class="nav-link"  [routerLink]="['/plantes']">Ajouter une plante</a>
+    <a class="nav-link"  [routerLink]="['/recettes']">Ajouter une recette</a>
+    <a class="nav-link"  [routerLink]="['/guides']">Ajouter un guide</a>
+  </div>
+  <div *ngIf="type=='Utilisateur'" routerLinkActive="active">
+    <a class="nav-link" [routerLink]="['/nos-guides']">Nos guides</a>
+    <a class="nav-link" [routerLink]="['/nos-recettes']">Nos recettes</a>
+  </div>
+
+  <!-- Centrer -->
+  <div class="topnav-centered" routerLinkActive="active">
+    <a class="active" [routerLink]="['/accueil']"><img src="../../assets/img/logoProjet.png" alt="Logo" style="width:150px;"></a>
+  </div>
+
+  <!-- A droite -->
+  <div class="topnav-right" *ngIf="connected" routerLinkActive="active">
+    <a class="nav-link" [routerLink]="['/accueil']">Se Déconnecter</a>
+  </div>
+  <div class="topnav-right" *ngIf="type=='Utilisateur'" routerLinkActive="active">
+    <a class="nav-link" [routerLink]="['/mon-jardin']">Mon Jardin</a>
+    <a class="nav-link" [routerLink]="['/mon-compte']">Mon Compte</a>
+  </div>
+  <div class="topnav-right" *ngIf="!connected" routerLinkActive="active">
+  <a class="nav-link" [routerLink]="['/creation-compte']">Créer un compte</a>
+</div>
+  <div class="topnav-right" *ngIf="!connected" routerLinkActive="active">
+    <a class="nav-link" [routerLink]="['/connexion']">Se Connecter</a>
+  </div>
+
+</div>
+
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+
+
+<div class="bg-light text-center text-white ">
+  <div class="class">
+    <section class="mb-4">
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #3b5998;"
+        href="#!"
+        role="button"
+      ><i class="fab fa-facebook"></i></a>
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #55acee;"
+        href="#!"
+        role="button"
+      ><i class="fab fa-twitter"></i
+      ></a>
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #ac2bac;"
+        href="#!"
+        role="button"
+      ><i class="fab fa-instagram"></i
+      ></a>
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #af0000;"
+        href="#!"
+        role="button"
+      ><i class="fab fa-pinterest"></i
+      ></a>
+    </section>
+  </div>
+
+  <div class="text-center p-3" style="background-color: forestgreen;">
+    Fait par : &nbsp; &nbsp;
+    Samir B. &nbsp; &nbsp;
+    Alexandre D. &nbsp; &nbsp;
+    Raphaël G. &nbsp; &nbsp;
+    Damien H. &nbsp; &nbsp;
+    Benjamin R. &nbsp; &nbsp;
+  </div>
+</div>

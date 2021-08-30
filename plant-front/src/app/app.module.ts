@@ -12,6 +12,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {PersonneComponent} from "./personne/personne.component";
 import {RechercheComponent} from "./recherche/recherche.component";
 import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
+import {AccueilComponent} from "./accueil/accueil.component";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
       PersonneComponent,
       RechercheComponent,
     RechercheAlternativeComponent,
-      UtilisateurComponent
+      UtilisateurComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,
