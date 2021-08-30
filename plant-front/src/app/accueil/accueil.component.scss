@@ -1,25 +1,24 @@
-.message-accueil
+.message-accueil h1
 {
   text-align: center;
-  position : relative;
-  top: 170px;
-}
+  //margin-top: 25px;
+  height: 5%;
+  }
 
 .message-1 {
+  margin-top: 100px;
   display: inline-block;
   text-align: center;
   position : relative;
-  top: 100px;
   width: 50%;
 
 }
 
 .message-2 {
-
+  margin-top: 100px;
   display: inline-block;
   text-align: center;
   position : relative;
-  top: 100px;
   width: 50%;
 
 }
@@ -30,16 +29,17 @@
   width: 100%;
   background-color: antiquewhite;
   position: relative;
+  padding: 25px 0px;
 }
 
 .carouAlex
 {
-  top: 320px;
+  margin-top: 30px;
   display : inline-block;
   position: relative;
   width: 100%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
   max-width : 600px;
 }
 
