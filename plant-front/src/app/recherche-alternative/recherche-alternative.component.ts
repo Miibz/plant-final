@@ -61,7 +61,7 @@ export class RechercheAlternativeComponent implements OnInit {
       case 1:this.recherche.presentation=this.intermediaire[1];this.menuChoix(5);break;//menuComportement
     }
   }
-  menuPresentationExposition(res:number)//choix 3
+  menuExposition(res:number)//choix 3
   {
     this.appConfig.findAllExposition().subscribe(resp =>{this.intermediaire=resp;});
     switch (res) {
@@ -70,6 +70,38 @@ export class RechercheAlternativeComponent implements OnInit {
       case 2:this.recherche.exposition=this.intermediaire[2];this.menuChoix(6);break;//menuComportement
     }
   }
+
+  menuSol(res:number)//choix 4
+  {
+    this.appConfig.findAllSol().subscribe(resp =>{this.intermediaire=resp;});
+    switch (res)
+    {
+      case 0:this.recherche.sol=this.intermediaire[0];this.rechercheAlternative(this.recherche);break;//Fin
+      case 1:this.recherche.sol=this.intermediaire[1];this.rechercheAlternative(this.recherche);break;//Fin
+      case 2:this.recherche.sol=this.intermediaire[2];this.rechercheAlternative(this.recherche);break;//Fin
+      case 3:this.recherche.sol=this.intermediaire[3];this.rechercheAlternative(this.recherche);break;//Fin
+      case 4:this.recherche.sol=this.intermediaire[4];this.rechercheAlternative(this.recherche);break;//Fin
+    }
+  }
+  menuComportement(res:number)//choix 5
+  {
+    this.appConfig.findAllComportement().subscribe(resp =>{this.intermediaire=resp;});
+    switch (res)
+    {
+      case 0:this.recherche.comportement=this.intermediaire[0];this.menuChoix(3);break;//menuSol
+      case 1:this.recherche.comportement=this.intermediaire[1];this.menuChoix(3);break;//menuComportement
+    }
+  }
+  menuCouleur(res:number)//choix 6
+  {
+    this.appConfig.findAllComportement().subscribe(resp =>{this.intermediaire=resp;});
+    switch (res)
+    {
+      case 0:this.recherche.comportement=this.intermediaire[0];this.menuChoix(3);break;//menuSol
+      case 1:this.recherche.comportement=this.intermediaire[1];this.menuChoix(3);break;//menuComportement
+    }
+  }
+
 
   rechercheAlternative(recherche:Recherche)
   {
