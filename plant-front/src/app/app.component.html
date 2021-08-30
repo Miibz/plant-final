@@ -1,5 +1,4 @@
 <div class="topnav" >
-
   <!-- A gauche -->
   <div *ngIf="type=='Administrateur'" routerLinkActive="active">
     <a class="nav-link"  [routerLink]="['/plantes']">Ajouter une plante</a>
@@ -10,12 +9,10 @@
     <a class="nav-link" [routerLink]="['/nos-guides']">Nos guides</a>
     <a class="nav-link" [routerLink]="['/nos-recettes']">Nos recettes</a>
   </div>
-
   <!-- Centrer -->
   <div class="topnav-centered" routerLinkActive="active">
     <a class="active" [routerLink]="['/accueil']"><img src="../../assets/img/logoProjet.png" alt="Logo" style="width:150px;"></a>
   </div>
-
   <!-- A droite -->
   <div class="topnav-right" *ngIf="connected" routerLinkActive="active">
     <a class="nav-link" [routerLink]="['/accueil']">Se Déconnecter</a>
@@ -30,14 +27,13 @@
   <div class="topnav-right" *ngIf="!connected" routerLinkActive="active">
     <a class="nav-link" [routerLink]="['/connexion']">Se Connecter</a>
   </div>
-
 </div>
 
-<div class="container-fluid">
+<div class="outletperso">
   <router-outlet></router-outlet>
 </div>
 
-
+<div class="footer">
 <div class="bg-light text-center text-white ">
   <div class="class">
     <section class="mb-4">
@@ -71,6 +67,7 @@
     </section>
   </div>
 
+
   <div class="text-center p-3" style="background-color: forestgreen;">
     Fait par : &nbsp; &nbsp;
     Samir B. &nbsp; &nbsp;
@@ -78,5 +75,6 @@
     Raphaël G. &nbsp; &nbsp;
     Damien H. &nbsp; &nbsp;
     Benjamin R. &nbsp; &nbsp;
+  </div>
   </div>
 </div>

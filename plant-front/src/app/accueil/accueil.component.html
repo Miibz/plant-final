@@ -5,18 +5,9 @@
 
 <br>
 
-<div class="titre">
 
-  <div class="message-1"><h2>Nous vous proposons des guides pour votre jardin : </h2>
-    <div><a class="" [routerLink]="['/nos-guides']"><img class="imagehover" src="../../assets/img/Nos-guides.jpg" alt="Nos-Guides" style="height:300px ; width: 700px;"></a></div>
-  </div>
-  <div class="message-2"> <h2> Pour devenir un chef facilement , suivez nos recettes : </h2>
-   <div><a class="" [routerLink]="['/nos recettes']"><img class="imagehover" src="../../assets/img/Nos-recettes.jpg" alt="Nos-recettes" style="height:300px ; width: 700px;"></a></div>
-  </div>
 
-</div>
-
-  <br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br>
 
 
 <div class="carouAlex">
@@ -28,13 +19,29 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="../../assets/img/Nos-guides.jpg" alt="First slide" style="width:150px;">
+        <a [routerLink]="['/nos-guides']">
+        <img class="d-block w-100" src="../../assets/img/Nos-guides.jpg" alt="First slide" style="width:300px; opacity: 80%">
+          </a>
+        <div class="carousel-caption ">
+          <h5 style="color:black">Consultez nos guides</h5>
+          <p style="color:black">Besoin de savoir quand planter ? Besoin de savoir les intéractions entre mégumes? Venez par là !</p>
+        </div>
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="../../assets/img/Nos-recettes.jpg" alt="Second slide" style="width:150px;">
+        <a [routerLink]="['/nos-recettes']">
+        <img class="d-block w-100" src="../../assets/img/Nos-recettes.jpg" alt="Second slide" style="width:300px; opacity: 80%">
+        </a>
+        <div class="carousel-caption">
+          <h5 style="color:black">Consultez nos recettes</h5>
+          <p style="color:black">Envie d'une rattatouille ou d'un boeuf bourgignon ? C'est par ici !</p>
+        </div>
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="../../assets/img/logoProjet.png" alt="Third slide" style="width:150px;">
+        <img class="d-block w-100" src="../../assets/img/logoProjet.png" alt="Third slide" style="width:300px;">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>...</h5>
+        <p>...</p>
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -48,6 +55,19 @@
   </div>
 </div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+
+  <div class="titre">
+
+    <div class="message-1"><h2>Nous vous proposons des guides pour votre jardin : </h2>
+      <div><a [routerLink]="['/nos-guides']"><img class="imagehover" src="../../assets/img/Nos-guides.jpg" alt="Nos-Guides" style="height:300px ; width: 700px;"></a></div>
+    </div>
+    <div class="message-2"> <h2> Pour devenir un chef facilement , suivez nos recettes : </h2>
+      <div><a [routerLink]="['/nos-recettes']"><img class="imagehover" src="../../assets/img/Nos-recettes.jpg" alt="Nos-recettes" style="height:300px ; width: 700px;"></a></div>
+    </div>
+
+  </div>
+
+<!--  <br><br><br><br><br><br>-->
 
 </div>
