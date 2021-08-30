@@ -1,0 +1,65 @@
+<fieldset>
+<!--  <div *ngfor="let plante of plante()">
+  </div>-->
+  <legend>Mon potager</legend> <!--choix arbre-->
+  <div class="card-deck">
+    <div  class="card border border-primary shadow-0" style="max-height: 20%;max-width: 15%;" *ngFor="let plante of plante()" (mouseenter)="affiche(plante)" (mouseleave)="nAffichePas(plante)">
+      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+        <img src="../../assets/img/{{plante.vegetal.nom}}.jpg" class="img-fluid" /><!-- {{vegetal.nom}}.jpg -->
+        <a href="#!">
+          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+        </a>
+      </div>
+      <div class="card-header">Information</div>
+      <div class="card-body">
+        <h5 class="card-title">{{plante.vegetal.nom}}</h5><!-- vegetal.nom -->
+        <p class="card-text">
+          {{plante.vegetal.description}}
+        </p>
+        <button type="button" class="btn btn-primary" *ngIf="plante.vegetal.affiche!=true && plante.vegetal.affiche2==true" (click)="plante.vegetal.affiche=true">Modifier</button><button type="button" class="btn btn-primary" *ngIf="plante.vegetal.affiche==true && plante.vegetal.affiche2==true" (click)="modifier(plante)">Valider</button></div><!-- nombre  d'éléments vegetal.nom == "tomate" filtre qui porte le nom de tomates dans la liste -->
+      <div class="card-footer">Nombre : <span *ngIf="plante.vegetal.affiche!=true">{{plante.vegetal.nombre}}</span> <input *ngIf="plante.vegetal.affiche==true" value="{{plante.vegetal.nombre}}" [(ngModel)]="plante.vegetal.nombre2"> pieds</div>  <button type="button" *ngIf="plante.vegetal.affiche==true" (click)="plante.vegetal.affiche=false"></button></div><!-- juste jardin, il à la liste des végétaux, il peut avoir plusieurs fois la même -->
+    </div>
+</fieldset>
+<fieldset>
+  <legend>Mes arbres fruitiers</legend> <!--choix arbre-->
+  <div class="card-deck">
+    <div  class="card border border-primary shadow-0" style="max-height: 20%;max-width: 15%;" *ngFor="let plante of arbre()" (mouseenter)="affiche(plante)" (mouseleave)="nAffichePas(plante)">
+      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+        <img src="../../assets/img/{{plante.vegetal.nom}}.jpg" class="img-fluid" /><!-- {{vegetal.nom}}.jpg -->
+        <a href="#!">
+          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+        </a>
+      </div>
+      <div class="card-header">Information</div>
+      <div class="card-body">
+        <h5 class="card-title">{{plante.vegetal.nom}}</h5><!-- vegetal.nom -->
+        <p class="card-text">
+          {{plante.vegetal.description}}
+        </p>
+        <button type="button" class="btn btn-primary" *ngIf="plante.vegetal.affiche!=true && plante.vegetal.affiche2==true" (click)="plante.vegetal.affiche=true">Modifier</button><button type="button" class="btn btn-primary" *ngIf="plante.vegetal.affiche==true && plante.vegetal.affiche2==true" (click)="modifier(plante)">Valider</button>
+      </div><!-- nombre  d'éléments vegetal.nom == "tomate" filtre qui porte le nom de tomates dans la liste -->
+      <div class="card-footer">Nombre : <span *ngIf="plante.vegetal.affiche!=true">{{plante.vegetal.nombre}}</span> <input *ngIf="plante.vegetal.affiche==true" value="{{plante.vegetal.nombre}}" [(ngModel)]="plante.vegetal.nombre2"> pieds</div>  <button type="button" *ngIf="plante.vegetal.affiche==true" (click)="plante.vegetal.affiche=false"></button></div><!-- juste jardin, il à la liste des végétaux, il peut avoir plusieurs fois la même -->
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>Plants à ajouter</legend>
+  <div class="card-deck">
+    <div class="card border border-primary shadow-0" style="max-height: 20%;max-width: 15%;" *ngFor="let plante of plantNonChoisis()">
+      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+        <img src="../../assets/img/{{plante.vegetal.nom}}.jpg" class="img-fluid" /><!-- {{vegetal.nom}}.jpg -->
+        <a href="#!">
+          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+        </a>
+      </div>
+      <div class="card-header">Information</div>
+      <div class="card-body">
+        <h5 class="card-title">{{plante.vegetal.nom}}</h5><!-- vegetal.nom -->
+        <p class="card-text">
+          {{plante.vegetal.description}}
+        </p>
+        <button type="button" class="btn btn-primary" (click)="ajouter(plante)" >Ajouter</button>
+        </div>
+      </div><!-- nombre  d'éléments vegetal.nom == "tomate" filtre qui porte le nom de tomates dans la liste -->
+  </div><!--choix replant -->
+</fieldset>
