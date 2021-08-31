@@ -30,7 +30,7 @@ export class AppConfigService {
   }
 
   findAllTypeDeFeuille(): Observable<Array<string>> {
-    return this.http.get<Array<string>>(this.backEndUrl + "tempsDeFeuille");
+    return this.http.get<Array<string>>(this.backEndUrl + "typeDeFeuille");
   }
   findAllTempsDeFeuille(): Observable<Array<string>> {
     return this.http.get<Array<string>>(this.backEndUrl + "tempsDeFeuille");
@@ -52,6 +52,9 @@ export class AppConfigService {
   }
   findAllCimetiere(): Observable<Array<string>> {
     return this.http.get<Array<string>>(this.backEndUrl + "utiliteCimetiere");
+  }
+  findAllUtilitePresentation(): Observable<Array<string>> {
+    return this.http.get<Array<string>>(this.backEndUrl + "utilitePresentation");
   }
 
 }

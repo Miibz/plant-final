@@ -53,6 +53,10 @@ public class Recherche {
 	private UtiliteComposition utiliteComposition;
 	@JsonView(Views.ViewCommon.class)
 	private UtiliteCimetiere utiliteCimetiere;
+	@JsonView(Views.ViewCommon.class)
+	private UtilitePresentation utilitePresentation;
+	@JsonView(Views.ViewCommon.class)
+	private Exposition exposition;
 	
 	
 	public Recherche() {
@@ -176,5 +180,32 @@ public class Recherche {
 	public void setUtiliteCimetiere(UtiliteCimetiere utiliteCimetiere) {
 		this.utiliteCimetiere = utiliteCimetiere;
 	}
-	
+	public int getVersion() {
+		return version;
+	}
+	public void setVersion(int version) {
+		this.version = version;
+	}
+	public UtilitePresentation getUtilitePresentation() {
+		return utilitePresentation;
+	}
+	public void setUtilitePresentation(UtilitePresentation utilitePresentation) {
+		this.utilitePresentation = utilitePresentation;
+	}
+	public Exposition getExposition() {
+		return exposition;
+	}
+	public void setExposition(Exposition exposition) {
+		this.exposition = exposition;
+	}
+	@Override
+	public String toString() {
+		return "Recherche [id=" + id + ", version=" + version + ", utilisateur=" + utilisateur + ", date=" + date
+				+ ", nature=" + nature + ", tempsDeVie=" + tempsDeVie + ", presentation=" + presentation + ", sol="
+				+ sol + ", comportement=" + comportement + ", utilite=" + utilite + ", typeDeFeuille=" + typeDeFeuille
+				+ ", tempsDeFeuille=" + tempsDeFeuille + ", utiliteOrnement=" + utiliteOrnement
+				+ ", utiliteGastronomie=" + utiliteGastronomie + ", couleur=" + couleur + ", utiliteComposition="
+				+ utiliteComposition + ", utiliteCimetiere=" + utiliteCimetiere + ", utilitePresentation="
+				+ utilitePresentation + ", exposition=" + exposition + "]";
+	}
 }

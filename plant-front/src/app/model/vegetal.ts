@@ -27,6 +27,7 @@ export class Vegetal {
   affinites:Array<Vegetal>;
   affiche:boolean=false;
   affiche2:boolean=false;
+  utilitePresentation:string;
 
 
   constructor(id?: number, version?: number,nombre?:number,nombre2?:number,nom?:string,description?:string, nature?: string, tempsDeVie?: string, presentation?: string, exposition?: string, sol?: string, comportement?: string, utilite?: string, typeFeuille?: string, tempsFeuille?: string, utiliteOrnement?: string, utiliteGastronomie?: string, couleur?: string, utiliteComposition?: string, utiliteCimetiere?: string, consomationEngrais?: number, consomationEau?: number, prix?: number, prixFruit?: number, affinites?: Array<Vegetal>,affiche?:boolean,affiche2?:boolean) {
