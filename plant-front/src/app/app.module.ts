@@ -13,6 +13,9 @@ import {RechercheComponent} from "./recherche/recherche.component";
 import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
 import {AccueilComponent} from "./accueil/accueil.component";
 import { CreationCompteComponent } from './creation-compte/creation-compte.component';
+import {ConnexionComponent} from "./connexion/connexion.component";
+import { RecetteComponent } from './recette/recette.component';
+import { AjoutRecetteComponent } from './ajout-recette/ajout-recette.component';
 
 
 @NgModule({
@@ -21,12 +24,15 @@ import { CreationCompteComponent } from './creation-compte/creation-compte.compo
     MonJardinComponent,
     DejaPlanteComponent,
     VegetalComponent,
+    PersonneComponent,
     RechercheComponent,
     RechercheAlternativeComponent,
+    CreationCompteComponent,
     UtilisateurComponent,
     AccueilComponent,
-    CreationCompteComponent,
-
+    RecetteComponent,
+    AjoutRecetteComponent,
+    ConnexionComponent
   ],
   imports: [
     BrowserModule,
