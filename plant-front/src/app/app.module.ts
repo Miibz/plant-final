@@ -13,6 +13,7 @@ import {PersonneComponent} from "./personne/personne.component";
 import {RechercheComponent} from "./recherche/recherche.component";
 import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
 import {AccueilComponent} from "./accueil/accueil.component";
+import {ConnexionComponent} from "./connexion/connexion.component";
 import { RecetteComponent } from './recette/recette.component';
 import { AjoutRecetteComponent } from './ajout-recette/ajout-recette.component';
 
@@ -28,7 +29,8 @@ import { AjoutRecetteComponent } from './ajout-recette/ajout-recette.component';
       UtilisateurComponent,
     AccueilComponent,
     RecetteComponent,
-    AjoutRecetteComponent
+    AjoutRecetteComponent,
+    ConnexionComponent
   ],
   imports: [
     BrowserModule,
