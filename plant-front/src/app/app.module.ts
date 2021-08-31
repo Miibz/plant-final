@@ -14,6 +14,8 @@ import {RechercheComponent} from "./recherche/recherche.component";
 import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
 import {AccueilComponent} from "./accueil/accueil.component";
 import {ConnexionComponent} from "./connexion/connexion.component";
+import { RecetteComponent } from './recette/recette.component';
+import { AjoutRecetteComponent } from './ajout-recette/ajout-recette.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import {ConnexionComponent} from "./connexion/connexion.component";
       RechercheComponent,
     RechercheAlternativeComponent,
       UtilisateurComponent,
+    RecetteComponent,
+    AjoutRecetteComponent
     AccueilComponent,
     ConnexionComponent
   ],

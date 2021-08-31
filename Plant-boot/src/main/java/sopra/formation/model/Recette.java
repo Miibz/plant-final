@@ -25,48 +25,77 @@ public class Recette {
 	@JsonView(Views.ViewCommon.class)
 	private String nom;
 //	private List<String> ingredientsNonVegetaux;
-	@OneToMany(mappedBy="recette")
-	@JsonView(Views.ViewRecette.class)
-	private List<RecetteJardin> recetteJardin;
-	@JsonView(Views.ViewRecette.class)
+//	@OneToMany(mappedBy="recette")
+//	@JsonView(Views.ViewRecette.class)
+//	private List<RecetteJardin> recetteJardin;
+	@JsonView(Views.ViewCommon.class)
+	private String info;
+	@JsonView(Views.ViewCommon.class)
+	private String ingredients;
+	@JsonView(Views.ViewCommon.class)
 	private String  methode;
 	
 	public Recette() {
 		super();
 	}
-	public Recette(Long id, String nom, List<String> ingredientsNonVegetaux, List<RecetteJardin> recetteJardin,
-			String methode) {
+
+	public Recette(Long id, String nom, String info, String ingredients, String methode) {
 		super();
 		this.id = id;
 		this.nom = nom;
-//		this.ingredientsNonVegetaux = ingredientsNonVegetaux;
-		this.recetteJardin = recetteJardin;
+		this.info = info;
+		this.ingredients = ingredients;
 		this.methode = methode;
 	}
-	public List<RecetteJardin> getRecetteJardin() {
-		return recetteJardin;
-	}
-	public void setRecetteJardin(List<RecetteJardin> recetteJardin) {
-		this.recetteJardin = recetteJardin;
-	}
-	public String getMethode() {
-		return methode;
-	}
-	public void setMethode(String methode) {
-		this.methode = methode;
-	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
 	public String getNom() {
 		return nom;
 	}
+
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
+
+	public String getInfo() {
+		return info;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
+	}
+
+	public String getIngredients() {
+		return ingredients;
+	}
+
+	public void setIngredients(String ingredients) {
+		this.ingredients = ingredients;
+	}
+
+	public String getMethode() {
+		return methode;
+	}
+
+	public void setMethode(String methode) {
+		this.methode = methode;
+	}
+	
 //	public List<String> getIngredientsNonVegetaux() {
 //		return ingredientsNonVegetaux;
 //	}

@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'plantFront';
-  type: string="";
-  connected:boolean=false;
+  type: string="Administrateur";
+  connected:boolean=true;
 }
