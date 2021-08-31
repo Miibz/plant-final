@@ -9,10 +9,11 @@ import {VegetalComponent} from "./vegetal/vegetal.component";
 import {RechercheAlternativeComponent} from "./recherche-alternative/recherche-alternative.component";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import {PersonneComponent} from "./personne/personne.component";
 import {RechercheComponent} from "./recherche/recherche.component";
 import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
 import {AccueilComponent} from "./accueil/accueil.component";
+import { CreationCompteComponent } from './creation-compte/creation-compte.component';
+
 
 @NgModule({
   declarations: [
@@ -20,11 +21,12 @@ import {AccueilComponent} from "./accueil/accueil.component";
     MonJardinComponent,
     DejaPlanteComponent,
     VegetalComponent,
-      PersonneComponent,
-      RechercheComponent,
+    RechercheComponent,
     RechercheAlternativeComponent,
-      UtilisateurComponent,
-    AccueilComponent
+    UtilisateurComponent,
+    AccueilComponent,
+    CreationCompteComponent,
+
   ],
   imports: [
     BrowserModule,
