@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Recherche} from "../model/recherche";
 import {AppConfigService} from "../app-config.service";
+import {RechercheService} from "../recherche/recherche-Http.service";
+import {VegetalHttpService} from "../vegetal/vegetal-http.service";
+import {Vegetal} from "../model/vegetal";
 
 @Component({
   selector: 'app-recherche-alternative',
@@ -26,9 +29,9 @@ export class RechercheAlternativeComponent implements OnInit {
   utiliteComposition:Array<string>;
   utiliteCimetiere:Array<string>;
   utilitePresentation:Array<string>;
+  resultats:Array<Vegetal>=new Array<Vegetal>();
 
-
-  constructor(public appConfig:AppConfigService) {
+  constructor(private appConfig:AppConfigService,private rechercheService:RechercheService,private vegetalService:VegetalHttpService) {
     this.choixMenu[0]=true;
     this.appConfig.findAllNature().subscribe(resp =>{this.natures=resp;});
     this.appConfig.findAllTempsDeVie().subscribe(resp =>{ this.tempsDeVie=resp;});
@@ -44,7 +47,6 @@ export class RechercheAlternativeComponent implements OnInit {
     this.appConfig.findAllNUtiliteComposition().subscribe(resp =>{ this.utiliteComposition=resp;});
     this.appConfig.findAllCimetiere().subscribe(resp =>{ this.utiliteCimetiere=resp;});
     this.appConfig.findAllPresentation().subscribe(resp =>{ this.utilitePresentation=resp;});
-
   }
 
   menuChoixAvant(lesChoix:Array<string>,unChoix:string):number
@@ -154,7 +156,7 @@ export class RechercheAlternativeComponent implements OnInit {
   menuTypeDeFeuille(res:number)//choix 8
   {
     console.log(this.recherche)
-    if(this.recherche.nature=="arbre")
+    if(this.recherche.nature=="Arbre")
     {
       console.log("arbre");
       switch (res)
@@ -163,7 +165,7 @@ export class RechercheAlternativeComponent implements OnInit {
         case 1:this.recherche.typeFeuille=this.typeDeFeuille[1];this.menuChoix(4);break;//menuSol
       }
     }
-    else if(this.recherche.nature=="arbuste")
+    else if(this.recherche.nature=="Arbuste")
     {
       console.log("arbuste");
       switch (res)
@@ -242,7 +244,14 @@ export class RechercheAlternativeComponent implements OnInit {
   }
   rechercheAlternative(recherche:Recherche)
   {
-    console.log(this.recherche);
+    this.rechercheService.create2(this.recherche).subscribe(response => {
+      let recherche=response;
+      console.log(recherche);
+      this.vegetalService.findAllBySearch((recherche.id)).subscribe(reponse => {
+        this.resultats = reponse;
+        console.log(this.resultats);
+      }, error => console.log(error));;
+    }, error => console.log(error));;
   }
   ngOnInit(): void {
 

@@ -2,21 +2,21 @@
 export class Recherche {
   id:number;
   version:number;
-  nature:string;
-  tempsDeVie:string;
-  presentation:string;
-  exposition:string;
-  sol:string;
-  comportement:string;
-  utilite:string;
-  typeFeuille:string;
-  tempsFeuille:string;
-  utiliteOrnement:string;
-  utiliteGastronomie:string;
-  couleur:string;
-  utiliteComposition:string;
-  utiliteCimetiere:string;
-  utilitePresentation:string;
+  nature:string=null;
+  tempsDeVie:string=null;
+  presentation:string=null;
+  exposition:string=null;
+  sol:string=null;
+  comportement:string=null;
+  utilite:string=null;
+  typeFeuille:string=null;
+  tempsFeuille:string=null;
+  utiliteOrnement:string=null;
+  utiliteGastronomie:string=null;
+  couleur:string=null;
+  utiliteComposition:string=null;
+  utiliteCimetiere:string=null;
+  utilitePresentation:string=null;
 
 
   constructor(id?: number, version?: number,nombre?:number,nombre2?:number,nom?:string,description?:string, nature?: string, tempsDeVie?: string, presentation?: string, exposition?: string, sol?: string, comportement?: string, utilite?: string, typeFeuille?: string, tempsFeuille?: string, utiliteOrnement?: string, utiliteGastronomie?: string, couleur?: string, utiliteComposition?: string, utiliteCimetiere?: string,utilitePresentation?:string) {
