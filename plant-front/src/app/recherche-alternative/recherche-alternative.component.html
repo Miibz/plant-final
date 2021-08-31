@@ -2,56 +2,56 @@
 <br><br><br><br><br><br><br><br>
 <br>
 <br><br><br><br><br><br><br><br>
-<table>
-  <tr>
-    <td *ngFor="let e of natures" (click)="menuNature(menuChoixAvant(natures,e))"  >{{e}}</td>
-  </tr>
-  <tr *ngIf="choixMenu[1]==true">
-    <td *ngFor="let e of tempsDeVie" (click)="menuTempsDeVie(menuChoixAvant(tempsDeVie,e))" >{{e}}</td>
-  </tr>
-  <tr *ngIf="choixMenu[2]==true">
-    <td *ngFor="let e of presentation" (click)="menuPresentationFleur(menuChoixAvant(presentation,e))" >{{e}}</td>
-  </tr>
-  <tr *ngIf="choixMenu[3]==true">
-    <td *ngFor="let e of expositions" (click)="menuExposition(menuChoixAvant(expositions,e))"  >{{e}}</td>
-  </tr>
-  <tr *ngIf="choixMenu[4]==true">
-    <td *ngFor="let e of sols" (click)="menuSol(menuChoixAvant(sols,e))"  >{{e}}</td>
-  </tr>
-  <tr *ngIf="choixMenu[5]==true">
-    <td *ngFor="let e of comportement" (click)="menuComportement(menuChoixAvant(comportement,e))"  >{{e}}</td>
-  </tr>
-  <tr *ngIf="choixMenu[6]==true">
-    <td *ngFor="let e of couleur" (click)="menuCouleur(menuChoixAvant(couleur,e))"  >{{e}}</td>
-  </tr>
-  <tr *ngIf="choixMenu[7]==true">
-    <td *ngFor="let e of utilite" (click)="menuUtilite(menuChoixAvant(utilite,e))"  >{{e}}</td>
-  </tr>
-  <tr *ngIf="choixMenu[8]==true">
-    <td *ngFor="let e of typeDeFeuille" (click)="menuTypeDeFeuille(menuChoixAvant(typeDeFeuille,e))"  >{{e}}</td>
-  </tr>
-  <tr *ngIf="choixMenu[9]==true">
-    <td *ngFor="let e of tempsDeFeuille" (click)="menuTypeDeFeuille(menuChoixAvant(typeDeFeuille,e))"  >{{e}}</td>
-  </tr>
-  <tr *ngIf="choixMenu[10]==true">
-    <td *ngFor="let e of presentation" (click)="menuPresentationArbuste(menuChoixAvant(presentation,e))"  >{{e}}</td>
-  </tr>
-  <tr *ngIf="choixMenu[11]==true">
-    <td *ngFor="let e of utiliteOrnement" (click)="menuUtiliteOrnement(menuChoixAvant(utiliteOrnement,e))"  >{{e}}</td>
-  </tr>
-  <tr *ngIf="choixMenu[12]==true">
-    <td *ngFor="let e of utiliteGastronomie" (click)="menuUtiliteGastronomie(menuChoixAvant(utiliteGastronomie,e))"  >{{e}}</td>
-  </tr>
-  <tr *ngIf="choixMenu[13]==true">
-    <td *ngFor="let e of utiliteComposition" (click)="menutiliteComposition(menuChoixAvant(utiliteComposition,e))"  >{{e}}</td>
-  </tr>
-  <tr *ngIf="choixMenu[14]==true">
-    <td *ngFor="let e of utiliteCimetiere" (click)="menutiliteCimetiere(menuChoixAvant(utiliteCimetiere,e))"  >{{e}}</td>
-  </tr>
-  <tr *ngIf="choixMenu[15]==true">
-    <td *ngFor="let e of utilitePresentation" (click)="menutilitePresentation(menuChoixAvant(natures,e))"  >{{e}}</td>
-  </tr>
-</table>
+<div class="listeChoix">
+  <div class="diffentsChoix">
+    <span class="choixDetail" *ngFor="let e of natures" (click)="menuNature(menuChoixAvant(natures,e))" >{{e}}</span>
+  </div>
+  <div class="diffentsChoix" *ngIf="choixMenu[1]==true">
+    <span class="choixDetail" *ngFor="let e of tempsDeVie" (click)="menuTempsDeVie(menuChoixAvant(tempsDeVie,e))" >{{e}}</span>
+  </div>
+  <div class="diffentsChoix" *ngIf="choixMenu[2]==true">
+    <span class="choixDetail" *ngFor="let e of presentation" (click)="menuPresentationFleur(menuChoixAvant(presentation,e))" >{{e}}</span>
+  </div>
+  <div class="diffentsChoix" *ngIf="choixMenu[3]==true">
+    <span class="choixDetail" *ngFor="let e of expositions" (click)="menuExposition(menuChoixAvant(expositions,e))"  >{{e}}</span>
+  </div>
+  <div class="diffentsChoix" *ngIf="choixMenu[4]==true">
+    <span class="choixDetail" *ngFor="let e of sols" (click)="menuSol(menuChoixAvant(sols,e))"  >{{e}}</span>
+  </div>
+  <div class="diffentsChoix" *ngIf="choixMenu[5]==true">
+    <span class="choixDetail" *ngFor="let e of comportement" (click)="menuComportement(menuChoixAvant(comportement,e))"  >{{e}}</span>
+  </div>
+  <div class="diffentsChoix" *ngIf="choixMenu[6]==true">
+    <span class="choixDetail" *ngFor="let e of couleur" (click)="menuCouleur(menuChoixAvant(couleur,e))" >{{e}}</span>
+  </div>
+  <div class="diffentsChoix" *ngIf="choixMenu[7]==true">
+    <span class="choixDetail" *ngFor="let e of utilite" (click)="menuUtilite(menuChoixAvant(utilite,e))"  >{{e}}</span>
+  </div>
+  <div class="diffentsChoix" *ngIf="choixMenu[8]==true">
+    <span class="choixDetail" *ngFor="let e of typeDeFeuille" (click)="menuTypeDeFeuille(menuChoixAvant(typeDeFeuille,e))"  >{{e}}</span>
+  </div>
+  <div class="diffentsChoix" *ngIf="choixMenu[9]==true">
+    <div class="choixDetail" *ngFor="let e of tempsDeFeuille" (click)="menuTypeDeFeuille(menuChoixAvant(typeDeFeuille,e))"  >{{e}}</div>
+  </div>
+  <div class="diffentsChoix" *ngIf="choixMenu[10]==true">
+    <span class="choixDetail" *ngFor="let e of presentation" (click)="menuPresentationArbuste(menuChoixAvant(presentation,e))"  >{{e}}</span>
+  </div>
+  <div class="diffentsChoix" *ngIf="choixMenu[11]==true">
+    <span class="choixDetail" *ngFor="let e of utiliteOrnement" (click)="menuUtiliteOrnement(menuChoixAvant(utiliteOrnement,e))"  >{{e}}</span>
+  </div>
+  <div class="diffentsChoix" *ngIf="choixMenu[12]==true">
+    <span class="choixDetail" *ngFor="let e of utiliteGastronomie" (click)="menuUtiliteGastronomie(menuChoixAvant(utiliteGastronomie,e))"  >{{e}}</span>
+  </div>
+  <div class="diffentsChoix" *ngIf="choixMenu[13]==true">
+    <span class="choixDetail" *ngFor="let e of utiliteComposition" (click)="menutiliteComposition(menuChoixAvant(utiliteComposition,e))"  >{{e}}</span>
+  </div>
+  <div class="diffentsChoix" *ngIf="choixMenu[14]==true">
+    <span class="choixDetail" *ngFor="let e of utiliteCimetiere" (click)="menutiliteCimetiere(menuChoixAvant(utiliteCimetiere,e))"  >{{e}}</span>
+  </div>
+  <div class="diffentsChoix" *ngIf="choixMenu[15]==true">
+    <span class="choixDetail" *ngFor="let e of utilitePresentation" (click)="menutilitePresentation(menuChoixAvant(natures,e))"  >{{e}}</span>
+  </div>
+</div>
 <br>
 <br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br>
