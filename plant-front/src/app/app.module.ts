@@ -13,6 +13,7 @@ import {PersonneComponent} from "./personne/personne.component";
 import {RechercheComponent} from "./recherche/recherche.component";
 import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
 import {AccueilComponent} from "./accueil/accueil.component";
+import {ConnexionComponent} from "./connexion/connexion.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {AccueilComponent} from "./accueil/accueil.component";
       RechercheComponent,
     RechercheAlternativeComponent,
       UtilisateurComponent,
-    AccueilComponent
+    AccueilComponent,
+    ConnexionComponent
   ],
   imports: [
     BrowserModule,
