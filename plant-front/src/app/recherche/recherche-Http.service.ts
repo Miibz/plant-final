@@ -11,6 +11,7 @@ import {Recherche} from "../model/recherche";
 export class RechercheService {
 
   recherches: Array<Recherche> = new Array<Recherche>();
+  retour:Recherche;
 
   constructor(private http: HttpClient, private appConfigService: AppConfigService) {
     this.load();
@@ -24,10 +25,21 @@ export class RechercheService {
     return this.http.get<Recherche> (this.appConfigService.backEndUrl + "recherche/" + id);
   }
 
-  create(recherche : Recherche) {
+
+  create(recherche : Recherche){
     this.http.post<Recherche>(this.appConfigService.backEndUrl + "recherche/", recherche).subscribe(response => {
       this.load();
+      this.retour=response;
     }, error => console.log(error));
+  }
+
+  create2(recherche : Recherche):Observable<Recherche>{
+    return this.http.post<Recherche>(this.appConfigService.backEndUrl + "recherche/", recherche);
+  }
+  retourCreate(recherche:Recherche)
+  {
+    this.create(recherche);
+    return this.retour;
   }
 
   modify(recherche : Recherche) {

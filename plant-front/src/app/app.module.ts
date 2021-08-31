@@ -27,9 +27,9 @@ import { AjoutRecetteComponent } from './ajout-recette/ajout-recette.component';
       RechercheComponent,
     RechercheAlternativeComponent,
       UtilisateurComponent,
+    AccueilComponent,
     RecetteComponent,
     AjoutRecetteComponent,
-    AccueilComponent,
     ConnexionComponent
   ],
   imports: [
