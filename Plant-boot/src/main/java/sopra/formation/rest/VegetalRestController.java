@@ -18,8 +18,10 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
+import sopra.formation.model.Recherche;
 import sopra.formation.model.Vegetal;
 import sopra.formation.model.Views;
+import sopra.formation.repository.IRechercheRepository;
 import sopra.formation.repository.IVegetalRepository;
 
 
@@ -29,11 +31,23 @@ import sopra.formation.repository.IVegetalRepository;
 public class VegetalRestController {
 	@Autowired
 	private IVegetalRepository vegetalRepo;
+	@Autowired
+	private IRechercheRepository rechercheRepo;
 
 	@GetMapping("")
 	@JsonView(Views.ViewVegetal.class)
 	public List<Vegetal> findAll() {
 		return vegetalRepo.findAll();
+	}
+	@GetMapping("/by-recherche/{id}")
+	@JsonView(Views.ViewVegetal.class)
+	public List<Vegetal> findAllByRecherche(@PathVariable Long id) {
+		System.out.println(id);
+		Recherche recherche=rechercheRepo.findById(id).get();
+		System.out.println(recherche.toString());
+		System.out.println(recherche.getTempsDeVie());
+//		return vegetalRepo.findVegetalByRecherche(recherche.getNature(),null).get();
+		return vegetalRepo.findVegetalByRecherche(recherche.getNature(),recherche.getTempsDeVie(),recherche.getExposition(),recherche.getSol(),recherche.getComportement(),recherche.getCouleur(),recherche.getUtilite(),recherche.getTypeDeFeuille(),recherche.getTempsDeFeuille(),recherche.getPresentation(),recherche.getUtiliteOrnement(),recherche.getUtiliteGastronomie(),recherche.getUtiliteComposition(),recherche.getUtiliteCimetiere(),recherche.getUtilitePresentation()).get();
 	}
 	
 
