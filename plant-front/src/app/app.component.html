@@ -1,9 +1,9 @@
 <div class="topnav" >
   <!-- A gauche -->
   <div *ngIf="type=='Administrateur'" routerLinkActive="active">
-    <a class="nav-link"  [routerLink]="['/plantes']">Ajouter une plante</a>
-    <a class="nav-link"  [routerLink]="['/recettes']">Ajouter une recette</a>
-    <a class="nav-link"  [routerLink]="['/guides']">Ajouter un guide</a>
+    <a class="nav-link"  [routerLink]="['/ajout-plantes']">Ajouter une plante</a>
+    <a class="nav-link"  [routerLink]="['/ajout-recette']">Ajouter une recette</a>
+    <a class="nav-link"  [routerLink]="['/ajout-guides']">Ajouter un guide</a>
   </div>
   <div *ngIf="type=='Utilisateur'" routerLinkActive="active">
     <a class="nav-link" [routerLink]="['/nos-guides']">Nos guides</a>

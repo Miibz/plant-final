@@ -13,6 +13,8 @@ import {PersonneComponent} from "./personne/personne.component";
 import {RechercheComponent} from "./recherche/recherche.component";
 import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
 import {AccueilComponent} from "./accueil/accueil.component";
+import { RecetteComponent } from './recette/recette.component';
+import { AjoutRecetteComponent } from './ajout-recette/ajout-recette.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import {AccueilComponent} from "./accueil/accueil.component";
       RechercheComponent,
     RechercheAlternativeComponent,
       UtilisateurComponent,
-    AccueilComponent
+    AccueilComponent,
+    RecetteComponent,
+    AjoutRecetteComponent
   ],
   imports: [
     BrowserModule,
