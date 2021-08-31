@@ -16,6 +16,8 @@ import {AccueilComponent} from "./accueil/accueil.component";
 import {ConnexionComponent} from "./connexion/connexion.component";
 import { RecetteComponent } from './recette/recette.component';
 import { AjoutRecetteComponent } from './ajout-recette/ajout-recette.component';
+import { AjoutGuideComponent } from './ajout-guide/ajout-guide.component';
+import { LectureRecetteComponent } from './lecture-recette/lecture-recette.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { AjoutRecetteComponent } from './ajout-recette/ajout-recette.component';
     AccueilComponent,
     RecetteComponent,
     AjoutRecetteComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    AjoutGuideComponent,
+    LectureRecetteComponent
   ],
   imports: [
     BrowserModule,
