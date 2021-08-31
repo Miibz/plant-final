@@ -4,9 +4,11 @@ import {MonJardinComponent} from "./mon-jardin/mon-jardin.component";
 import {AccueilComponent} from "./accueil/accueil.component";
 import {AjoutRecetteComponent} from "./ajout-recette/ajout-recette.component";
 import {RecetteComponent} from "./recette/recette.component";
+import {RechercheAlternativeComponent} from "./recherche-alternative/recherche-alternative.component";
 
 const routes: Routes = [
   {path: "mon-jardin", component: MonJardinComponent},
+  {path: "recherche2", component: RechercheAlternativeComponent},
   {path: "accueil", component: AccueilComponent},
   {path: "ajout-recette", component: AjoutRecetteComponent},
   // {path: "ajout-guide", component: AjoutGuideComponent},

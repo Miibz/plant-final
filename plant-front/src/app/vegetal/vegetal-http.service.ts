@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {AppConfigService} from "../app-config.service";
 import {Observable} from "rxjs";
 import { Vegetal } from '../model/vegetal';
+import {Recherche} from "../model/recherche";
 
 
 @Injectable({
@@ -10,6 +11,7 @@ import { Vegetal } from '../model/vegetal';
 })
 export class VegetalHttpService {
   jardins: Array<Vegetal> = new Array<Vegetal>();
+  recherchePersonnelle: Array<Vegetal> = new Array<Vegetal>();
 
   constructor(private http: HttpClient, private appConfigService: AppConfigService) {
     this.load();
@@ -19,10 +21,14 @@ export class VegetalHttpService {
     return this.jardins;
   }
 
+  findAllBySearch(id :number):Observable<Array<Vegetal>>
+  {
+  return this.http.get<Array<Vegetal>>(this.appConfigService.backEndUrl + "vegetal/by-recherche/"+id);
+  }
+
   findById(id: number): Observable<Vegetal> {
     return this.http.get<Vegetal>(this.appConfigService.backEndUrl + "vegetal/" + id);
   }
-
 
   create(vegetal : Vegetal) {
     this.http.post<Vegetal>(this.appConfigService.backEndUrl + "vegetal/", vegetal).subscribe(response => {
