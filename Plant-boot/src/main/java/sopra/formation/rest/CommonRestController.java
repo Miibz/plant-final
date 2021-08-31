@@ -1,12 +1,13 @@
 package sopra.formation.rest;
 
-import org.hibernate.boot.model.naming.ImplicitJoinColumnNameSource.Nature;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import sopra.formation.model.Comportement;
 import sopra.formation.model.Couleur;
 import sopra.formation.model.Exposition;
+import sopra.formation.model.Nature;
 import sopra.formation.model.Presentation;
 import sopra.formation.model.Sol;
 import sopra.formation.model.TempsDeFeuille;
@@ -17,6 +18,7 @@ import sopra.formation.model.UtiliteCimetiere;
 import sopra.formation.model.UtiliteComposition;
 import sopra.formation.model.UtiliteGastronomie;
 import sopra.formation.model.UtiliteOrnement;
+import sopra.formation.model.UtilitePresentation;
 
 
 
@@ -55,6 +57,10 @@ public class CommonRestController {
 	public Utilite[] utilite() {
 		return Utilite.values();
 	}
+	@GetMapping("/comportement")
+	public Comportement[] comportement() {
+		return Comportement.values();
+	}
 	@GetMapping("/utiliteOrnement")
 	public UtiliteOrnement[] utiliteOrnement() {
 		return UtiliteOrnement.values();
@@ -74,6 +80,10 @@ public class CommonRestController {
 	@GetMapping("/utiliteCimetiere")
 	public UtiliteCimetiere[] utiliteCimetiere() {
 		return UtiliteCimetiere.values();
+	}
+	@GetMapping("/utilitePresentation")
+	public UtilitePresentation[] utilitePresentation() {
+		return UtilitePresentation.values();
 	}
 	
 
