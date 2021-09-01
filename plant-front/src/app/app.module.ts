@@ -4,9 +4,7 @@ import {MonJardinComponent} from "./mon-jardin/mon-jardin.component";
 import {DejaPlanteComponent} from "./deja-plante/deja-plante.component";
 import {VegetalComponent} from "./vegetal/vegetal.component";
 import {RechercheComponent} from "./recherche/recherche.component";
-import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
 import {CreationCompteComponent} from "./creation-compte/creation-compte.component";
-import {AccueilComponent} from "./accueil/accueil.component";
 import {RecetteComponent} from "./recette/recette.component";
 import {RechercheAlternativeComponent} from "./recherche-alternative/recherche-alternative.component";
 import {FormsModule} from "@angular/forms";
@@ -15,6 +13,9 @@ import {ConnexionComponent} from "./connexion/connexion.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
+import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
+import {AccueilComponent} from "./accueil/accueil.component";
+import { AdminAjoutPlanteComponent } from './admin-ajout-plante/admin-ajout-plante.component';
 import {BarreDeRechercheComponent} from "./barre-de-recherche/barre-de-recherche.component";
 
 
@@ -26,6 +27,9 @@ import {BarreDeRechercheComponent} from "./barre-de-recherche/barre-de-recherche
     VegetalComponent,
     RechercheComponent,
     RechercheAlternativeComponent,
+      UtilisateurComponent,
+    AccueilComponent,
+    AdminAjoutPlanteComponent,
     CreationCompteComponent,
     UtilisateurComponent,
     AccueilComponent,

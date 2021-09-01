@@ -1,3 +1,4 @@
+import {Notice} from "./notice";
 
 export class Vegetal {
   id:number;
@@ -28,6 +29,7 @@ export class Vegetal {
   affiche:boolean=false;
   affiche2:boolean=false;
   utilitePresentation:string;
+  notice:Notice;
 
 
   constructor(id?: number, version?: number,nombre?:number,nombre2?:number,nom?:string,description?:string, nature?: string, tempsDeVie?: string, presentation?: string, exposition?: string, sol?: string, comportement?: string, utilite?: string, typeFeuille?: string, tempsFeuille?: string, utiliteOrnement?: string, utiliteGastronomie?: string, couleur?: string, utiliteComposition?: string, utiliteCimetiere?: string, consomationEngrais?: number, consomationEau?: number, prix?: number, prixFruit?: number, affinites?: Array<Vegetal>,affiche?:boolean,affiche2?:boolean) {
