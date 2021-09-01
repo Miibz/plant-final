@@ -15,6 +15,7 @@ import {ConnexionComponent} from "./connexion/connexion.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
+import {BarreDeRechercheComponent} from "./barre-de-recherche/barre-de-recherche.component";
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import {HttpClientModule} from "@angular/common/http";
     UtilisateurComponent,
     AccueilComponent,
     RecetteComponent,
+    BarreDeRechercheComponent,
     AjoutRecetteComponent,
     ConnexionComponent
   ],

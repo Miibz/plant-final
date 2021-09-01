@@ -37,17 +37,17 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let vegetal of listVegetaux()">
+      <tr *ngFor="let vegetal of vegetaux">
         <td>{{vegetal.nom}}</td>
-        <td><img src="../../assets/img/{{veg.nom}}.png"></td>
+        <td><img src="../../assets/img/{{vegetal.nom}}.png"></td>
         <td></td>
       </tr>
-      <tr *ngFor="let rec of listRecettes()">
+      <tr *ngFor="let rec of recettes">
         <td>{{rec.nom}}</td>
         <td><img src="../../assets/img/{{rec.nom}}.png"></td>
         <td></td>
       </tr>
-      <tr *ngFor="let guide of listGuides()">
+      <tr *ngFor="let guide of guides">
         <td>{{guide.nom}}</td>
         <td><img src="../../assets/img/{{guide.nom}}.png"></td>
         <td></td>
