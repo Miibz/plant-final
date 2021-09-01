@@ -8,8 +8,6 @@ import {BarreDeRechercheComponent} from "./barre-de-recherche/barre-de-recherche
 import {DejaPlanteComponent} from "./deja-plante/deja-plante.component";
 import {RecetteComponent} from "./recette/recette.component";
 import {AjoutRecetteComponent} from "./ajout-recette/ajout-recette.component";
-import {RecetteComponent} from "./recette/recette.component";
-import {RechercheAlternativeComponent} from "./recherche-alternative/recherche-alternative.component";
 import {AjoutGuideComponent} from "./ajout-guide/ajout-guide.component";
 import {LectureRecetteComponent} from "./lecture-recette/lecture-recette.component";
 import {CreationCompteComponent} from "./creation-compte/creation-compte.component";
