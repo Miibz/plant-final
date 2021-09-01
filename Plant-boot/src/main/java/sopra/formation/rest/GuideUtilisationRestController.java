@@ -22,7 +22,7 @@ import sopra.formation.model.GuideUtilisation;
 import sopra.formation.model.Views;
 import sopra.formation.repository.IGuideUtilisationRepository;
 @RestController
-@RequestMapping("/guideUtilisation")
+@RequestMapping("/guide")
 @CrossOrigin("*")
 public class GuideUtilisationRestController {
 	@Autowired
@@ -48,6 +48,20 @@ public class GuideUtilisationRestController {
 		}
 	}
 	
+
+
+@GetMapping("/recherche/{nom}")
+	@JsonView(Views.ViewGuideByNom.class)
+	public List<GuideUtilisation> findGuidesWithNom(@PathVariable String nom) {
+
+		Optional<List<GuideUtilisation>> optGuide = GuideUtilisationRepo.findGuidesByNom(nom);
+
+		if (optGuide.isPresent()) {
+			return (List<GuideUtilisation>) optGuide.get();
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+		}
+	}
 
 	@PostMapping("")
 	@JsonView(Views.ViewGuideUtilisation.class)

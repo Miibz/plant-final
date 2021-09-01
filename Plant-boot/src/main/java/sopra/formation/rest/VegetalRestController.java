@@ -64,18 +64,31 @@ public class VegetalRestController {
 		}
 	}
 	
-	@GetMapping("/{id}/{nom}")
+	@GetMapping("/recherche/{nom}")
 	@JsonView(Views.ViewVegetalWithNom.class)
-	public Vegetal findWithNom(@PathVariable String nom) {
+	public List<Vegetal> findVegetauxWithNom(@PathVariable String nom) {
 
-		Optional<Vegetal> optVegetal = vegetalRepo.findVegetalByNom(nom);
+		Optional<List<Vegetal>> optVegetal = vegetalRepo.findVegetauxByNom(nom);
 
 		if (optVegetal.isPresent()) {
-			return optVegetal.get();
+			return (List<Vegetal>) optVegetal.get();
 		} else {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
 		}
 	}
+	
+//	@GetMapping("/{id}/{nom}")
+//	@JsonView(Views.ViewVegetalWithNom.class)
+//	public Vegetal findWithNom(@PathVariable String nom) {
+//
+//		Optional<Vegetal> optVegetal = vegetalRepo.findVegetalByNom(nom);
+//
+//		if (optVegetal.isPresent()) {
+//			return optVegetal.get();
+//		} else {
+//			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+//		}
+//	}
 	
 
 	@PostMapping("")

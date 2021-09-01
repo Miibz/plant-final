@@ -32,40 +32,32 @@ export class VegetalComponent implements OnInit {
   add() {
     this.vegetalForm = new Vegetal();
     this.vegetalForm.notice=new Notice();
-    this.ueForm.formateur=new Formateur();
+    this.vegetalForm.affinites=new Array<Vegetal>();
   }
 
   edit(id: number) {
     this.vegetalService.findById(id).subscribe(resp => {
-      this.ueForm = resp;
-      if(!this.ueForm.filiere)
+      this.vegetalForm = resp;
+      if(!this.vegetalForm.notice)
       {
-        this.ueForm.filiere=new Filiere();
+        this.vegetalForm.notice=new Notice();
       }
-      if(!this.ueForm.formateur)
+      if(!this.vegetalForm.affinites)
       {
-        this.ueForm.formateur=new Formateur();
-      }
-      if(!this.ueForm.matiere)
-      {
-        this.ueForm.matiere=new Matiere();
-      }
-      if(!this.ueForm.salle)
-      {
-        this.ueForm.salle=new Salle();
+        this.vegetalForm.affinites=new Array<Vegetal>();
       }
     });
 
   }
 
   save() {
-    if (this.ueForm.id) {
-      this.vegetalService.modify(this.ueForm);
+    if (this.vegetalForm.id) {
+      this.vegetalService.modify(this.vegetalForm);
     } else {
-      this.vegetalService.create(this.ueForm);
+      this.vegetalService.create(this.vegetalForm);
     }
 
-    this.ueForm = null;
+    this.vegetalForm = null;
   }
 
   delete(id:number)
@@ -76,7 +68,7 @@ export class VegetalComponent implements OnInit {
   }
 
   cancel() {
-    this.ueForm = null;
+    this.vegetalForm = null;
   }
   ngOnInit(): void {
   }
