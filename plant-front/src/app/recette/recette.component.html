@@ -1,6 +1,6 @@
 <div class="ladiv">
-<h1> Voici nos guides !</h1>
-  <h4>Il vous seront forcément utiles !</h4>
+<h1> Voici nos recettes !</h1>
+  <h4>Suprennez vos amis avec ces recettes de grand chef étoilés !</h4>
 
 <div class="lesguides" *ngFor=" let recette of list()">
 
@@ -9,8 +9,12 @@
   </div>
 
   <div class="info">
-    {{recette.info}}
+    <i class="fas fa-user-friends"></i>  {{recette.nbPersonne}}
   </div>
+  <div class="info">
+    <i class="far fa-clock"></i> {{recette.temps}}
+  </div>
+
   <form>
 <fieldset>
   <legend> Ingrédients :</legend>
@@ -21,13 +25,15 @@
   </form>
 
   <fieldset>
-    <legend> Recette pas à pas :</legend>
+    <legend> Descriptif :</legend>
   <div class="angular-with-newlines methode" >
-    {{recette.methode}}
+    {{recette.descriptif}}
   </div>
   </fieldset>
 
-  <button type="button" class="btn btn-outline-primary" [routerLink]="['/recette/' + recette.id]">Voir la recette</button>
+  <div class="lebouton">
+  <button type="button" class="btn btn-outline-success " [routerLink]="['/recette/' + recette.id]">Voir la recette</button>
+  </div>
 
 </div>
   <br>

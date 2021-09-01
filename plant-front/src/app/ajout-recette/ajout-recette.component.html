@@ -5,8 +5,10 @@
       <thead>
       <tr>
         <th>Nom de la recette</th>
-        <th>Info </th>
+        <th>Nombre de personne</th>
+        <th>Temps nécessaire</th>
         <th>Ingrédients</th>
+        <th>Descriptif</th>
         <th>Recette</th>
         <th></th>
       </tr>
@@ -14,12 +16,14 @@
       <tbody>
       <tr *ngFor="let rec of list()">
         <td>{{rec.nom}}</td>
-        <td>{{rec.info}}</td>
+        <td>{{rec.nbPersonne}}</td>
+        <td>{{rec.temps}}</td>
         <td>{{rec.ingredients}}</td>
+        <td>{{rec.descriptif}}</td>
         <td>{{rec.methode}}</td>
         <td>
           <div class="btn-group btn-group-sm">
-            <a type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo" (click)="edit(rec.id)"><i class="fa fa-edit"></i></a>
+            <a type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo" (click)="edit(rec.id); click = true" ><i class="fa fa-edit"></i></a>
             <a class="btn btn-danger" (click)="delete(rec.id)"><i class="fa fa-trash"></i></a>
           </div>
         </td>
@@ -36,12 +40,20 @@
           <label for="nom">Nom de la recette:</label>
           <input type="text" class="form-control" id="nom"  placeholder="Entrez le nom de la recette" [(ngModel)]="recetteForm.nom">
           <div class="form-group">
-            <label for="infoR">Info de la recette:</label>
-            <input type="text" class="form-control" id="infoR" placeholder="Nombre de personne, temps nécessaire ..." [(ngModel)]="recetteForm.info">
+            <label for="nbp">Nombre de personnes:</label>
+            <input type="text" class="form-control" id="nbp" placeholder="Nombre de personne " [(ngModel)]="recetteForm.nbPersonne">
+          </div>
+          <div class="form-group">
+            <label for="temps">Temps nécessaire:</label>
+            <input type="text" class="form-control" id="temps" placeholder="Temps nécessaire " [(ngModel)]="recetteForm.temps">
           </div>
           <div class="form-group">
             <label for="ingreR">Ingrédients :</label>
             <textarea rows="6" type="text" class="form-control" id="ingreR" placeholder="Entrez les ingrédients nécessaire à la recette" [(ngModel)]="recetteForm.ingredients"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="desc">Description :</label>
+            <textarea rows="4" type="text" class="form-control" id="desc" placeholder="Entrez une description de la recette" [(ngModel)]="recetteForm.descriptif"></textarea>
           </div>
           <div class="form-group">
             <label for="metR">Recette pas à pas :</label>

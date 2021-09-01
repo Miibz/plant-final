@@ -18,6 +18,8 @@ import { RecetteComponent } from './recette/recette.component';
 import { AjoutRecetteComponent } from './ajout-recette/ajout-recette.component';
 import { AjoutGuideComponent } from './ajout-guide/ajout-guide.component';
 import { LectureRecetteComponent } from './lecture-recette/lecture-recette.component';
+import { LectureGuideComponent } from './lecture-guide/lecture-guide.component';
+import { GuideComponent } from './guide/guide.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { LectureRecetteComponent } from './lecture-recette/lecture-recette.compo
     AjoutRecetteComponent,
     ConnexionComponent,
     AjoutGuideComponent,
-    LectureRecetteComponent
+    LectureRecetteComponent,
+    LectureGuideComponent,
+    GuideComponent
   ],
   imports: [
     BrowserModule,

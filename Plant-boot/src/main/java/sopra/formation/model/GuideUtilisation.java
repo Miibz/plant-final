@@ -36,6 +36,10 @@ public class GuideUtilisation {
 	@Lob
 	@Column(columnDefinition="LONGTEXT")
 	private String contenu;
+	@Lob
+	@Column(columnDefinition="LONGTEXT")
+	@JsonView(Views.ViewCommon.class)
+	private String  descriptif;
 	
 	
 	public GuideUtilisation() {
@@ -43,12 +47,13 @@ public class GuideUtilisation {
 	}
 
 
-	public GuideUtilisation(Long id, int version, String nom, String contenu) {
+	public GuideUtilisation(Long id, int version, String nom, String contenu, String descriptif) {
 		super();
 		this.id = id;
 		this.version = version;
 		this.nom = nom;
 		this.contenu = contenu;
+		this.descriptif = descriptif;
 	}
 
 
@@ -91,5 +96,12 @@ public class GuideUtilisation {
 		this.contenu = contenu;
 	}
 
+	public String getDescriptif() {
+		return descriptif;
+	}
+
+	public void setDescriptif(String descriptif) {
+		this.descriptif = descriptif;
+	}
 	
 }

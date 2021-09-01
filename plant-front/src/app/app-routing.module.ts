@@ -8,6 +8,8 @@ import {RecetteComponent} from "./recette/recette.component";
 import {RechercheAlternativeComponent} from "./recherche-alternative/recherche-alternative.component";
 import {AjoutGuideComponent} from "./ajout-guide/ajout-guide.component";
 import {LectureRecetteComponent} from "./lecture-recette/lecture-recette.component";
+import {LectureGuideComponent} from "./lecture-guide/lecture-guide.component";
+import {GuideComponent} from "./guide/guide.component";
 
 const routes: Routes = [
   {path: "mon-jardin", component: MonJardinComponent},
@@ -17,9 +19,10 @@ const routes: Routes = [
   {path: "ajout-guide", component: AjoutGuideComponent},
   // {path: "ajout-plante", component: AjoutPlanteComponent},
   {path: "nos-recettes", component: RecetteComponent},
-  // {path: "nos-guides", component: GuideComponent},
+  {path: "nos-guides", component: GuideComponent},
   {path: "connexion", component: ConnexionComponent},
   {path: "recette/:id", component: LectureRecetteComponent},
+  {path: "guide/:id", component: LectureGuideComponent},
 
 
 ];

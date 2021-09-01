@@ -25,7 +25,9 @@ public class Recette {
 	@JsonView(Views.ViewCommon.class)
 	private String nom;
 	@JsonView(Views.ViewCommon.class)
-	private String info;
+	private String nbPersonne;
+	@JsonView(Views.ViewCommon.class)
+	private String temps;
 	@JsonView(Views.ViewCommon.class)
 	@Lob
 	@Column(columnDefinition="LONGTEXT")
@@ -34,6 +36,11 @@ public class Recette {
 	@Column(columnDefinition="LONGTEXT")
 	@JsonView(Views.ViewCommon.class)
 	private String  methode;
+	@Lob
+	@Column(columnDefinition="LONGTEXT")
+	@JsonView(Views.ViewCommon.class)
+	private String  descriptif;
+	
 //	private List<String> ingredientsNonVegetaux;
 //	@OneToMany(mappedBy="recette")
 //	@JsonView(Views.ViewRecette.class)
@@ -44,14 +51,15 @@ public class Recette {
 		super();
 	}
 
-	public Recette(Long id, String nom, String info, String ingredients, String methode) {
+	public Recette(Long id, String nom, String nbPersonne, String temps, String ingredients, String methode, String descriptif) {
 		super();
 		this.id = id;
 		this.nom = nom;
-		this.info = info;
+		this.nbPersonne = nbPersonne;
+		this.temps = temps;
 		this.ingredients = ingredients;
 		this.methode = methode;
-	}
+		this.descriptif = descriptif;	}
 
 	public Long getId() {
 		return id;
@@ -77,14 +85,22 @@ public class Recette {
 		this.nom = nom;
 	}
 
-	public String getInfo() {
-		return info;
+	public String get() {
+		return nbPersonne;
 	}
 
-	public void setInfo(String info) {
-		this.info = info;
+	public void setNbPersonne(String nbPersonne) {
+		this.nbPersonne = nbPersonne;
 	}
 
+	public String getTemps() {
+		return temps;
+	}
+
+	public void setTemps(String temps) {
+		this.temps = temps;
+	}
+	
 	public String getIngredients() {
 		return ingredients;
 	}
@@ -99,6 +115,14 @@ public class Recette {
 
 	public void setMethode(String methode) {
 		this.methode = methode;
+	}
+	
+	public String getDescriptif() {
+		return descriptif;
+	}
+
+	public void setDescriptif(String descriptif) {
+		this.descriptif = descriptif;
 	}
 	
 //	public List<String> getIngredientsNonVegetaux() {
