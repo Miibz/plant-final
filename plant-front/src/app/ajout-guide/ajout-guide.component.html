@@ -1,0 +1,49 @@
+<div style="background-color: antiquewhite; width: 100%; "class="madiv">
+  <div class="container">
+    <h2>Les guides du site :</h2>
+    <table class="table table-striped table-hover">
+      <thead>
+      <tr>
+        <th>Nom du guide</th>
+        <th>Contenu</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let guide of list()">
+        <td>{{guide.nom}}</td>
+        <td>{{guide.contenu}}</td>
+        <td>
+          <div class="btn-group btn-group-sm">
+            <a type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo" (click)="edit(guide.id)"><i class="fa fa-edit"></i></a>
+            <a class="btn btn-danger" (click)="delete(guide.id)"><i class="fa fa-trash"></i></a>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container">
+    <button id="ajout" type="button" class="btn btn-success" data-toggle="collapse" data-target="#demo" (click)="add(); click = true" *ngIf="!click">Ajouter un guide</button>
+    <div id="demo" class="collapse">
+      <div class="card-body">
+        <div class="form-group">
+          <label for="nom">Nom du guide:</label>
+          <input type="text" class="form-control" id="nom"  placeholder="Entrez le nom du guide" [(ngModel)]="guideForm.nom">
+        </div>
+          <div class="form-group">
+            <label for="contenu">Contenu du guide:</label>
+            <textarea rows="10" type="text" class="form-control" id="contenu" placeholder="Entrez le contenu du guide" [(ngModel)]="guideForm.contenu"></textarea>
+          </div>
+        </div>
+      <button type="button" class="btn btn-outline-primary" data-toggle="collapse" data-target="#demo" (click)="save(); click = false">Ajouter le guide</button>
+      <button type="button" class="btn btn-outline-danger" data-toggle="collapse" data-target="#demo" (click)="cancel(); click = false">Annuler</button>
+      </div>
+
+    </div>
+
+
+  </div>
+
+

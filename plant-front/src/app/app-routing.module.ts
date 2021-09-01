@@ -8,6 +8,10 @@ import {BarreDeRechercheComponent} from "./barre-de-recherche/barre-de-recherche
 import {DejaPlanteComponent} from "./deja-plante/deja-plante.component";
 import {RecetteComponent} from "./recette/recette.component";
 import {AjoutRecetteComponent} from "./ajout-recette/ajout-recette.component";
+import {RecetteComponent} from "./recette/recette.component";
+import {RechercheAlternativeComponent} from "./recherche-alternative/recherche-alternative.component";
+import {AjoutGuideComponent} from "./ajout-guide/ajout-guide.component";
+import {LectureRecetteComponent} from "./lecture-recette/lecture-recette.component";
 import {CreationCompteComponent} from "./creation-compte/creation-compte.component";
 import {AdminAjoutPlanteComponent} from "./admin-ajout-plante/admin-ajout-plante.component";
 
@@ -21,11 +25,14 @@ const routes: Routes = [
 
   {path: "creation-compte", component: CreationCompteComponent},
   {path: "ajout-recette", component: AjoutRecetteComponent},
-  // {path: "ajout-guide", component: AjoutGuideComponent},
+  {path: "ajout-guide", component: AjoutGuideComponent},
   // {path: "ajout-plante", component: AjoutPlanteComponent},
   {path: "nos-recettes", component: RecetteComponent},
   // {path: "nos-guides", component: GuideComponent},
   {path: "connexion", component: ConnexionComponent},
+  {path: "recette/:id", component: LectureRecetteComponent},
+
+
 ];
 
 @NgModule({

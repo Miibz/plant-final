@@ -22,7 +22,7 @@ import sopra.formation.model.GuideUtilisation;
 import sopra.formation.model.Views;
 import sopra.formation.repository.IGuideUtilisationRepository;
 @RestController
-@RequestMapping("/guideUtilisation")
+@RequestMapping("/guide")
 @CrossOrigin("*")
 public class GuideUtilisationRestController {
 	@Autowired

@@ -1,10 +1,12 @@
 package sopra.formation.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.OneToOne;
 import javax.persistence.Version;
 
@@ -19,68 +21,54 @@ public class GuideUtilisation {
 	@Version
 	@JsonView(Views.ViewCommon.class)
 	private int version;
-	@JsonView({Views.ViewGuideUtilisation.class, Views.ViewGuideByNom.class})
+	//@JsonView(Views.ViewCommon.class)
+	//private FormatSauvegarde formatSauvegarde;
+	//@OneToOne
+	//@JoinColumn(name="meteo_id")
+	//@JsonView(Views.ViewGuideUtilisation.class)
+	//private Meteo meteo;
+	//@OneToOne(mappedBy="guideUtilisation")
+	//@JsonView(Views.ViewGuideUtilisation.class)
+	//private Facture facture;
+	@JsonView(Views.ViewCommon.class)
 	private String nom;
 	@JsonView(Views.ViewCommon.class)
-	private FormatSauvegarde formatSauvegarde;
-	@OneToOne
-	@JoinColumn(name="meteo_id")
-	@JsonView(Views.ViewGuideUtilisation.class)
-	private Meteo meteo;
-	@OneToOne(mappedBy="guideUtilisation")
-	@JsonView(Views.ViewGuideUtilisation.class)
-	private Facture facture;
+	@Lob
+	@Column(columnDefinition="LONGTEXT")
+	private String contenu;
+	
 	
 	public GuideUtilisation() {
 		super();
 	}
 
 
-
-	public GuideUtilisation(Long id, int version, String nom, FormatSauvegarde formatSauvegarde, Meteo meteo,
-			Facture facture) {
+	public GuideUtilisation(Long id, int version, String nom, String contenu) {
 		super();
 		this.id = id;
 		this.version = version;
 		this.nom = nom;
-		this.formatSauvegarde = formatSauvegarde;
-		this.meteo = meteo;
-		this.facture = facture;
+		this.contenu = contenu;
 	}
 
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 
 	public int getVersion() {
 		return version;
 	}
 
+
 	public void setVersion(int version) {
 		this.version = version;
-	}
-
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public FormatSauvegarde getFormatSauvegarde() {
-		return formatSauvegarde;
-	}
-	public void setFormatSauvegarde(FormatSauvegarde formatSauvegarde) {
-		this.formatSauvegarde = formatSauvegarde;
-	}
-	public Meteo getMeteo() {
-		return meteo;
-	}
-	public void setMeteo(Meteo meteo) {
-		this.meteo = meteo;
-	}
-	public Facture getFacture() {
-		return facture;
-	}
-	public void setFacture(Facture facture) {
-		this.facture = facture;
 	}
 
 
@@ -92,6 +80,17 @@ public class GuideUtilisation {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
+
+
+	public String getContenu() {
+		return contenu;
+	}
+
+
+	public void setContenu(String contenu) {
+		this.contenu = contenu;
+	}
+
 	
 	
 }

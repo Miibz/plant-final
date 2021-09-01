@@ -10,6 +10,7 @@ import {AjoutRecetteHttpService} from "./ajoutRecetteHttp.service";
 export class AjoutRecetteComponent implements OnInit {
 
   recetteForm : Recette = new Recette();
+  click : boolean = false;
 
   constructor(private ajoutRecetteService : AjoutRecetteHttpService) { }
 

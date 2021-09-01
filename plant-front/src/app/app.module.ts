@@ -17,6 +17,11 @@ import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
 import {AccueilComponent} from "./accueil/accueil.component";
 import { AdminAjoutPlanteComponent } from './admin-ajout-plante/admin-ajout-plante.component';
 import {BarreDeRechercheComponent} from "./barre-de-recherche/barre-de-recherche.component";
+import {ConnexionComponent} from "./connexion/connexion.component";
+import { RecetteComponent } from './recette/recette.component';
+import { AjoutRecetteComponent } from './ajout-recette/ajout-recette.component';
+import { AjoutGuideComponent } from './ajout-guide/ajout-guide.component';
+import { LectureRecetteComponent } from './lecture-recette/lecture-recette.component';
 
 
 @NgModule({
@@ -36,7 +41,9 @@ import {BarreDeRechercheComponent} from "./barre-de-recherche/barre-de-recherche
     RecetteComponent,
     BarreDeRechercheComponent,
     AjoutRecetteComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    AjoutGuideComponent,
+    LectureRecetteComponent
   ],
   imports: [
     BrowserModule,
