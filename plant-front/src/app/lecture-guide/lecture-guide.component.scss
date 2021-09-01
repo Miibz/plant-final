@@ -1,7 +1,6 @@
 .ladiv {
   white-space: pre-wrap;
   margin : 5px;
-  border: solid forestgreen;
 }
 
 .lenom {
@@ -31,4 +30,14 @@
   margin : 5px;
   border: solid forestgreen;
   width: 300px;
+}
+
+legend {
+  padding : 0 10px;
+  width : auto;
+}
+
+fieldset{
+  border: solid forestgreen;
+  margin: 10px;
 }

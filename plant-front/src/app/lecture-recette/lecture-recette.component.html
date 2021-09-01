@@ -10,7 +10,23 @@
 
 <div class="info" ><i class="fas fa-user-friends"></i> {{recette.nbPersonne}}</div>
   <div class="info" ><i class="far fa-clock"></i>{{recette.temps}}</div>
-<div class="ladiv">{{recette.ingredients}}</div>
-<div class="ladiv">{{recette.methode}}</div>
+
+  <fieldset>
+    <legend> Ingrédients :</legend>
+    <div class="angular-with-newlines methode" >
+      <div class="ladiv2">{{recette.ingredients}}</div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend> La recette pas à pas :</legend>
+    <div class="angular-with-newlines methode" >
+      <div class="ladiv2">{{recette.methode}}</div>
+    </div>
+  </fieldset>
+
+
+
+
 
 </div>
