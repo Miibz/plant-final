@@ -23,15 +23,15 @@ export class BarreDeRechercheService {
   }
 
   findVegetauxWithNom(nom: string): Observable<Array<Vegetal>> {
-    return this.http.get<Array<Vegetal>>(this.appConfigService.backEndUrl+"barre-de-recherche/"+ nom);
+    return this.http.get<Array<Vegetal>>(this.appConfigService.backEndUrl+"vegetal/recherche/"+ nom);
   }
 
   findGuidesWithNom(nom: string): Observable<Array<GuideUtilisation>> {
-    return this.http.get<Array<GuideUtilisation>>(this.appConfigService.backEndUrl+"barre-de-recherche/"+ nom);
+    return this.http.get<Array<GuideUtilisation>>(this.appConfigService.backEndUrl+"/guideUtilisation/recherche/"+ nom);
   }
 
   findRecettesWithNom(nom: string): Observable<Array<Recette>> {
-    return this.http.get<Array<Recette>>(this.appConfigService.backEndUrl+"barre-de-recherche/"+ nom);
+    return this.http.get<Array<Recette>>(this.appConfigService.backEndUrl+"/recette/barre-de-recherche/"+ nom);
   }
 
   loadVegetal() {

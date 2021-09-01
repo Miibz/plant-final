@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import {MonJardinComponent} from "./mon-jardin/mon-jardin.component";
 import {AccueilComponent} from "./accueil/accueil.component";
 import {ConnexionComponent} from "./connexion/connexion.component";
-import {AjoutRecetteComponent} from "./ajout-recette/ajout-recette.component";
-import {RecetteComponent} from "./recette/recette.component";
 import {RechercheAlternativeComponent} from "./recherche-alternative/recherche-alternative.component";
 import {BarreDeRechercheComponent} from "./barre-de-recherche/barre-de-recherche.component";
 import {DejaPlanteComponent} from "./deja-plante/deja-plante.component";
+import {RecetteComponent} from "./recette/recette.component";
+import {AjoutRecetteComponent} from "./ajout-recette/ajout-recette.component";
 import {CreationCompteComponent} from "./creation-compte/creation-compte.component";
 
 const routes: Routes = [
