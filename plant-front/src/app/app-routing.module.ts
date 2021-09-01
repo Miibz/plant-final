@@ -22,7 +22,6 @@ const routes: Routes = [
   {path: "accueil", component: AccueilComponent},
   {path: "barre-de-recherche", component: BarreDeRechercheComponent},
   {path: "app-deja-plante", component: DejaPlanteComponent},
-
   {path: "creation-compte", component: CreationCompteComponent},
   {path: "ajout-recette", component: AjoutRecetteComponent},
   {path: "ajout-guide", component: AjoutGuideComponent},
