@@ -1,4 +1,4 @@
-<br/><br/><br/><br/><br/><br/><br/>
+
 
 <div class="titrehaut"> <h1><u>Créer un nouveau compte </u></h1>
 </div>
@@ -17,7 +17,7 @@
 </table>
 
 <table class="Droite">
-  <tr><td>Mot de passe* :</td><td><input class="mdp" type="password" [(ngModel)]="utilisateurForm.mdp" placeholder = "********"></td></tr><br/>
+  <tr><td>Mot de passe* :</td><td><input class="mdp" type="password" [(ngModel)]="utilisateurForm.motDePasse" placeholder = "********"></td></tr><br/>
   <tr><td>Confirmer le mot de passe* :</td><td> <input class="mdp" type="password" placeholder = "********"></td></tr><br/>
   <tr><td>Code postal* :</td><td> <input class="cdp" type="number" [(ngModel)]="utilisateurForm.adresse.codePostal" placeholder = "Saisir un code postal"></td></tr><br/>
   <tr><td>Ville* :</td><td> <input class="ville" type="text" [(ngModel)]="utilisateurForm.adresse.ville" placeholder = "Saisir une ville"></td></tr><br/>
@@ -26,7 +26,7 @@
 <br/><br/><br/>
 <div class="partibasse">
   <input class="Coche" name="coche" type="checkbox"><label class="textefin"> J'accepte les CDU </label><br/>
-  <button class="bouton" (click)="save()">Creer le compte</button>
+  <button class="bouton" (click)="save()" [routerLink]="['/connexion'] " >Creer le compte</button>
 </div>
 
 <br/>
