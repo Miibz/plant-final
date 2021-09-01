@@ -19,6 +19,7 @@ import {RechercheAlternativeComponent} from "./recherche-alternative/recherche-a
 import {RecetteComponent} from "./recette/recette.component";
 import {ConnexionComponent} from "./connexion/connexion.component";
 import {AjoutRecetteComponent} from "./ajout-recette/ajout-recette.component";
+import { LectureVegetalComponent } from './lecture-vegetal/lecture-vegetal.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import {AjoutRecetteComponent} from "./ajout-recette/ajout-recette.component";
     AjoutRecetteComponent,
     ConnexionComponent,
     AjoutGuideComponent,
-    LectureRecetteComponent
+    LectureRecetteComponent,
+    LectureVegetalComponent
   ],
   imports: [
     BrowserModule,
