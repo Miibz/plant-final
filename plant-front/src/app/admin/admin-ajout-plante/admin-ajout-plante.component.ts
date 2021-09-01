@@ -15,10 +15,10 @@ import {AffiniteService} from "../../service/affinite.service";
 })
 export class AdminAjoutPlanteComponent implements OnInit {
   formulaire:boolean=false;
-  affinite: Affinite;
+  affinite: Affinite=new Affinite();
   recherche:Recherche=new Recherche();
   vegetal:Vegetal=new Vegetal();
-  vegetalAffinite :Vegetal;
+  vegetalAffinite :Vegetal=new Vegetal();
   opaciteNature=[0.5];
   choixMenu:Array<boolean>=new Array<boolean>();
   natures:Array<string>;
@@ -286,14 +286,41 @@ export class AdminAjoutPlanteComponent implements OnInit {
     this.formulaire=true;
   }
 
+  saveVegetal() {
+    if (this.vegetal.id) {
+      this.vegetalService.modify(this.vegetal);
+    } else {
+      this.vegetalService.create2(this.vegetal).subscribe(response => {
+        this.vegetal=response;
+      }, error => console.log(error));;
+    }
+  }
+
+  saveAffinite() {
+    if (this.affinite.id) {
+      this.affiniteService.modify(this.affinite);
+    } else {
+      this.affiniteService.create(this.affinite);
+    }
+  }
+
   send()
   {
-    this.affinite.vegetal2=new Vegetal();
-    this.affinite.vegetal2.id=this.vegetalAffinite.id;
-    this.vegetalService.save2(this.vegetal);
-    this.affiniteService.save2(this.affinite);
-    this.formulaire=false;
-    this.vegetal=new Vegetal();
+    if (this.vegetal.id) {
+      this.vegetalService.modify(this.vegetal);
+    } else {
+      this.vegetalService.create2(this.vegetal).subscribe(response => {
+        this.vegetal=response;
+        this.affinite.vegetal2=new Vegetal();
+        this.affinite.vegetal1=new Vegetal();
+        this.affinite.vegetal1.id=this.vegetal.id;
+        this.affinite.vegetal2.id=this.vegetalAffinite.id;
+        console.log(this.affinite);
+        this.saveAffinite();
+        this.formulaire=false;
+        this.vegetal=new Vegetal();
+      }, error => console.log(error));;
+    }
   }
   listAffinite()
   {

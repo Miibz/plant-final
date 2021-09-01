@@ -4,6 +4,7 @@ import {VegetalHttpService} from "../vegetal/vegetal-http.service";
 import {Jardin} from "../model/jardin";
 import {DejaPlante} from "../model/dejaPlante";
 import {VegetalComponent} from "../vegetal/vegetal.component";
+import {Vegetal} from "../model/vegetal";
 
 @Component({
   selector: 'mon-jardin',
@@ -51,6 +52,7 @@ return this.jardinService.findAll();
   @HostListener("mouseenter")
   affiche(dejaPlante:DejaPlante)
   {
+    dejaPlante.vegetal=new Vegetal();
     dejaPlante.vegetal.affiche2=true;
   }
   @HostListener("mousleave")

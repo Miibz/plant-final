@@ -39,7 +39,12 @@ export class VegetalHttpService {
   create(vegetal : Vegetal) {
     this.http.post<Vegetal>(this.appConfigService.backEndUrl + "vegetal/", vegetal).subscribe(response => {
       this.load();
+
     }, error => console.log(error));
+  }
+
+  create2(vegetal : Vegetal):Observable<Vegetal> {
+    return this.http.post<Vegetal>(this.appConfigService.backEndUrl + "vegetal/", vegetal);
   }
 
   modify(vegetal : Vegetal) {

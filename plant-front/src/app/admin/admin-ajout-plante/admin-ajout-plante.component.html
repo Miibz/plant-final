@@ -1,6 +1,6 @@
 <br><br><br>
 <br><br><br><br><br><br>
-<div *ngIf="formulaire!=true" class="listeChoix">
+<div class="listeChoix">
   <div class="diffentsChoix" >
     <div class="choixDetail" *ngFor="let e of natures; index as i;" (click)="menuNature(menuChoixAvant(natures,e,i,'Nature'))" [style.opacity]="opaciteNature[i]"  tabindex="{{i}}" ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
     <!-- <div  class="choixDetail" *ngFor="let e of natures" style="background-image:url('../../assets/img/<span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span>.jpg');" (click)="menuNature(menuChoixAvant(natures,e,3'))" ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div> -->
@@ -69,7 +69,7 @@
     <div class="elementForm">Consommation d'eaau : <input type="number"></div>
     <div class="elementForm">Consommation d'engrais : <input type="number"></div>
     <div class="elementForm">Affinités :
-      <select class="form-control" id="affinite" [(ngModel)]="vegetal.id">
+      <select class="form-control" id="affinite" [(ngModel)]="vegetalAffinite.id">
         <option value="">Choisir les plantes avec lequel elle a des affinités</option>
         <option *ngFor="let veg of listVegetal()" [value]="veg.id">{{veg.nom}}</option>
        </select>
