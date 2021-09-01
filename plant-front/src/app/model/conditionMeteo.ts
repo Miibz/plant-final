@@ -1,6 +1,3 @@
-import {Jardin} from "./jardin";
-
-
 export class  ConditionMeteo {
   id: number;
   version: number;
@@ -13,3 +10,4 @@ export class  ConditionMeteo {
   }
 
 }
+

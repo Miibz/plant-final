@@ -26,9 +26,9 @@ public abstract class Personne {
 	private String nom;
 	@JsonView(Views.ViewPersonne.class)
 	private String prenom;
-	@JsonView(Views.ViewPersonne.class)
+	@JsonView({Views.ViewPersonne.class, Views.ViewConnexion.class})
 	private String adresseMail;
-	@JsonView(Views.ViewPersonne.class)
+	@JsonView({Views.ViewPersonne.class, Views.ViewConnexion.class})
 	private String motDePasse;
 	@JsonView(Views.ViewCommon.class)
 	private String pseudo;

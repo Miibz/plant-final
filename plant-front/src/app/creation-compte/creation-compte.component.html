@@ -1,0 +1,34 @@
+<br/><br/><br/><br/><br/><br/><br/>
+
+<div class="titrehaut"> <h1><u>Créer un nouveau compte </u></h1>
+</div>
+<br/><br/>
+<table class="Centre">
+  <tr><td>Nom*</td><td><input type="text" [(ngModel)]="utilisateurForm.nom" placeholder="Saisir un nom"></td></tr>
+  <tr><td>Prenom*</td><td><input type="text" [(ngModel)]="utilisateurForm.prenom" placeholder="Saisir un prenom"></td></tr>
+  <tr><td>Pseudo*</td><td><input type="text" [(ngModel)]="utilisateurForm.pseudo" placeholder="Saisir un pseudo"></td></tr>
+</table>
+
+<table class="Gauche">
+  <tr><td>Adresse mail* :</td><td><input class="adressmail" type="email" [(ngModel)]="utilisateurForm.adresseMail" placeholder = "toto@gmail.com"></td></tr><br/>
+  <tr><td>Confirmer adresse mail* :</td><td> <input class="adressmail" type="email" placeholder = "toto@gmail.com"></td></tr><br/>
+  <tr><td>Adresse* :</td><td> <input class="adresse" type="text" [(ngModel)]="utilisateurForm.adresse.rue" placeholder = "Saisir une adresse"></td></tr><br/>
+  <tr><td>Complément :</td><td> <input class="complement" type="text" placeholder = "Saisir un complement"></td></tr><br/>
+</table>
+
+<table class="Droite">
+  <tr><td>Mot de passe* :</td><td><input class="mdp" type="password" [(ngModel)]="utilisateurForm.mdp" placeholder = "********"></td></tr><br/>
+  <tr><td>Confirmer le mot de passe* :</td><td> <input class="mdp" type="password" placeholder = "********"></td></tr><br/>
+  <tr><td>Code postal* :</td><td> <input class="cdp" type="number" [(ngModel)]="utilisateurForm.adresse.codePostal" placeholder = "Saisir un code postal"></td></tr><br/>
+  <tr><td>Ville* :</td><td> <input class="ville" type="text" [(ngModel)]="utilisateurForm.adresse.ville" placeholder = "Saisir une ville"></td></tr><br/>
+</table>
+
+<br/><br/><br/>
+<div class="partibasse">
+  <input class="Coche" name="coche" type="checkbox"><label class="textefin"> J'accepte les CDU </label><br/>
+  <button class="bouton" (click)="save()">Creer le compte</button>
+</div>
+
+<br/>
+
+
