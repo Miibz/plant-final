@@ -12,13 +12,15 @@ import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
 import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
 import {AccueilComponent} from "./accueil/accueil.component";
-import { AdminAjoutPlanteComponent } from './admin-ajout-plante/admin-ajout-plante.component';
+import { AdminAjoutPlanteComponent } from './admin/admin-ajout-plante/admin-ajout-plante.component';
 import {BarreDeRechercheComponent} from "./barre-de-recherche/barre-de-recherche.component";
 import { AjoutGuideComponent } from './ajout-guide/ajout-guide.component';
 import { LectureRecetteComponent } from './lecture-recette/lecture-recette.component';
 import {RechercheComponent} from "./recherche/recherche.component";
 import {RechercheAlternativeComponent} from "./recherche-alternative/recherche-alternative.component";
 import {RecetteComponent} from "./recette/recette.component";
+import { AdminModifierPlanteComponent } from './admin/admin-modifier-plante/admin-modifier-plante.component';
+import { AffichageDetailPlanteComponent } from './admin/affichage-detail-plante/affichage-detail-plante.component';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import {RecetteComponent} from "./recette/recette.component";
     AjoutRecetteComponent,
     ConnexionComponent,
     AjoutGuideComponent,
-    LectureRecetteComponent
+    LectureRecetteComponent,
+    AdminModifierPlanteComponent,
+    AffichageDetailPlanteComponent
   ],
   imports: [
     BrowserModule,

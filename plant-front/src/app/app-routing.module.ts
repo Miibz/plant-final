@@ -11,7 +11,7 @@ import {AjoutRecetteComponent} from "./ajout-recette/ajout-recette.component";
 import {AjoutGuideComponent} from "./ajout-guide/ajout-guide.component";
 import {LectureRecetteComponent} from "./lecture-recette/lecture-recette.component";
 import {CreationCompteComponent} from "./creation-compte/creation-compte.component";
-import {AdminAjoutPlanteComponent} from "./admin-ajout-plante/admin-ajout-plante.component";
+import {AdminAjoutPlanteComponent} from "./admin/admin-ajout-plante/admin-ajout-plante.component";
 
 const routes: Routes = [
   {path: "mon-jardin", component: MonJardinComponent},

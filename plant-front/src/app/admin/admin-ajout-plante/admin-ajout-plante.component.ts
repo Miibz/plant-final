@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {Recherche} from "../model/recherche";
-import {Vegetal} from "../model/vegetal";
-import {AppConfigService} from "../app-config.service";
-import {RechercheService} from "../recherche/recherche-Http.service";
-import {VegetalHttpService} from "../vegetal/vegetal-http.service";
-import {NoticeHttpService} from "../service/notice-http.service";
-import {Affinite} from "../model/Affinite";
-import {AffiniteService} from "../service/affinite.service";
+import {Recherche} from "../../model/recherche";
+import {Vegetal} from "../../model/vegetal";
+import {AppConfigService} from "../../app-config.service";
+import {RechercheService} from "../../recherche/recherche-Http.service";
+import {VegetalHttpService} from "../../vegetal/vegetal-http.service";
+import {NoticeHttpService} from "../../service/notice-http.service";
+import {Affinite} from "../../model/Affinite";
+import {AffiniteService} from "../../service/affinite.service";
 
 @Component({
   selector: 'app-admin-ajout-plante',
@@ -288,6 +288,7 @@ export class AdminAjoutPlanteComponent implements OnInit {
 
   send()
   {
+    this.affinite.vegetal2=new Vegetal();
     this.affinite.vegetal2.id=this.vegetalAffinite.id;
     this.vegetalService.save2(this.vegetal);
     this.affiniteService.save2(this.affinite);
