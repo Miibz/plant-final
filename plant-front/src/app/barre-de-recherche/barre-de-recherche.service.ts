@@ -27,7 +27,7 @@ export class BarreDeRechercheService {
   }
 
   findGuidesWithNom(nom: string): Observable<Array<GuideUtilisation>> {
-    return this.http.get<Array<GuideUtilisation>>(this.appConfigService.backEndUrl+"guideUtilisation/recherche/"+ nom);
+    return this.http.get<Array<GuideUtilisation>>(this.appConfigService.backEndUrl+"guide/recherche/"+ nom);
   }
 
   findRecettesWithNom(nom: string): Observable<Array<Recette>> {
@@ -35,19 +35,19 @@ export class BarreDeRechercheService {
   }
 
   loadVegetal() {
-    this.http.get<Array<Vegetal>>(this.appConfigService.backEndUrl + "barre-de-recherche/").subscribe(response => {
+    this.http.get<Array<Vegetal>>(this.appConfigService.backEndUrl + "vegetal/recherche/").subscribe(response => {
       this.vegetaux = response;
     }, error => console.log(error));
   }
 
   loadRecette() {
-    this.http.get<Array<Recette>>(this.appConfigService.backEndUrl + "barre-de-recherche/").subscribe(response => {
+    this.http.get<Array<Recette>>(this.appConfigService.backEndUrl + "guide/recherche/").subscribe(response => {
       this.recette = response;
     }, error => console.log(error));
   }
 
   loadGuide() {
-    this.http.get<Array<GuideUtilisation>>(this.appConfigService.backEndUrl + "barre-de-recherche/").subscribe(response => {
+    this.http.get<Array<GuideUtilisation>>(this.appConfigService.backEndUrl + "recette/recherche/").subscribe(response => {
       this.guide = response;
     }, error => console.log(error));
   }

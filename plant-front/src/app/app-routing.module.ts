@@ -22,6 +22,11 @@ const routes: Routes = [
   {path: "nos-recettes", component: RecetteComponent},
   // {path: "nos-guides", component: GuideComponent},
   {path: "connexion", component: ConnexionComponent},
+  {path: "recette/:id", component: LectureRecetteComponent},
+  {path: "guide/:id", component: LectureRecetteComponent},
+  {path: "vegetal/:id", component: LectureRecetteComponent},
+
+
 ];
 
 @NgModule({
