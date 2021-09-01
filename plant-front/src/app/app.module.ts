@@ -17,20 +17,21 @@ import {ConnexionComponent} from "./connexion/connexion.component";
 import { RecetteComponent } from './recette/recette.component';
 import { AjoutRecetteComponent } from './ajout-recette/ajout-recette.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     MonJardinComponent,
     DejaPlanteComponent,
     VegetalComponent,
-      PersonneComponent,
-      RechercheComponent,
+    PersonneComponent,
+    RechercheComponent,
     RechercheAlternativeComponent,
-      UtilisateurComponent,
+    UtilisateurComponent,
     AccueilComponent,
     RecetteComponent,
     AjoutRecetteComponent,
-    ConnexionComponent
+    ConnexionComponent,
   ],
   imports: [
     BrowserModule,

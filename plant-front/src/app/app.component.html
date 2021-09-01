@@ -22,10 +22,10 @@
     <a class="nav-link" [routerLink]="['/mon-compte']">Mon Compte</a>
   </div>
   <div class="topnav-right" *ngIf="!connected" routerLinkActive="active">
-  <a class="nav-link" [routerLink]="['/creation-compte']">Créer un compte</a>
+  <a *ngIf="!isConnected()" class="nav-link" [routerLink]="['/creation-compte']">Créer un compte</a>
 </div>
   <div class="topnav-right" *ngIf="!connected" routerLinkActive="active">
-    <a class="nav-link" [routerLink]="['/connexion']">Se Connecter</a>
+    <a *ngIf="!isConnected()"class="nav-link" [routerLink]="['/connexion']">Se Connecter</a>
   </div>
 </div>
 
