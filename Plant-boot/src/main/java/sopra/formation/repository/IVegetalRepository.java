@@ -39,4 +39,8 @@ public interface IVegetalRepository extends  JpaRepository<Vegetal,Long> {
 //	@Query("select v from Vegetal v where v.nature = :nature and v.tempsDeVie=:tempsDeVie and v.exposition=:exposition and v.sol=:sol and v.comportement=:comportement and v.couleur=:couleur and v.utilite=:utilite and v.typeDeFeuille=:typeDeFeuille and v.tempsDeFeuille=:tempsDeFeuille and v.presentation=:presentation and v.utiliteOrnement=:utiliteOrnement and v.utiliteGastronomie=:utiliteGastronomie and v.utiliteComposition=:utiliteComposition and utiliteCimetiere=:utiliteCimetiere and utilitePresentation=:utilitePresentation")
 
 
+
+	@Query("select v from Vegetal v where v.nom LIKE CONCAT('%',:nom,'%')")
+	Optional<List<Vegetal>> findVegetauxByNom(@Param("nom") String nom);
+
 }

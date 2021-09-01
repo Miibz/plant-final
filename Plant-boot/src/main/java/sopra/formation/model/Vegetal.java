@@ -23,7 +23,7 @@ public class Vegetal {
 	@Version
 	@JsonView(Views.ViewCommon.class)
 	private int version;
-	@JsonView(Views.ViewCommon.class)
+	@JsonView({Views.ViewCommon.class, ViewVegetal.class,Views.ViewVegetalWithNom.class})
 	private String nom;
 	@JsonView({Views.ViewCommon.class, ViewVegetal.class})
 	private Long nombre;

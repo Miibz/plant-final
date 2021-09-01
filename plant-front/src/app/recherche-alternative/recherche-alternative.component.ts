@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {Recherche} from "../model/recherche";
 import {AppConfigService} from "../app-config.service";
 import {RechercheService} from "../recherche/recherche-Http.service";
@@ -12,6 +12,9 @@ import {Vegetal} from "../model/vegetal";
 })
 export class RechercheAlternativeComponent implements OnInit {
   recherche:Recherche=new Recherche();
+  opaciteNature=[0.5];
+  indice=0;
+  adresse:string="../../assets/img/Fleur.jpg";
   choixMenu:Array<boolean>=new Array<boolean>();
   intermediaire:Array<string>=new Array<string>();
   natures:Array<string>;
@@ -30,6 +33,21 @@ export class RechercheAlternativeComponent implements OnInit {
   utiliteCimetiere:Array<string>;
   utilitePresentation:Array<string>;
   resultats:Array<Vegetal>=new Array<Vegetal>();
+  opaciteTempsDeVie=[0.5];
+  opacitePresentationFleur=[0.5];
+  opaciteExposition=[0.5];
+  opaciteSol=[0.5];
+  opaciteComportement=[0.5];
+  opaciteCouleur=[0.5];
+  opaciteUtilite=[0.5];
+  opaciteTypeDeFeuille=[0.5];
+  opaciteTempsDeFeuille=[0.5];
+  opacitePresentationArbuste=[0.5];
+  opaciteUtiliteOrnement=[0.5];
+  opaciteUtiliteGastronomie=[0.5];
+  opaciteUtiliteComposition=[0.5];
+  opaciteCimetiere=[0.5];
+  opaciteUtilitePresentation=[0.5];
 
   constructor(private appConfig:AppConfigService,private rechercheService:RechercheService,private vegetalService:VegetalHttpService) {
     this.choixMenu[0]=true;
@@ -49,10 +67,28 @@ export class RechercheAlternativeComponent implements OnInit {
     this.appConfig.findAllPresentation().subscribe(resp =>{ this.utilitePresentation=resp;});
   }
 
-  menuChoixAvant(lesChoix:Array<string>,unChoix:string):number
+  menuChoixAvant(lesChoix:Array<string>,unChoix:string,i:number,descision:string):number
   {
     let choix=lesChoix.indexOf(unChoix);
-    console.log(choix);
+    switch (descision) {
+      case "Nature": this.opaciteNature[choix]=1;break;//menuNature
+      case "TempsDeVie":this.opaciteTempsDeVie[choix]=1;break;//menuTempsDeVie
+      case "menuPresentationFleur":this.opacitePresentationFleur[choix]=1;break;//menuPresentationFleur
+      case "Exposition":this.opaciteExposition[choix]=1;break;//menuExposition()
+      case "Sol":this.opaciteSol[choix]=1;break;//menuSol()
+      case "Comportement":this.opaciteComportement[choix]=1;break;//menuComportement()
+      case "Couleur":this.opaciteCouleur[choix]=1;break;//menuCouleur()
+      case "Utilite":this.opaciteUtilite[choix]=1;break;//menuUtilite
+      case "TypeDeFeuille":this.opaciteTypeDeFeuille[choix]=1;break;//menuTypeDeFeuille
+      case "TempsDeFeuille":this.opaciteTempsDeFeuille[choix]=1;break;//menuTempsDeFeuille()
+      case "PresentationArbuste":this.opacitePresentationArbuste[choix]=1;break;//menuPresentationArbuste();
+      case "UtiliteOrnement":this.opaciteUtiliteOrnement[choix]=1;break;//menuUtiliteOrnement();
+      case "UtiliteGastronomie":this.opaciteUtiliteGastronomie[choix]=1;break;//menuUtiliteGastronomie();
+      case "UtiliteComposition" :this.opaciteUtiliteComposition[choix]=1;break;//menuUtiliteComposition();
+      case "UtiliteCimetiere" :this.opaciteCimetiere[choix]=1;break;//menuUtiliteCimetiere();
+      case "UtilitePresentation" :this.opaciteUtilitePresentation[choix]=1;break;//menuUtilitePresentation();
+
+    }
     return choix;
   }
 
@@ -252,6 +288,18 @@ export class RechercheAlternativeComponent implements OnInit {
         console.log(this.resultats);
       }, error => console.log(error));;
     }, error => console.log(error));;
+  }
+
+reponseOpacite(e:string,listes:Array<string>,i:number)
+{
+ // return {'opacity':+1+';'};
+  return {'background-color':'blue'+';'};
+}
+
+  test()
+  {
+    // return {'opacity':+1+';'};
+    return {'background-color':'red'+';'};
   }
   ngOnInit(): void {
 
