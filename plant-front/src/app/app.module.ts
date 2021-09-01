@@ -13,6 +13,7 @@ import {PersonneComponent} from "./personne/personne.component";
 import {RechercheComponent} from "./recherche/recherche.component";
 import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
 import {AccueilComponent} from "./accueil/accueil.component";
+import { AdminAjoutPlanteComponent } from './admin-ajout-plante/admin-ajout-plante.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {AccueilComponent} from "./accueil/accueil.component";
       RechercheComponent,
     RechercheAlternativeComponent,
       UtilisateurComponent,
-    AccueilComponent
+    AccueilComponent,
+    AdminAjoutPlanteComponent
   ],
   imports: [
     BrowserModule,
