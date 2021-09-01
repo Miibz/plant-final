@@ -15,8 +15,9 @@ import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
 import {AccueilComponent} from "./accueil/accueil.component";
 import {BarreDeRechercheComponent} from "./barre-de-recherche/barre-de-recherche.component";
 import {ConnexionComponent} from "./connexion/connexion.component";
-import { RecetteComponent } from './recette/recette.component';
-import { AjoutRecetteComponent } from './ajout-recette/ajout-recette.component';
+import {AjoutRecetteComponent} from "./ajout-recette/ajout-recette.component";
+import {RecetteComponent} from "./recette/recette.component";
+
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { AjoutRecetteComponent } from './ajout-recette/ajout-recette.component';
     RechercheAlternativeComponent,
       UtilisateurComponent,
     AccueilComponent,
-    BarreDeRechercheComponent
+    BarreDeRechercheComponent,
     UtilisateurComponent,
     AccueilComponent,
     RecetteComponent,

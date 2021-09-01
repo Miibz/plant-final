@@ -1,29 +1,15 @@
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-
-
 
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
-      <a class="btn btn-outline-success" (click)="affichage()"><input type="text" [(ngModel)]="recherche">Rechercher</a>
+      <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search" id="" [(ngModel)]="recherche">
+      <a class="btn btn-outline-success" (click)="affichage()">Rechercher</a>
     </form>
   </div>
 </nav>
 
-<div class="card text-white bg-success mb-3">
-  <div class="card-header bg-info text-white">
+<div class="card mt-3">
+  <div class="card text-white bg-success mb-3">
     <h2>Résultat de la recherche</h2>
   </div>
   <div class="card-body">
@@ -37,17 +23,17 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let vegetal of listVegetaux()">
+      <tr *ngFor="let vegetal of vegetaux">
         <td>{{vegetal.nom}}</td>
-        <td><img src="../../assets/img/{{veg.nom}}.png"></td>
+        <td><img src="../../assets/img/{{vegetal.nom}}.png"></td>
         <td></td>
       </tr>
-      <tr *ngFor="let rec of listRecettes()">
+      <tr *ngFor="let rec of recettes">
         <td>{{rec.nom}}</td>
         <td><img src="../../assets/img/{{rec.nom}}.png"></td>
         <td></td>
       </tr>
-      <tr *ngFor="let guide of listGuides()">
+      <tr *ngFor="let guide of guides">
         <td>{{guide.nom}}</td>
         <td><img src="../../assets/img/{{guide.nom}}.png"></td>
         <td></td>
