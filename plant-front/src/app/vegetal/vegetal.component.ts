@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Notice} from "../model/notice";
-import {NoticeHttpService} from "../notice-http.service";
+import {NoticeHttpService} from "../service/notice-http.service";
 import {VegetalHttpService} from "./vegetal-http.service";
 import {Vegetal} from "../model/vegetal";
 

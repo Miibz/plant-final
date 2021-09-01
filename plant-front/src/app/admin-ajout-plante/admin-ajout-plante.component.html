@@ -68,8 +68,13 @@
     <legend>Informations techniques</legend>
     <div class="elementForm">Consommation d'eaau : <input type="number"></div>
     <div class="elementForm">Consommation d'engrais : <input type="number"></div>
-    <div class="elementForm">Affinités : </div>
+    <div class="elementForm">Affinités :
+      <select class="form-control" id="affinite" [(ngModel)]="vegetal.id">
+        <option value="">Choisir les plantes avec lequel elle a des affinités</option>
+        <option *ngFor="let veg of listVegetal()" [value]="veg.id">{{veg.nom}}</option>
+       </select>
+    </div>
     <div class="elementForm">Notice : </div>
   </fieldset>
-  <button (click)="send()"></button>
+  <button (click)="send()">Confirmer</button>
 </div>

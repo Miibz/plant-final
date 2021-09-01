@@ -22,7 +22,7 @@ import sopra.formation.model.Affinite;
 import sopra.formation.model.Views;
 import sopra.formation.repository.IAffiniteRepository;
 @RestController
-@RequestMapping("/affinites")
+@RequestMapping("/affinite")
 @CrossOrigin("*")
 public class AffiniteRestController {
 	@Autowired

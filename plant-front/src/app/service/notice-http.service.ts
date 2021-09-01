@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import {Vegetal} from "./model/vegetal";
+import {Vegetal} from "../model/vegetal";
 import {HttpClient} from "@angular/common/http";
-import {AppConfigService} from "./app-config.service";
+import {AppConfigService} from "../app-config.service";
 import {Observable} from "rxjs";
-import {Notice} from "./model/notice";
+import {Notice} from "../model/notice";
 
 @Injectable({
   providedIn: 'root'

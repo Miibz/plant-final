@@ -4,7 +4,9 @@ import {Vegetal} from "../model/vegetal";
 import {AppConfigService} from "../app-config.service";
 import {RechercheService} from "../recherche/recherche-Http.service";
 import {VegetalHttpService} from "../vegetal/vegetal-http.service";
-import {NoticeHttpService} from "../notice-http.service";
+import {NoticeHttpService} from "../service/notice-http.service";
+import {Affinite} from "../model/Affinite";
+import {AffiniteService} from "../service/affinite.service";
 
 @Component({
   selector: 'app-admin-ajout-plante',
@@ -13,8 +15,10 @@ import {NoticeHttpService} from "../notice-http.service";
 })
 export class AdminAjoutPlanteComponent implements OnInit {
   formulaire:boolean=false;
+  affinite: Affinite;
   recherche:Recherche=new Recherche();
   vegetal:Vegetal=new Vegetal();
+  vegetalAffinite :Vegetal;
   opaciteNature=[0.5];
   choixMenu:Array<boolean>=new Array<boolean>();
   natures:Array<string>;
@@ -48,7 +52,7 @@ export class AdminAjoutPlanteComponent implements OnInit {
   opaciteCimetiere=[0.5];
   opaciteUtilitePresentation=[0.5];
 
-  constructor(private noticeService:NoticeHttpService,private appConfig:AppConfigService,private rechercheService:RechercheService,private vegetalService:VegetalHttpService) {
+  constructor(private noticeService:NoticeHttpService,private appConfig:AppConfigService,private rechercheService:RechercheService,private vegetalService:VegetalHttpService,private affiniteService:AffiniteService) {
     this.choixMenu[0]=true;
     this.appConfig.findAllNature().subscribe(resp =>{this.natures=resp;});
     this.appConfig.findAllTempsDeVie().subscribe(resp =>{ this.tempsDeVie=resp;});
@@ -284,7 +288,20 @@ export class AdminAjoutPlanteComponent implements OnInit {
 
   send()
   {
-    this.vegetalService.create(this.vegetal);
+    this.affinite.vegetal2.id=this.vegetalAffinite.id;
+    this.vegetalService.save2(this.vegetal);
+    this.affiniteService.save2(this.affinite);
+    this.formulaire=false;
+    this.vegetal=new Vegetal();
+  }
+  listAffinite()
+  {
+    return this.affiniteService.findAll();
+  }
+
+  listVegetal()
+  {
+    return this.vegetalService.findAll();
   }
 
   ngOnInit(): void {
