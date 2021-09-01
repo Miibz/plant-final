@@ -1,1 +1,36 @@
-<p>recette works!</p>
+<div class="ladiv">
+<h1> Voici nos guides !</h1>
+  <h4>Il vous seront forcément utiles !</h4>
+
+<div class="lesguides" *ngFor=" let recette of list()">
+
+  <div class="titre">
+    {{recette.nom}}
+  </div>
+
+  <div class="info">
+    {{recette.info}}
+  </div>
+  <form>
+<fieldset>
+  <legend> Ingrédients :</legend>
+  <div class="angular-with-newlines ingredients" >
+    {{recette.ingredients}}
+  </div>
+  </fieldset>
+  </form>
+
+  <fieldset>
+    <legend> Recette pas à pas :</legend>
+  <div class="angular-with-newlines methode" >
+    {{recette.methode}}
+  </div>
+  </fieldset>
+
+  <button type="button" class="btn btn-outline-primary" [routerLink]="['/recette/' + recette.id]">Voir la recette</button>
+
+</div>
+  <br>
+</div>
+
+

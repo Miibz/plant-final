@@ -1,13 +1,13 @@
 package sopra.formation.model;
 
-
-
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
@@ -22,18 +22,23 @@ public class Recette {
 	@Version
 	@JsonView(Views.ViewCommon.class)
 	private int version;
-	@JsonView(Views.ViewCommon.class)
+	@JsonView({Views.ViewCommon.class, Views.ViewRecetteByNom.class})
 	private String nom;
+	@JsonView(Views.ViewCommon.class)
+	private String info;
+	@JsonView(Views.ViewCommon.class)
+	@Lob
+	@Column(columnDefinition="LONGTEXT")
+	private String ingredients;
+	@Lob
+	@Column(columnDefinition="LONGTEXT")
+	@JsonView(Views.ViewCommon.class)
+	private String  methode;
 //	private List<String> ingredientsNonVegetaux;
 //	@OneToMany(mappedBy="recette")
 //	@JsonView(Views.ViewRecette.class)
 //	private List<RecetteJardin> recetteJardin;
-	@JsonView(Views.ViewCommon.class)
-	private String info;
-	@JsonView(Views.ViewCommon.class)
-	private String ingredients;
-	@JsonView(Views.ViewCommon.class)
-	private String  methode;
+	
 	
 	public Recette() {
 		super();

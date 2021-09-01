@@ -1,9 +1,59 @@
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Rechercher un végétal" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Rechercher</button>
+      <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
+      <a class="btn btn-outline-success" (click)="affichage()"><input type="text" [(ngModel)]="recherche">Rechercher</a>
     </form>
   </div>
 </nav>
 
+<div class="card text-white bg-success mb-3">
+  <div class="card-header bg-info text-white">
+    <h2>Résultat de la recherche</h2>
+  </div>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Image</th>
+        <th>?</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let vegetal of vegetaux">
+        <td>{{vegetal.nom}}</td>
+        <td><img src="../../assets/img/{{vegetal.nom}}.png"></td>
+        <td></td>
+      </tr>
+      <tr *ngFor="let rec of recettes">
+        <td>{{rec.nom}}</td>
+        <td><img src="../../assets/img/{{rec.nom}}.png"></td>
+        <td></td>
+      </tr>
+      <tr *ngFor="let guide of guides">
+        <td>{{guide.nom}}</td>
+        <td><img src="../../assets/img/{{guide.nom}}.png"></td>
+        <td></td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>

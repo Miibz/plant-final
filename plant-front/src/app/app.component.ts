@@ -9,7 +9,7 @@ import {SessionService} from "./session.service";
 })
 export class AppComponent {
   title = 'plantFront';
-  type: string="Administrateur";
+  type: string="Utilisateur";
   connected:boolean=false;
   constructor(private sessionService: SessionService) {
   }

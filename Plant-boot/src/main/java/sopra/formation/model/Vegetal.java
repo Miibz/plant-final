@@ -23,9 +23,9 @@ public class Vegetal {
 	@Version
 	@JsonView(Views.ViewCommon.class)
 	private int version;
-	@JsonView(Views.ViewCommon.class)
+	@JsonView({Views.ViewCommon.class, ViewVegetal.class,Views.ViewVegetalWithNom.class})
 	private String nom;
-	@JsonView(Views.ViewCommon.class)
+	@JsonView({Views.ViewCommon.class, ViewVegetal.class})
 	private Long nombre;
 	@JsonView(Views.ViewCommon.class)
 	private String description;
@@ -55,6 +55,10 @@ public class Vegetal {
 	private UtiliteComposition utiliteComposition;
 	@JsonView(Views.ViewCommon.class)
 	private UtiliteCimetiere utiliteCimetiere;
+	@JsonView(Views.ViewCommon.class)
+	private UtilitePresentation utilitePresentation;
+	@JsonView(Views.ViewCommon.class)
+	private Exposition exposition;
 	@JsonView(Views.ViewCommon.class)
 	private Long consommationEau;
 	@JsonView(Views.ViewCommon.class)
@@ -295,5 +299,36 @@ public class Vegetal {
 	public void setNotice(Notice notice) {
 		this.notice = notice;
 	}
+
+
+	public Long getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(Long nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public UtilitePresentation getUtilitePresentation() {
+		return utilitePresentation;
+	}
+
+
+	public void setUtilitePresentation(UtilitePresentation utilitePresentation) {
+		this.utilitePresentation = utilitePresentation;
+	}
+
+
+	public Exposition getExposition() {
+		return exposition;
+	}
+
+
+	public void setExposition(Exposition exposition) {
+		this.exposition = exposition;
+	}
+	
 	
 }
