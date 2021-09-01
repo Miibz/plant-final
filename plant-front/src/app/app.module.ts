@@ -5,8 +5,6 @@ import {DejaPlanteComponent} from "./deja-plante/deja-plante.component";
 import {VegetalComponent} from "./vegetal/vegetal.component";
 import {CreationCompteComponent} from "./creation-compte/creation-compte.component";
 import {FormsModule} from "@angular/forms";
-import {AjoutRecetteComponent} from "./ajout-recette/ajout-recette.component";
-import {ConnexionComponent} from "./connexion/connexion.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
