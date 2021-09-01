@@ -19,8 +19,6 @@ import { LectureRecetteComponent } from './lecture-recette/lecture-recette.compo
 import {RechercheComponent} from "./recherche/recherche.component";
 import {RechercheAlternativeComponent} from "./recherche-alternative/recherche-alternative.component";
 import {RecetteComponent} from "./recette/recette.component";
-import {ConnexionComponent} from "./connexion/connexion.component";
-import {AjoutRecetteComponent} from "./ajout-recette/ajout-recette.component";
 
 
 @NgModule({
