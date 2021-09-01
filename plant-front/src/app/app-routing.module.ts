@@ -8,6 +8,7 @@ import {RecetteComponent} from "./recette/recette.component";
 import {RechercheAlternativeComponent} from "./recherche-alternative/recherche-alternative.component";
 import {BarreDeRechercheComponent} from "./barre-de-recherche/barre-de-recherche.component";
 import {DejaPlanteComponent} from "./deja-plante/deja-plante.component";
+import {CreationCompteComponent} from "./creation-compte/creation-compte.component";
 
 const routes: Routes = [
   {path: "mon-jardin", component: MonJardinComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: "barre-de-recherche", component: BarreDeRechercheComponent},
   {path: "app-deja-plante", component: DejaPlanteComponent},
 
+  {path: "creation-compte", component: CreationCompteComponent},
   {path: "ajout-recette", component: AjoutRecetteComponent},
   // {path: "ajout-guide", component: AjoutGuideComponent},
   // {path: "ajout-plante", component: AjoutPlanteComponent},

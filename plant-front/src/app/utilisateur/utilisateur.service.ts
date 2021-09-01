@@ -10,9 +10,6 @@ export class UtilisateurService {
  utilisateurs: Array<Utilisateur> = new Array<Utilisateur>();
 
   constructor() {
-    this.utilisateurs.push(new Utilisateur(1,0,"SULTAN","Eric","s.eric@gmail.com","2342","chibrator12",true,"0723449912",new Adresse(1,0,"rue","la madone","13009","Marseille")));
-    this.utilisateurs.push(new Utilisateur(2,0,"BENBELLA","Samir","s.bens@gmail.com","8774","tireur2coupfranc",false,"0620042352",new Adresse(2,0,"boulevard","henri barnier","13015","Marseille")));
-    this.utilisateurs.push(new Utilisateur(3,0,"SARKOZY","Nicolas","voleur2dollar@gmail.com","6660","copin2kadafi",true,"0423477953",new Adresse(3,0,"avenue","de la paix","75000","Paris")));
 
   }
   findAll(): Array<Utilisateur> {
