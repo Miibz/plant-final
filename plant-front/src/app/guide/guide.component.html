@@ -1,0 +1,24 @@
+<div class="ladiv">
+  <h1> Voici nos guides !</h1>
+  <h4>Il vous seront forcément utiles !</h4>
+
+  <div class="lesguides" *ngFor=" let guide of list()">
+
+    <div class="titre">
+      {{guide.nom}}
+    </div>
+
+    <fieldset>
+      <legend> Descriptif :</legend>
+      <div class="angular-with-newlines methode" >
+        {{guide.descriptif}}
+      </div>
+    </fieldset>
+
+    <div class="lebouton">
+      <button type="button" class="btn btn-outline-success " [routerLink]="['/guide/' + guide.id]">Voir le guide</button>
+    </div>
+
+  </div>
+  <br>
+</div>

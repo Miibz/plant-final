@@ -5,8 +5,6 @@ import {DejaPlanteComponent} from "./deja-plante/deja-plante.component";
 import {VegetalComponent} from "./vegetal/vegetal.component";
 import {CreationCompteComponent} from "./creation-compte/creation-compte.component";
 import {FormsModule} from "@angular/forms";
-import {AjoutRecetteComponent} from "./ajout-recette/ajout-recette.component";
-import {ConnexionComponent} from "./connexion/connexion.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
@@ -16,6 +14,8 @@ import { AdminAjoutPlanteComponent } from './admin-ajout-plante/admin-ajout-plan
 import {BarreDeRechercheComponent} from "./barre-de-recherche/barre-de-recherche.component";
 import { AjoutGuideComponent } from './ajout-guide/ajout-guide.component';
 import { LectureRecetteComponent } from './lecture-recette/lecture-recette.component';
+import { LectureGuideComponent } from './lecture-guide/lecture-guide.component';
+import { GuideComponent } from './guide/guide.component';
 import {RechercheComponent} from "./recherche/recherche.component";
 import {RechercheAlternativeComponent} from "./recherche-alternative/recherche-alternative.component";
 import {RecetteComponent} from "./recette/recette.component";
@@ -40,7 +40,9 @@ import {RecetteComponent} from "./recette/recette.component";
     AjoutRecetteComponent,
     ConnexionComponent,
     AjoutGuideComponent,
-    LectureRecetteComponent
+    LectureRecetteComponent,
+    LectureGuideComponent,
+    GuideComponent
   ],
   imports: [
     BrowserModule,
