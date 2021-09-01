@@ -48,6 +48,19 @@ public class RecetteRestController {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
 		}
 	}
+	
+	@GetMapping("/recherche/{nom}")
+	@JsonView(Views.ViewRecetteByNom.class)
+	public List<Recette> findRecettesWithNom(@PathVariable String nom) {
+
+		Optional<List<Recette>> optRecette = recetteRepo.findRecettesByNom(nom);
+
+		if (optRecette.isPresent()) {
+			return (List<Recette>) optRecette.get();
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+		}
+	}
 
 	@PostMapping("")
 	@JsonView(Views.ViewRecette.class)

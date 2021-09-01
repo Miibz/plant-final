@@ -1,0 +1,50 @@
+.titrehaut
+{
+  text-align: center;
+  position : relative;
+  top: 15px;
+}
+
+
+.Gauche{
+  float:left;
+  font-weight: bolder;
+  margin-left: 35px;
+
+}
+
+.Centre{
+  align-content: center;
+  margin: auto;
+  font-weight: bolder;
+}
+
+
+.Droite{
+  float:right;
+  margin-right: 10%;
+  font-weight: bolder;
+}
+
+.partibasse{
+  text-align: center;
+  margin-top: 11%;
+}
+
+.Coche{
+  text-align: center;
+  font-weight: bolder;
+}
+
+.bouton{
+  text-align: center;
+  background-color:red;
+  cursor: pointer;
+  border-radius: 10px;
+  line-height: 3;
+  font-weight: bolder;
+}
+
+.textefin{
+  font-weight: bolder;
+}

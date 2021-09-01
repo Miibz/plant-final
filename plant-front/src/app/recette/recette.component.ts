@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AjoutRecetteHttpService} from "../ajout-recette/ajoutRecetteHttp.service";
+import {Recette} from "../model/recette";
 
 @Component({
   selector: 'app-recette',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecetteComponent implements OnInit {
 
-  constructor() { }
+
+
+  constructor(private recetteService : AjoutRecetteHttpService) { }
+
+  list(): Array<Recette> {
+    return this.recetteService.findAll();
+  }
 
   ngOnInit(): void {
   }
