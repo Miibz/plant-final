@@ -19,6 +19,8 @@ public class GuideUtilisation {
 	@Version
 	@JsonView(Views.ViewCommon.class)
 	private int version;
+	@JsonView({Views.ViewGuideUtilisation.class, Views.ViewGuideByNom.class})
+	private String nom;
 	@JsonView(Views.ViewCommon.class)
 	private FormatSauvegarde formatSauvegarde;
 	@OneToOne
@@ -33,14 +35,20 @@ public class GuideUtilisation {
 		super();
 	}
 
-	public GuideUtilisation(Long id, int version, FormatSauvegarde formatSauvegarde, Meteo meteo, Facture facture) {
+
+
+	public GuideUtilisation(Long id, int version, String nom, FormatSauvegarde formatSauvegarde, Meteo meteo,
+			Facture facture) {
 		super();
 		this.id = id;
 		this.version = version;
+		this.nom = nom;
 		this.formatSauvegarde = formatSauvegarde;
 		this.meteo = meteo;
 		this.facture = facture;
 	}
+
+
 
 	public int getVersion() {
 		return version;
@@ -74,5 +82,16 @@ public class GuideUtilisation {
 	public void setFacture(Facture facture) {
 		this.facture = facture;
 	}
+
+
+	public String getNom() {
+		return nom;
+	}
+
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
 	
 }

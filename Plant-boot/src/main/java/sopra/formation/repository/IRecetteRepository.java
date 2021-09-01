@@ -16,4 +16,7 @@ public interface IRecetteRepository extends  JpaRepository<Recette,Long> {
 
 	@Query("select r from Recette r where r.id = :id")
 	Optional<Recette> findFormateurById(@Param("id") Long id);
+	
+	@Query("select r from Recette r where r.nom LIKE CONCAT('%',:nom,'%')")
+	Optional<List<Recette>> findRecettesByNom(@Param("nom") String nom);
 }

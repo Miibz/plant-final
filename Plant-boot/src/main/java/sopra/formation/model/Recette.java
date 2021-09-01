@@ -22,7 +22,7 @@ public class Recette {
 	@Version
 	@JsonView(Views.ViewCommon.class)
 	private int version;
-	@JsonView(Views.ViewCommon.class)
+	@JsonView({Views.ViewCommon.class, Views.ViewRecetteByNom.class})
 	private String nom;
 	@JsonView(Views.ViewCommon.class)
 	private String info;

@@ -49,6 +49,20 @@ public class GuideUtilisationRestController {
 	}
 	
 
+
+@GetMapping("/recherche/{nom}")
+	@JsonView(Views.ViewGuideByNom.class)
+	public List<GuideUtilisation> findGuidesWithNom(@PathVariable String nom) {
+
+		Optional<List<GuideUtilisation>> optGuide = GuideUtilisationRepo.findGuidesByNom(nom);
+
+		if (optGuide.isPresent()) {
+			return (List<GuideUtilisation>) optGuide.get();
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+		}
+	}
+
 	@PostMapping("")
 	@JsonView(Views.ViewGuideUtilisation.class)
 	public GuideUtilisation create(@RequestBody GuideUtilisation GuideUtilisation) {
