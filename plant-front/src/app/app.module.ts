@@ -29,7 +29,7 @@ import {RecetteComponent} from "./recette/recette.component";
     VegetalComponent,
     RechercheComponent,
     RechercheAlternativeComponent,
-      UtilisateurComponent,
+    UtilisateurComponent,
     AccueilComponent,
     AdminAjoutPlanteComponent,
     CreationCompteComponent,
