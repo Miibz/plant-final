@@ -25,4 +25,7 @@ public class Views {
 	public static class ViewVegetalWithNom extends ViewVegetal {}
 	public static class ViewGuideByNom extends ViewGuideUtilisation {}
 	public static class ViewRecetteByNom extends ViewRecette {}
+	public static class ViewVegetal1 extends ViewCommon {}
+	public static class ViewVegetal2 extends ViewVegetal {}
+	public static class ViewAffinite extends ViewCommon {}
 }

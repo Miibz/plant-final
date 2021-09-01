@@ -29,7 +29,13 @@ export class VegetalHttpService {
   findById(id: number): Observable<Vegetal> {
     return this.http.get<Vegetal>(this.appConfigService.backEndUrl + "vegetal/" + id);
   }
-
+  save2(vegetal:Vegetal) {
+    if (vegetal.id) {
+      this.modify(vegetal);
+    } else {
+      this.create(vegetal);
+    }
+  }
   create(vegetal : Vegetal) {
     this.http.post<Vegetal>(this.appConfigService.backEndUrl + "vegetal/", vegetal).subscribe(response => {
       this.load();

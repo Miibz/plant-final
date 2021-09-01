@@ -67,10 +67,12 @@ public class Vegetal {
 	private Long prix;
 	@JsonView(Views.ViewCommon.class)
 	private Long prixFruit;
-	@OneToMany
-	@JoinColumn(name="affinite_id")
-	@JsonView(Views.ViewVegetal.class)
-	private List<Vegetal> affinite;
+	@OneToMany(mappedBy="vegetal1")
+	@JsonView(Views.ViewVegetal1.class)
+	private List<Affinite> affinites1;
+	@OneToMany(mappedBy="vegetal2")
+	@JsonView(Views.ViewVegetal2.class)
+	private List<Affinite> affinites2;
 	@OneToMany(mappedBy="vegetal")
 	@JsonView(Views.ViewVegetal.class)
 	private List<DejaPlante> dejaPlante;
@@ -89,17 +91,19 @@ public class Vegetal {
 		super();
 	}
 
-
-	public Vegetal(Long id, int version, String nom, String description, Nature nature, TempsDeVie tempsDeVie,
-			Presentation presentation, Sol sol, Comportement comportement, Utilite utilite, TypeDeFeuille typeDeFeuille,
-			TempsDeFeuille tempsDeFeuille, UtiliteOrnement utiliteOrnement, UtiliteGastronomie utiliteGastronomie,
-			Couleur couleur, UtiliteComposition utiliteComposition, UtiliteCimetiere utiliteCimetiere,
-			Long consommationEau, Long consommationEngrais, Long prix, Long prixFruit, List<Vegetal> affinite,
-			List<DejaPlante> dejaPlante, List<Commentaire> commentaire, List<Article> article, Notice notice) {
+	public Vegetal(Long id, int version, String nom, Long nombre, String description, Nature nature,
+			TempsDeVie tempsDeVie, Presentation presentation, Sol sol, Comportement comportement, Utilite utilite,
+			TypeDeFeuille typeDeFeuille, TempsDeFeuille tempsDeFeuille, UtiliteOrnement utiliteOrnement,
+			UtiliteGastronomie utiliteGastronomie, Couleur couleur, UtiliteComposition utiliteComposition,
+			UtiliteCimetiere utiliteCimetiere, UtilitePresentation utilitePresentation, Exposition exposition,
+			Long consommationEau, Long consommationEngrais, Long prix, Long prixFruit, List<Affinite> affinites1,
+			List<Affinite> affinites2, List<DejaPlante> dejaPlante, List<Commentaire> commentaire,
+			List<Article> article, Notice notice) {
 		super();
 		this.id = id;
 		this.version = version;
 		this.nom = nom;
+		this.nombre = nombre;
 		this.description = description;
 		this.nature = nature;
 		this.tempsDeVie = tempsDeVie;
@@ -114,15 +118,36 @@ public class Vegetal {
 		this.couleur = couleur;
 		this.utiliteComposition = utiliteComposition;
 		this.utiliteCimetiere = utiliteCimetiere;
+		this.utilitePresentation = utilitePresentation;
+		this.exposition = exposition;
 		this.consommationEau = consommationEau;
 		this.consommationEngrais = consommationEngrais;
 		this.prix = prix;
 		this.prixFruit = prixFruit;
-		this.affinite = affinite;
+		this.affinites1 = affinites1;
+		this.affinites2 = affinites2;
 		this.dejaPlante = dejaPlante;
 		this.commentaire = commentaire;
 		this.article = article;
 		this.notice = notice;
+	}
+
+
+
+	public List<Affinite> getAffinites1() {
+		return affinites1;
+	}
+
+	public void setAffinites1(List<Affinite> affinites1) {
+		this.affinites1 = affinites1;
+	}
+
+	public List<Affinite> getAffinites2() {
+		return affinites2;
+	}
+
+	public void setAffinites2(List<Affinite> affinites2) {
+		this.affinites2 = affinites2;
 	}
 
 	public String getNom() {
@@ -286,12 +311,6 @@ public class Vegetal {
 	}
 	public void setPrixFruit(Long prixFruit) {
 		this.prixFruit = prixFruit;
-	}
-	public List<Vegetal> getAffinite() {
-		return affinite;
-	}
-	public void setAffinite(List<Vegetal> affinite) {
-		this.affinite = affinite;
 	}
 	public Notice getNotice() {
 		return notice;
