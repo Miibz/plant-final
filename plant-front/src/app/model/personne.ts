@@ -5,18 +5,18 @@ export class Personne{
   nom:string;
   prenom:string;
   adresseMail:string;
-  mdp:string;
+  motDePasse:string;
   pseudo:string;
   adresse: Adresse;
 
 
-  constructor(id?: number, version?: number, nom?: string, prenom?: string, adresseMail?: string, mdp?: string, pseudo?: string, adresse?: Adresse) {
+  constructor(id?: number, version?: number, nom?: string, prenom?: string, adresseMail?: string, motDePasse?: string, pseudo?: string, adresse?: Adresse) {
     this.id = id;
     this.version = version;
     this.nom = nom;
     this.prenom = prenom;
     this.adresseMail = adresseMail;
-    this.mdp = mdp;
+    this.motDePasse = motDePasse;
     this.pseudo = pseudo;
     this.adresse = adresse;
   }
