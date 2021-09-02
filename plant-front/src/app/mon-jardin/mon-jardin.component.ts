@@ -3,6 +3,8 @@ import {MonJardinHttpService} from "./mon-jardin-http.service";
 import {VegetalHttpService} from "../vegetal/vegetal-http.service";
 import {Jardin} from "../model/jardin";
 import {DejaPlante} from "../model/dejaPlante";
+import {VegetalComponent} from "../vegetal/vegetal.component";
+import {Vegetal} from "../model/vegetal";
 
 @Component({
   selector: 'mon-jardin',
@@ -17,7 +19,7 @@ export class MonJardinComponent implements OnInit {
   mesPlantes:Array<DejaPlante>=new Array<DejaPlante>();
   monJardin:Jardin=new Jardin();
 
-  constructor(private jardinService: MonJardinHttpService,private dejaPlanteService:VegetalHttpService) {
+  constructor(private jardinService: MonJardinHttpService,private vegetalService:VegetalHttpService) {
     this.load();
 
   }
@@ -50,6 +52,7 @@ return this.jardinService.findAll();
   @HostListener("mouseenter")
   affiche(dejaPlante:DejaPlante)
   {
+    dejaPlante.vegetal=new Vegetal();
     dejaPlante.vegetal.affiche2=true;
   }
   @HostListener("mousleave")
@@ -71,13 +74,13 @@ return this.jardinService.findAll();
   {
     dejaPlante.vegetal.nombre=dejaPlante.vegetal.nombre2;
     dejaPlante.vegetal.affiche=false;
-    this.dejaPlanteService.modify(dejaPlante.vegetal);
+    this.vegetalService.save2(dejaPlante.vegetal);
   }
   ajouter(dejaPlante:DejaPlante)
   {
     dejaPlante.vegetal.nombre=1;
     dejaPlante.vegetal.affiche=false;
-    this.dejaPlanteService.modify(dejaPlante.vegetal);
+    this.vegetalService.save2(dejaPlante.vegetal);
   }
   save() {
     if (this.jardinForm.id) {

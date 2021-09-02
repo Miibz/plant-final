@@ -1,33 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import {Notice} from "../model/notice";
-import {NoticeHttpService} from "../service/notice-http.service";
-import {VegetalHttpService} from "./vegetal-http.service";
-import {Vegetal} from "../model/vegetal";
+import {VegetalHttpService} from "../../vegetal/vegetal-http.service";
+import {Notice} from "../../model/notice";
+import {Vegetal} from "../../model/vegetal";
 
 @Component({
-  selector: 'app-vegetal',
-  templateUrl: './vegetal.component.html',
-  styleUrls: ['./vegetal.component.scss']
+  selector: 'app-affichage-detail-plante',
+  templateUrl: './affichage-detail-plante.component.html',
+  styleUrls: ['./affichage-detail-plante.component.scss']
 })
-export class VegetalComponent implements OnInit {
-  vegetalForm : Vegetal=null;
-  constructor(private noticeService : NoticeHttpService, private vegetalService : VegetalHttpService) {
-  }
-
+export class AffichageDetailPlanteComponent implements OnInit {
+  vegetalForm:Vegetal=new Vegetal();
+  vegetal:Vegetal=new Vegetal();
+  constructor(private vegetalService:VegetalHttpService) { }
 
   list(): any {
     return this.vegetalService.findAll();
   }
 
-  listNotice(): Array<Notice>
+  trouverParId(id:number)
   {
-    return this.noticeService.findAll();
+    this.vegetalService.findById(id).subscribe(response=>{
+      this.vegetal=response;
+    });
   }
-  listAffinites(): Array<Vegetal>
-  {
-    return this.vegetalService.findAll();
-  }
-
 
   add() {
     this.vegetalForm = new Vegetal();
@@ -71,6 +66,7 @@ export class VegetalComponent implements OnInit {
   cancel() {
     this.vegetalForm = null;
   }
+
   ngOnInit(): void {
   }
 

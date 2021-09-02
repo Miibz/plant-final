@@ -10,7 +10,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
 import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
 import {AccueilComponent} from "./accueil/accueil.component";
-import { AdminAjoutPlanteComponent } from './admin-ajout-plante/admin-ajout-plante.component';
+import { AdminAjoutPlanteComponent } from './admin/admin-ajout-plante/admin-ajout-plante.component';
 import {BarreDeRechercheComponent} from "./barre-de-recherche/barre-de-recherche.component";
 import { AjoutGuideComponent } from './ajout-guide/ajout-guide.component';
 import { LectureRecetteComponent } from './lecture-recette/lecture-recette.component';
@@ -45,6 +45,8 @@ import {ConnexionComponent} from "./connexion/connexion.component";
     LectureRecetteComponent,
     LectureGuideComponent,
     GuideComponent
+    AdminModifierPlanteComponent,
+    AffichageDetailPlanteComponent
   ],
   imports: [
     BrowserModule,
