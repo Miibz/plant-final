@@ -20,7 +20,6 @@ export class LectureVegetalComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.id = params.id;
-
       this.vegetalService.findById(this.id).subscribe(param => {
         this.vegetal= param;
       })

@@ -23,6 +23,7 @@ import { AjoutRecetteComponent } from "./ajout-recette/ajout-recette.component";
 import {ConnexionComponent} from "./connexion/connexion.component";
 import {AdminModifierPlanteComponent} from "./admin/admin-modifier-plante/admin-modifier-plante.component";
 import {AffichageDetailPlanteComponent} from "./admin/affichage-detail-plante/affichage-detail-plante.component";
+import {LectureVegetalComponent} from "./lecture-vegetal/lecture-vegetal.component";
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import {AffichageDetailPlanteComponent} from "./admin/affichage-detail-plante/af
     LectureRecetteComponent,
     LectureGuideComponent,
     GuideComponent,
+    LectureVegetalComponent,
     AdminModifierPlanteComponent,
     AffichageDetailPlanteComponent
   ],

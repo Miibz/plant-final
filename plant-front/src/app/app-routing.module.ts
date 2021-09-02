@@ -14,6 +14,7 @@ import {CreationCompteComponent} from "./creation-compte/creation-compte.compone
 import {AjoutGuideComponent} from "./ajout-guide/ajout-guide.component";
 import {LectureRecetteComponent} from "./lecture-recette/lecture-recette.component";
 import {AdminAjoutPlanteComponent} from "./admin/admin-ajout-plante/admin-ajout-plante.component";
+import {LectureVegetalComponent} from "./lecture-vegetal/lecture-vegetal.component";
 
 const routes: Routes = [
   {path: "mon-jardin", component: MonJardinComponent},
@@ -31,7 +32,7 @@ const routes: Routes = [
   {path: "connexion", component: ConnexionComponent},
   {path: "recette/:id", component: LectureRecetteComponent},
   {path: "guide/:id", component: LectureGuideComponent},
-  {path: "vegetal/:id", component: LectureRecetteComponent},
+  {path: "vegetal/:id", component: LectureVegetalComponent},
 
 
   {path: "recette/:id", component: LectureRecetteComponent},
