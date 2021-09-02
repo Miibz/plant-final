@@ -21,8 +21,8 @@ export class Vegetal {
   couleur:string;
   utiliteComposition:string;
   utiliteCimetiere:string;
-  consomationEngrais:number;
-  consomationEau:number
+  consommationEngrais:number;
+  consommationEau:number
   prix:number;
   prixFruit:number;
   affinites:Array<Vegetal>;
@@ -32,7 +32,7 @@ export class Vegetal {
   notice:Notice;
 
 
-  constructor(id?: number, version?: number,nombre?:number,nombre2?:number,nom?:string,description?:string, nature?: string, tempsDeVie?: string, presentation?: string, exposition?: string, sol?: string, comportement?: string, utilite?: string, typeFeuille?: string, tempsFeuille?: string, utiliteOrnement?: string, utiliteGastronomie?: string, couleur?: string, utiliteComposition?: string, utiliteCimetiere?: string, consomationEngrais?: number, consomationEau?: number, prix?: number, prixFruit?: number, affinites?: Array<Vegetal>,affiche?:boolean,affiche2?:boolean) {
+  constructor(id?: number, version?: number,nombre?:number,nombre2?:number,nom?:string,description?:string, nature?: string, tempsDeVie?: string, presentation?: string, exposition?: string, sol?: string, comportement?: string, utilite?: string, typeFeuille?: string, tempsFeuille?: string, utiliteOrnement?: string, utiliteGastronomie?: string, couleur?: string, utiliteComposition?: string, utiliteCimetiere?: string, consommationEngrais?: number, consommationEau?: number, prix?: number, prixFruit?: number, affinites?: Array<Vegetal>,affiche?:boolean,affiche2?:boolean) {
     this.id = id!;
     this.version = version!;
     this.nom = nom!;
@@ -53,8 +53,8 @@ export class Vegetal {
     this.couleur = couleur!;
     this.utiliteComposition = utiliteComposition!;
     this.utiliteCimetiere = utiliteCimetiere!;
-    this.consomationEngrais = consomationEngrais!;
-    this.consomationEau = consomationEau!;
+    this.consommationEngrais = consommationEngrais!;
+    this.consommationEau = consommationEau!;
     this.prix = prix!;
     this.prixFruit = prixFruit!;
     this.affinites = affinites!;
