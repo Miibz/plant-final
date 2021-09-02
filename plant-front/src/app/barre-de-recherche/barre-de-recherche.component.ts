@@ -7,6 +7,7 @@ import {Observable} from "rxjs";
 import {VegetalHttpService} from "../vegetal/vegetal-http.service";
 import {AppConfigService} from "../app-config.service";
 import {HttpClient} from "@angular/common/http";
+import {Guide} from "../model/guide";
 
 @Component({
   selector: 'barre-de-recherche',
@@ -18,7 +19,7 @@ export class BarreDeRechercheComponent implements OnInit {
   barreDeRechercheForm: BarreDeRechercheService = null;
   vegetaux: Array<Vegetal>;
   recettes: Array<Recette>;
-  guides: Array<GuideUtilisation>;
+  guides: Array<Guide>;
 
   recherche: string;
 
