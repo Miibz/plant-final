@@ -15,7 +15,6 @@ export class AppComponent {
   }
 
   isConnected(): boolean {
-    console.log("coucou");
     return this.sessionService.user != null;
   }
 

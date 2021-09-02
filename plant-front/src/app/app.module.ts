@@ -16,7 +16,7 @@ import {AccueilComponent} from "./accueil/accueil.component";
 import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
 import {BarreDeRechercheComponent} from "./barre-de-recherche/barre-de-recherche.component";
 import {ConnexionComponent} from "./connexion/connexion.component";
-import {LectureVegetalComponent} from "./lecture-vegetal/lecture-vegetal.component";
+
 import {GuideComponent} from "./guide/guide.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {FormsModule} from "@angular/forms";
@@ -24,6 +24,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {RecetteComponent} from "./recette/recette.component";
 import {AjoutGuideComponent} from "./ajout-guide/ajout-guide.component";
 import { NosVegetauxComponent } from './nos-vegetaux/nos-vegetaux.component';
+import {LectureVegetalComponent} from "./lecture-vegetal/lecture-vegetal.component";
 
 
 
