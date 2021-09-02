@@ -8,10 +8,13 @@ import {BarreDeRechercheComponent} from "./barre-de-recherche/barre-de-recherche
 import {DejaPlanteComponent} from "./deja-plante/deja-plante.component";
 import {RecetteComponent} from "./recette/recette.component";
 import {AjoutRecetteComponent} from "./ajout-recette/ajout-recette.component";
+import {LectureGuideComponent} from "./lecture-guide/lecture-guide.component";
+import {GuideComponent} from "./guide/guide.component";
+import {CreationCompteComponent} from "./creation-compte/creation-compte.component";
 import {AjoutGuideComponent} from "./ajout-guide/ajout-guide.component";
 import {LectureRecetteComponent} from "./lecture-recette/lecture-recette.component";
-import {CreationCompteComponent} from "./creation-compte/creation-compte.component";
 import {AdminAjoutPlanteComponent} from "./admin/admin-ajout-plante/admin-ajout-plante.component";
+import {LectureVegetalComponent} from "./lecture-vegetal/lecture-vegetal.component";
 
 const routes: Routes = [
   {path: "mon-jardin", component: MonJardinComponent},
@@ -20,14 +23,18 @@ const routes: Routes = [
   {path: "accueil", component: AccueilComponent},
   {path: "barre-de-recherche", component: BarreDeRechercheComponent},
   {path: "app-deja-plante", component: DejaPlanteComponent},
-
   {path: "creation-compte", component: CreationCompteComponent},
   {path: "ajout-recette", component: AjoutRecetteComponent},
   {path: "ajout-guide", component: AjoutGuideComponent},
   // {path: "ajout-plante", component: AjoutPlanteComponent},
   {path: "nos-recettes", component: RecetteComponent},
-  // {path: "nos-guides", component: GuideComponent},
+  {path: "nos-guides", component: GuideComponent},
   {path: "connexion", component: ConnexionComponent},
+  {path: "recette/:id", component: LectureRecetteComponent},
+  {path: "guide/:id", component: LectureGuideComponent},
+  {path: "vegetal/:id", component: LectureVegetalComponent},
+
+
   {path: "recette/:id", component: LectureRecetteComponent},
 
 
