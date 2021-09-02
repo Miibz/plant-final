@@ -13,8 +13,8 @@ public class Admin extends Personne {
 	}
 
 	public Admin(Long id, int version, String nom, String prenom, String adresseMail, String motDePasse, String pseudo,
-			boolean enable) {
-		super(id, version, nom, prenom, adresseMail, motDePasse, pseudo, enable);
+			boolean enable, Adresse adresse) {
+		super(id, version, nom, prenom, adresseMail, motDePasse, pseudo, enable, adresse);
 		// TODO Auto-generated constructor stub
 	}
 

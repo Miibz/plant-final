@@ -39,6 +39,19 @@ public class VegetalRestController {
 	public List<Vegetal> findAll() {
 		return vegetalRepo.findAll();
 	}
+	
+	@GetMapping("/with-child")
+	@JsonView(Views.ViewVegetal1.class)
+	public List<Vegetal> findAllWithChild() {
+		return vegetalRepo.findAll();
+	}
+	
+	@GetMapping("/with-parent")
+	@JsonView(Views.ViewVegetal2.class)
+	public List<Vegetal> findAllWithParent() {
+		return vegetalRepo.findAll();
+	}
+	
 	@GetMapping("/by-recherche/{id}")
 	@JsonView(Views.ViewVegetal.class)
 	public List<Vegetal> findAllByRecherche(@PathVariable Long id) {

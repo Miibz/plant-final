@@ -9,8 +9,6 @@ import {Recette} from "../model/recette";
 })
 export class RecetteComponent implements OnInit {
 
-
-
   constructor(private recetteService : AjoutRecetteHttpService) { }
 
   list(): Array<Recette> {
