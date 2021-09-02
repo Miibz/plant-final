@@ -31,7 +31,7 @@
     <div [style.opacity]="opaciteTypeDeFeuille[i]"  class="choixDetail" *ngFor="let e of typeDeFeuille; index as i;" (click)="menuTypeDeFeuille(menuChoixAvant(typeDeFeuille,e,i,'TypeDeFeuille'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
   </div>
   <div  class="diffentsChoix" *ngIf="choixMenu[9]==true">
-    <div [style.opacity]="opaciteTempsDeFeuille[i]" class="choixDetail" *ngFor="let e of tempsDeFeuille; index as i;" (click)="menuTypeDeFeuille(menuChoixAvant(typeDeFeuille,e,i,'TempsDeFeuille'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
+    <div [style.opacity]="opaciteTempsDeFeuille[i]" class="choixDetail" *ngFor="let e of tempsDeFeuille; index as i;" (click)="menuTempsDeFeuille(menuChoixAvant(typeDeFeuille,e,i,'TempsDeFeuille'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
   </div>
   <div  class="diffentsChoix" *ngIf="choixMenu[10]==true">
     <div [style.opacity]="opacitePresentationFleur[i]" class="choixDetail" *ngFor="let e of presentation; index as i;" (click)="menuPresentationArbuste(menuChoixAvant(presentation,e,i,'PresentationArbuste'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>

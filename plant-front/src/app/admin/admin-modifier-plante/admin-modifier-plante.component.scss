@@ -26,9 +26,9 @@
 
 .texteRecherche {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 100px;
+  left: 100px;
+  transform: translate(-100px, -100px);
   font-size: 28px;
   color: white;
   font-weight:bold;
@@ -36,6 +36,6 @@
 
 img
 {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 200px;
+  max-height: 200px;
 }
