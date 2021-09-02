@@ -19,6 +19,8 @@ import { GuideComponent } from './guide/guide.component';
 import {RechercheComponent} from "./recherche/recherche.component";
 import {RechercheAlternativeComponent} from "./recherche-alternative/recherche-alternative.component";
 import {RecetteComponent} from "./recette/recette.component";
+import { AjoutRecetteComponent } from "./ajout-recette/ajout-recette.component";
+import {ConnexionComponent} from "./connexion/connexion.component";
 
 
 @NgModule({
