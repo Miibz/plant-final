@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {Recherche} from "../model/recherche";
-import {Vegetal} from "../model/vegetal";
-import {AppConfigService} from "../app-config.service";
-import {RechercheService} from "../recherche/recherche-Http.service";
-import {VegetalHttpService} from "../vegetal/vegetal-http.service";
-import {NoticeHttpService} from "../notice-http.service";
+import {Recherche} from "../../model/recherche";
+import {Vegetal} from "../../model/vegetal";
+import {AppConfigService} from "../../app-config.service";
+import {RechercheService} from "../../recherche/recherche-Http.service";
+import {VegetalHttpService} from "../../vegetal/vegetal-http.service";
+import {NoticeHttpService} from "../../service/notice-http.service";
+import {Affinite} from "../../model/Affinite";
+import {AffiniteService} from "../../service/affinite.service";
 
 @Component({
   selector: 'app-admin-ajout-plante',
@@ -13,8 +15,10 @@ import {NoticeHttpService} from "../notice-http.service";
 })
 export class AdminAjoutPlanteComponent implements OnInit {
   formulaire:boolean=false;
+  affinite: Affinite=new Affinite();
   recherche:Recherche=new Recherche();
   vegetal:Vegetal=new Vegetal();
+  vegetalAffinite :Vegetal=new Vegetal();
   opaciteNature=[0.5];
   choixMenu:Array<boolean>=new Array<boolean>();
   natures:Array<string>;
@@ -48,7 +52,7 @@ export class AdminAjoutPlanteComponent implements OnInit {
   opaciteCimetiere=[0.5];
   opaciteUtilitePresentation=[0.5];
 
-  constructor(private noticeService:NoticeHttpService,private appConfig:AppConfigService,private rechercheService:RechercheService,private vegetalService:VegetalHttpService) {
+  constructor(private noticeService:NoticeHttpService,private appConfig:AppConfigService,private rechercheService:RechercheService,private vegetalService:VegetalHttpService,private affiniteService:AffiniteService) {
     this.choixMenu[0]=true;
     this.appConfig.findAllNature().subscribe(resp =>{this.natures=resp;});
     this.appConfig.findAllTempsDeVie().subscribe(resp =>{ this.tempsDeVie=resp;});
@@ -282,9 +286,50 @@ export class AdminAjoutPlanteComponent implements OnInit {
     this.formulaire=true;
   }
 
+  saveVegetal() {
+    if (this.vegetal.id) {
+      this.vegetalService.modify(this.vegetal);
+    } else {
+      this.vegetalService.create2(this.vegetal).subscribe(response => {
+        this.vegetal=response;
+      }, error => console.log(error));;
+    }
+  }
+
+  saveAffinite() {
+    if (this.affinite.id) {
+      this.affiniteService.modify(this.affinite);
+    } else {
+      this.affiniteService.create(this.affinite);
+    }
+  }
+
   send()
   {
-    this.vegetalService.create(this.vegetal);
+    if (this.vegetal.id) {
+      this.vegetalService.modify(this.vegetal);
+    } else {
+      this.vegetalService.create2(this.vegetal).subscribe(response => {
+        this.vegetal=response;
+        this.affinite.vegetal2=new Vegetal();
+        this.affinite.vegetal1=new Vegetal();
+        this.affinite.vegetal1.id=this.vegetal.id;
+        this.affinite.vegetal2.id=this.vegetalAffinite.id;
+        console.log(this.affinite);
+        this.saveAffinite();
+        this.formulaire=false;
+        this.vegetal=new Vegetal();
+      }, error => console.log(error));;
+    }
+  }
+  listAffinite()
+  {
+    return this.affiniteService.findAll();
+  }
+
+  listVegetal()
+  {
+    return this.vegetalService.findAll();
   }
 
   ngOnInit(): void {
