@@ -16,7 +16,7 @@ import {AccueilComponent} from "./accueil/accueil.component";
 import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
 import {BarreDeRechercheComponent} from "./barre-de-recherche/barre-de-recherche.component";
 import {ConnexionComponent} from "./connexion/connexion.component";
-import {AjoutGuideComponent} from "./ajout-guide/ajout-guide.component";
+import {AdminModifierPlanteComponent} from "./admin/admin-modifier-plante/admin-modifier-plante.component";
 import {AffichageDetailPlanteComponent} from "./admin/affichage-detail-plante/affichage-detail-plante.component";
 import {LectureVegetalComponent} from "./lecture-vegetal/lecture-vegetal.component";
 import {GuideComponent} from "./guide/guide.component";
@@ -50,7 +50,6 @@ import {RecetteComponent} from "./recette/recette.component";
     GuideComponent,
     LectureVegetalComponent,
     AdminModifierPlanteComponent,
-    AffichageDetailPlanteComponent
   ],
   imports: [
     BrowserModule,
