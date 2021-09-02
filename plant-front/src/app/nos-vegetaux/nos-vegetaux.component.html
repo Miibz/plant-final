@@ -1,7 +1,8 @@
+<div style="background-color: antiquewhite">
 <div class="ladiv">
-  <h1> Voici nos végétaux</h1>
-  <div class="card-deck">
-    <div class="card border border-primary shadow-0" style="max-height: 20%;max-width: 15%;" *ngFor="let plante of list()">
+  <h1 style="text-align: center"> Voici nos végétaux : </h1>
+  <div class="card-deck" style="margin:0px;">
+    <div class="card border border-success shadow-0" style=" max-height: 20%;max-width: 15%; background-color: antiquewhite; border-color: forestgreen;" *ngFor="let plante of list()">
       <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
         <img src="../../assets/img/{{plante.nom}}.jpg" class="img-fluid" /><!-- {{vegetal.nom}}.jpg -->
         <a href="#!">
@@ -14,9 +15,10 @@
         <p class="card-text">
           {{plante.description}}
         </p>
-        <button type="button" class="btn btn-primary" [routerLink]="['/vegetal/' + plante.id]" >Plus de détails</button>
+        <button type="button" class="btn btn-success" [routerLink]="['/vegetal/' + plante.id]" >Plus de détails</button>
         <button *ngIf="isType('Admin')" type="button" class="btn btn-primary" [routerLink]="['/admin-modifier-plante/' + plante.id]" >Modifier</button>
       </div>
     </div><!-- nombre  d'éléments vegetal.nom == "tomate" filtre qui porte le nom de tomates dans la liste -->
   </div><!--choix replant -->
+</div>
 </div>
