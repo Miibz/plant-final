@@ -5,6 +5,7 @@ import {Jardin} from "../model/jardin";
 import {DejaPlante} from "../model/dejaPlante";
 import {VegetalComponent} from "../vegetal/vegetal.component";
 import {Vegetal} from "../model/vegetal";
+import {DejaPlanteService} from "../deja-plante/deja-plante.service";
 
 @Component({
   selector: 'mon-jardin',
@@ -15,17 +16,44 @@ export class MonJardinComponent implements OnInit {
   modifQuantite:boolean=false;
   nbrPieds:number=5;
   jardinForm: Jardin =new Jardin();
-  idSession:number=1;
+  idSession:number=2;
   mesPlantes:Array<DejaPlante>=new Array<DejaPlante>();
   monJardin:Jardin=new Jardin();
+  mesPlantesVegetals:Array<Vegetal>=new Array<Vegetal>();
 
-  constructor(private jardinService: MonJardinHttpService,private vegetalService:VegetalHttpService) {
+  constructor(private jardinService: MonJardinHttpService,private vegetalService:VegetalHttpService,private dejaPlanteService:DejaPlanteService) {
     this.load();
-
   }
 
   ngOnInit(): void {
+
   }
+
+miseAJour()
+{
+  this.vegetalService.loadReturn().subscribe(rep=> {
+    this.mesPlantesVegetals=rep;
+    this.jardinService.findById(this.idSession).subscribe(resp => {
+      this.monJardin=resp;
+      console.log(this.mesPlantesVegetals);
+      for(let p of this.mesPlantesVegetals)
+      {
+        console.log("youpi");
+        let dejaPlante:DejaPlante=new DejaPlante();
+        dejaPlante.jardin=new Jardin();
+        dejaPlante.vegetal=new Vegetal();
+        dejaPlante.jardin.id=this.monJardin.id;
+        dejaPlante.vegetal.id=p.id;
+        if (dejaPlante.id) {
+          this.dejaPlanteService.modify(dejaPlante);
+        } else {
+          this.dejaPlanteService.create(dejaPlante);
+        }
+      }
+      this.mesPlantes=this.monJardin.dejaPlante;
+    });
+  });
+}
 
   load()
   {
@@ -52,7 +80,6 @@ return this.jardinService.findAll();
   @HostListener("mouseenter")
   affiche(dejaPlante:DejaPlante)
   {
-    dejaPlante.vegetal=new Vegetal();
     dejaPlante.vegetal.affiche2=true;
   }
   @HostListener("mousleave")
@@ -63,7 +90,6 @@ return this.jardinService.findAll();
   add() {
     this.jardinForm = new Jardin();
   }
-
   edit(id: number) {
     this.jardinService.findById(id).subscribe(resp => {
       this.jardinForm = resp;
