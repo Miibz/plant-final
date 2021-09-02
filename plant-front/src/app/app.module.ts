@@ -23,6 +23,7 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {RecetteComponent} from "./recette/recette.component";
 import {AjoutGuideComponent} from "./ajout-guide/ajout-guide.component";
+import { NosVegetauxComponent } from './nos-vegetaux/nos-vegetaux.component';
 import {LectureVegetalComponent} from "./lecture-vegetal/lecture-vegetal.component";
 
 
@@ -50,6 +51,7 @@ import {LectureVegetalComponent} from "./lecture-vegetal/lecture-vegetal.compone
     GuideComponent,
     LectureVegetalComponent,
     AdminModifierPlanteComponent,
+    NosVegetauxComponent,
   ],
   imports: [
     BrowserModule,
