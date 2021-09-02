@@ -9,8 +9,8 @@ import {SessionService} from "./session.service";
 })
 export class AppComponent {
   title = 'plantFront';
-  type: string="Utilisateur";
-  connected:boolean=false;
+  // type: string="Utilisateur";
+  // connected:boolean=false;
   constructor(private sessionService: SessionService) {
   }
 
@@ -25,5 +25,11 @@ export class AppComponent {
 
   getType(): string {
     return this.sessionService.type;
+  }
+
+ deconnexion(): any {
+    this.sessionService.type = "";
+    this.sessionService.user = null;
+
   }
 }

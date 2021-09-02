@@ -1,0 +1,49 @@
+.ladiv {
+  white-space: pre-wrap;
+  margin : 5px;
+  border: solid forestgreen;
+}
+
+.lenom {
+  display: inline-block;
+  transform: translate(0%, 0%);
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  width : 73%;
+  height : 80px;
+}
+
+.limage {
+  margin: 10px;
+  display: inline-block;
+  width: 25%;
+  height: 300px;
+}
+
+.head {
+  display: block;
+  margin: 0px;
+}
+
+.info {
+  white-space: pre-wrap;
+  margin : 5px;
+  border: solid forestgreen;
+  width: 300px;
+}
+
+legend {
+  padding : 0 10px;
+  width : auto;
+}
+
+fieldset{
+  border: solid forestgreen;
+  margin: 10px;
+}
+
+.ladiv2 {
+  white-space: pre-wrap;
+  margin : 10px;
+}

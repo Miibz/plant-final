@@ -1,6 +1,7 @@
 package sopra.formation.model;
 
 import javax.persistence.DiscriminatorColumn;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -34,6 +35,10 @@ public abstract class Personne {
 	private String pseudo;
 	@JsonView(Views.ViewCommon.class)
 	private boolean enable;
+	@Embedded
+	@JsonView(Views.ViewPersonne.class)
+	private Adresse adresse;
+	
 	
 	
 	public Personne() {
@@ -41,8 +46,9 @@ public abstract class Personne {
 	}
 
 
+
 	public Personne(Long id, int version, String nom, String prenom, String adresseMail, String motDePasse,
-			String pseudo, boolean enable) {
+			String pseudo, boolean enable, Adresse adresse) {
 		super();
 		this.id = id;
 		this.version = version;
@@ -52,17 +58,27 @@ public abstract class Personne {
 		this.motDePasse = motDePasse;
 		this.pseudo = pseudo;
 		this.enable = enable;
+		this.adresse = adresse;
 	}
 
 
-	public boolean isEnable() {
-		return enable;
+
+	public Long getId() {
+		return id;
 	}
 
 
-	public void setEnable(boolean enable) {
-		this.enable = enable;
+
+	public void setId(Long id) {
+		this.id = id;
 	}
+
+
+
+	public int getVersion() {
+		return version;
+	}
+
 
 
 	public void setVersion(int version) {
@@ -70,50 +86,89 @@ public abstract class Personne {
 	}
 
 
-	public int getVersion() {
-		return version;
-	}
-	public void setVersion(Long version) {
-		version = version;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getNom() {
 		return nom;
 	}
+
+
+
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
+
+
+
 	public String getPrenom() {
 		return prenom;
 	}
+
+
+
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
+
+
+
 	public String getAdresseMail() {
 		return adresseMail;
 	}
+
+
+
 	public void setAdresseMail(String adresseMail) {
 		this.adresseMail = adresseMail;
 	}
+
+
+
 	public String getMotDePasse() {
 		return motDePasse;
 	}
+
+
+
 	public void setMotDePasse(String motDePasse) {
 		this.motDePasse = motDePasse;
 	}
+
+
+
 	public String getPseudo() {
 		return pseudo;
 	}
+
+
+
 	public void setPseudo(String pseudo) {
 		this.pseudo = pseudo;
 	}
+
+
+
+	public boolean isEnable() {
+		return enable;
+	}
+
+
+
+	public void setEnable(boolean enable) {
+		this.enable = enable;
+	}
+
+
+
+	public Adresse getAdresse() {
+		return adresse;
+	}
+
+
+
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
+
+
 	
 }

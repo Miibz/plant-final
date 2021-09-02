@@ -1,1 +1,66 @@
-{{vegetal.nom}}
+<div style="background-color: antiquewhite">
+
+  <div class=" head">
+
+    <div class=" limage"> <img src="assets/img/Nos-guides.jpg" alt="Image recette" style="width: 470px; height : 300px"></div>
+    <div class="  lenom">{{vegetal.nom}}</div>
+
+  </div>
+
+
+  <!--  <div class="info" ><i class="fas fa-user-friends"></i> {{recette.nbPersonne}}</div>
+    <div class="info" ><i class="far fa-clock"></i>{{recette.temps}}</div> -->
+
+  <fieldset>
+    <legend> Informations Générale :</legend>
+    <div class="angular-with-newlines methode" >
+      <div class="ladiv2"><p>{{vegetal.description}}</p></div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Information technique</legend>
+    <div class="angular-with-newlines methode" >
+      <table>
+        <tr>
+          <td>Consommation en litre d'eau par Jour : </td>
+          <td>{{vegetal.consomationEau}}</td>
+        </tr>
+        <tr>
+          <td>Consommation en g d'engrais par Mois : </td>
+          <td>{{vegetal.consomationEngrais}}</td>
+        </tr>
+        <tr>
+          <td>Prix d'achat d'un plant : </td>
+          <td>{{vegetal.prix}}</td>
+        </tr>
+        <tr *ngIf="vegetal.nature=='Replant'">
+          <td>Prix de vente d'un fruit : </td>
+          <td>{{vegetal.prix}}</td>
+        </tr>
+      </table>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Affinités</legend>
+    <div class="card border border-primary shadow-0" style="max-height: 20%;max-width: 15%;" *ngFor="let plante of affinites">
+      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+        <img id="imgCard" src="../../assets/img/{{plante.nom}}.jpg" class="img-fluid" /><!-- {{vegetal.nom}}.jpg -->
+        <a href="#!">
+          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+        </a>
+      </div>
+      <div class="card-header">Information</div>
+      <div class="card-body">
+        <h5 class="card-title">{{plante.nom}}</h5><!-- vegetal.nom -->
+        <p class="card-text">
+          {{plante.description}}
+        </p>
+      </div>
+    </div>
+  </fieldset>
+
+
+
+
+</div>

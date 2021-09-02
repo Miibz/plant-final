@@ -10,9 +10,12 @@ import {Adresse} from "../model/adresse";
 })
 export class CreationCompteComponent implements OnInit {
 
+
   utilisateurForm: Utilisateur = new Utilisateur();
 
+
   constructor(private creationService: CreationCompteHttpService) {
+    this.utilisateurForm.adresse= new Adresse();
     this.add();
 
   }
@@ -51,7 +54,8 @@ export class CreationCompteComponent implements OnInit {
     } else {
       this.creationService.modify(this.utilisateurForm);
     }
-    this.utilisateurForm = null;
+    //this.utilisateurForm = new Utilisateur();
+
   }
 
   cancel() {
