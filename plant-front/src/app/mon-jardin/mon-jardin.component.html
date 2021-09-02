@@ -1,6 +1,7 @@
+<script src="../../../../../../Téléchargements/mon-jardin/mon-jardin.component.ts"></script>
 <fieldset>
-<!--  <div *ngfor="let plante of plante()">
-  </div>-->
+  <!--  <div *ngfor="let plante of plante()">
+    </div>-->
   <legend>Mon potager</legend> <!--choix arbre-->
   <div class="card-deck">
     <div class="card border border-primary shadow-0" style="max-height: 20%;max-width: 15%;" *ngFor="let plante of plante()" (mouseenter)="affiche(plante)" (mouseleave)="nAffichePas(plante)">
@@ -18,7 +19,7 @@
         </p>
         <button type="button" class="btn btn-primary" *ngIf="plante.vegetal.affiche!=true && plante.vegetal.affiche2==true" (click)="plante.vegetal.affiche=true">Modifier</button><button type="button" class="btn btn-primary" *ngIf="plante.vegetal.affiche==true && plante.vegetal.affiche2==true" (click)="modifier(plante)">Valider</button></div><!-- nombre  d'éléments vegetal.nom == "tomate" filtre qui porte le nom de tomates dans la liste -->
       <div class="card-footer">Nombre : <span *ngIf="plante.vegetal.affiche!=true">{{plante.vegetal.nombre}}</span> <input *ngIf="plante.vegetal.affiche==true" value="{{plante.vegetal.nombre}}" [(ngModel)]="plante.vegetal.nombre2"> pieds</div>  <button type="button" *ngIf="plante.vegetal.affiche==true" (click)="plante.vegetal.affiche=false"></button></div><!-- juste jardin, il à la liste des végétaux, il peut avoir plusieurs fois la même -->
-    </div>
+  </div>
 </fieldset>
 <fieldset>
   <legend>Mes arbres fruitiers</legend> <!--choix arbre-->
@@ -59,7 +60,8 @@
           {{plante.vegetal.description}}
         </p>
         <button type="button" class="btn btn-primary" (click)="ajouter(plante)" >Ajouter</button>
-        </div>
-      </div><!-- nombre  d'éléments vegetal.nom == "tomate" filtre qui porte le nom de tomates dans la liste -->
+      </div>
+    </div><!-- nombre  d'éléments vegetal.nom == "tomate" filtre qui porte le nom de tomates dans la liste -->
   </div><!--choix replant -->
+  <button (click)="miseAJour()" class="btn ">Mettre à jour les plants disponible</button>
 </fieldset>

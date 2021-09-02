@@ -75,4 +75,8 @@ export class VegetalHttpService {
       this.jardins = response;
     }, error => console.log(error));
   }
+
+  loadReturn() {
+    return this.http.get<Array<Vegetal>>(this.appConfigService.backEndUrl + "vegetal/");
+  }
 }

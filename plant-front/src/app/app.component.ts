@@ -9,13 +9,12 @@ import {SessionService} from "./session.service";
 })
 export class AppComponent {
   title = 'plantFront';
-  type: string="Utilisateur";
-  connected:boolean=false;
+  // type: string="Utilisateur";
+  // connected:boolean=false;
   constructor(private sessionService: SessionService) {
   }
 
   isConnected(): boolean {
-    console.log("coucou");
     return this.sessionService.user != null;
   }
 
@@ -25,5 +24,11 @@ export class AppComponent {
 
   getType(): string {
     return this.sessionService.type;
+  }
+
+ deconnexion(): any {
+    this.sessionService.type = "";
+    this.sessionService.user = null;
+
   }
 }
