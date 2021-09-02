@@ -15,10 +15,12 @@ import {AjoutGuideComponent} from "./ajout-guide/ajout-guide.component";
 import {LectureRecetteComponent} from "./lecture-recette/lecture-recette.component";
 import {AdminAjoutPlanteComponent} from "./admin/admin-ajout-plante/admin-ajout-plante.component";
 import {LectureVegetalComponent} from "./lecture-vegetal/lecture-vegetal.component";
+import {AdminModifierPlanteComponent} from "./admin/admin-modifier-plante/admin-modifier-plante.component";
 
 const routes: Routes = [
   {path: "mon-jardin", component: MonJardinComponent},
   {path: "recherche2", component: RechercheAlternativeComponent},
+  {path: "admin-modifier-plante/:id", component: AdminModifierPlanteComponent},
   {path: "admin-ajout-plante", component: AdminAjoutPlanteComponent},
   {path: "accueil", component: AccueilComponent},
   {path: "barre-de-recherche", component: BarreDeRechercheComponent},

@@ -19,7 +19,7 @@ public class Affinite {
 	@JsonView({Views.ViewCommon.class,Views.ViewAffinite.class})
 	private int version;
 	@ManyToOne
-	@JoinColumn(name="jardin_id1")
+	@JoinColumn(name="vegetal_id1")
 	@JsonView({Views.ViewVegetal2.class,Views.ViewAffinite.class})
 	private Vegetal vegetal1;
 	@ManyToOne
