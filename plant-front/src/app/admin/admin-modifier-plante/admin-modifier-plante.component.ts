@@ -309,7 +309,9 @@ export class AdminModifierPlanteComponent implements OnInit {
 
   modifierFun()
   {
+    console.log(this.vegetal);
       this.vegetalService.modifyReturn(this.vegetal).subscribe(response => {
+        this.vegetal=response;
         this.affinite.vegetal2=new Vegetal();
         this.affinite.vegetal1=new Vegetal();
         this.affinite.vegetal1.id=this.vegetal.id;
