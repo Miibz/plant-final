@@ -21,6 +21,8 @@ import {RechercheAlternativeComponent} from "./recherche-alternative/recherche-a
 import {RecetteComponent} from "./recette/recette.component";
 import { AjoutRecetteComponent } from "./ajout-recette/ajout-recette.component";
 import {ConnexionComponent} from "./connexion/connexion.component";
+import {AdminModifierPlanteComponent} from "./admin/admin-modifier-plante/admin-modifier-plante.component";
+import {AffichageDetailPlanteComponent} from "./admin/affichage-detail-plante/affichage-detail-plante.component";
 
 
 @NgModule({
@@ -44,7 +46,7 @@ import {ConnexionComponent} from "./connexion/connexion.component";
     AjoutGuideComponent,
     LectureRecetteComponent,
     LectureGuideComponent,
-    GuideComponent
+    GuideComponent,
     AdminModifierPlanteComponent,
     AffichageDetailPlanteComponent
   ],
