@@ -13,9 +13,11 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
+import sopra.formation.model.Personne;
 import sopra.formation.model.Utilisateur;
 import sopra.formation.model.Views;
 import sopra.formation.repository.IUtilisateurRepository;
+import sopra.formation.rest.dto.PersonneDTO;
 import sopra.formation.rest.dto.UserDTO;
 
 
@@ -27,20 +29,41 @@ public class ConnexionRestController {
 	@Autowired
 	private IUtilisateurRepository utilisateurRepo;
 
+//	@PostMapping("/connexion2")
+//	@JsonView(Views.ViewConnexion.class)
+//	public UserDTO utilisateur(@RequestBody UserDTO userDTO) {
+//		Optional<Utilisateur> utilisateur = utilisateurRepo.findByEmailAndMotDePasse(userDTO.getLogin(),userDTO.getPassword());
+//		System.out.println(userDTO.getLogin());
+//		System.out.println(userDTO.getPassword());
+//
+//		if (utilisateur.isPresent()) {
+//			userDTO.setUtilisateur(utilisateur.get());
+//			userDTO.setType(utilisateur.get().getClass().getSimpleName());
+//
+//			return userDTO;
+//		} else {
+//			throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Login/password introuvable");
+//		}
+//	}
+	
 	@PostMapping("/connexion")
 	@JsonView(Views.ViewConnexion.class)
-	public UserDTO utilisateur(@RequestBody UserDTO userDTO) {
-		Optional<Utilisateur> utilisateur = utilisateurRepo.findByEmailAndMotDePasse(userDTO.getLogin(),userDTO.getPassword());
-		System.out.println(userDTO.getLogin());
-		System.out.println(userDTO.getPassword());
-
-		if (utilisateur.isPresent()) {
-			userDTO.setUtilisateur(utilisateur.get());
-			userDTO.setType(utilisateur.get().getClass().getSimpleName());
-
-			return userDTO;
-		} else {
-			throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Login/password introuvable");
-		}
+	public PersonneDTO personne(@RequestBody PersonneDTO personneDTO) {
+		
+		
+			//System.out.println(userDTO.getLogin());
+			//System.out.println(userDTO.getPassword());
+			Optional<Personne> personne = utilisateurRepo.findByEmailAndMotDePasse(personneDTO.getLogin(),personneDTO.getPassword());
+			if (personne.isPresent()) {
+				personneDTO.setPersonne(personne.get());
+				personneDTO.setType(personne.get().getClass().getSimpleName());
+	
+				return personneDTO;
+			} else {
+				throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Login/password introuvable");
+			}
+		
 	}
+	
+	
 }

@@ -10,6 +10,6 @@ import sopra.formation.model.Utilisateur;
 
 public interface IUtilisateurRepository extends  JpaRepository<Utilisateur,Long> {
 	
-	@Query("select u from Utilisateur u where u.adresseMail = :adresseMail and u.motDePasse = :motDePasse")
-	Optional<Utilisateur> findByEmailAndMotDePasse(@Param("adresseMail") String email, @Param("motDePasse") String motDePasse);
+	@Query("select p from Personne p where p.adresseMail = :adresseMail and p.motDePasse = :motDePasse")
+	Optional<Personne> findByEmailAndMotDePasse(@Param("adresseMail") String email, @Param("motDePasse") String motDePasse);
 }

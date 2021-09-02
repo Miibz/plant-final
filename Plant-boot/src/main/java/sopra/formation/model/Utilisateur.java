@@ -17,9 +17,6 @@ public class Utilisateur extends Personne {
 	private String numeroTelephone;
 	@OneToMany(mappedBy="utilisateur")
 	@JsonView(Views.ViewUtilisateur.class)
-	private List<Adresse> adresse;
-	@OneToMany(mappedBy="utilisateur")
-	@JsonView(Views.ViewUtilisateur.class)
 	private List<Jardin> jardin;
 	@OneToMany(mappedBy="utilisateur")
 	@JsonView(Views.ViewUtilisateur.class)
@@ -37,17 +34,16 @@ public class Utilisateur extends Personne {
 
 
 	public Utilisateur(Long id, int version, String nom, String prenom, String adresseMail, String motDePasse,
-			String pseudo, boolean enable) {
-		super(id, version, nom, prenom, adresseMail, motDePasse, pseudo, enable);
+			String pseudo, boolean enable, Adresse adresse) {
+		super(id, version, nom, prenom, adresseMail, motDePasse, pseudo, enable, adresse);
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public Utilisateur(int version, String numeroTelephone, List<Adresse> adresse, List<Jardin> jardin,
+	public Utilisateur(int version, String numeroTelephone, List<Jardin> jardin,
 			List<Devis> devis, List<Recherche> recherche, List<Commentaire> commentaire) {
 		super();
 		this.numeroTelephone = numeroTelephone;
-		this.adresse = adresse;
 		this.jardin = jardin;
 		this.devis = devis;
 		this.recherche = recherche;
@@ -64,12 +60,7 @@ public class Utilisateur extends Personne {
 		this.numeroTelephone = numeroTelephone;
 	}
 
-	public List<Adresse> getAdresse() {
-		return adresse;
-	}
-	public void setAdresse(List<Adresse> adresse) {
-		this.adresse = adresse;
-	}
+	
 	public List<Jardin> getJardin() {
 		return jardin;
 	}
