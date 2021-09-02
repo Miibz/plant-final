@@ -1,5 +1,6 @@
 package sopra.formation.model;
 
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,15 +12,8 @@ import javax.persistence.Version;
 import com.fasterxml.jackson.annotation.JsonView;
 
 
-@Entity
+@Embeddable
 public class Adresse {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@JsonView(Views.ViewCommon.class)
-	private Long id;
-	@Version
-	@JsonView(Views.ViewCommon.class)
-	private int version;
 	@JsonView(Views.ViewCommon.class)
 	private String numero;
 	@JsonView(Views.ViewCommon.class)
@@ -28,23 +22,9 @@ public class Adresse {
 	private String codePostal;
 	@JsonView(Views.ViewCommon.class)
 	private String ville;
-	@ManyToOne
-	@JoinColumn(name="adresse_id")
-	@JsonView(Views.ViewAdresse.class)
-	private Utilisateur utilisateur;
 	
 	public Adresse() {
 		super();
-	}
-	
-	
-	public int getVersion() {
-		return version;
-	}
-
-
-	public void setVersion(int version) {
-		this.version = version;
 	}
 
 
@@ -55,27 +35,6 @@ public class Adresse {
 
 	public void setCodePostal(String codePostal) {
 		this.codePostal = codePostal;
-	}
-
-
-
-	public Utilisateur getUtilisateur() {
-		return utilisateur;
-	}
-
-
-	public void setUtilisateur(Utilisateur utilisateur) {
-		this.utilisateur = utilisateur;
-	}
-
-
-	public Long getId() {
-		return id;
-	}
-
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 

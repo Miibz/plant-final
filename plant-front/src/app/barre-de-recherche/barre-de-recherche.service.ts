@@ -12,14 +12,12 @@ import {Recette} from "../model/recette";
 export class BarreDeRechercheService {
 
   vegetaux: Array<Vegetal> = new Array<Vegetal>();
-  recette: Array<Recette> = new Array<Recette>();
-  guide: Array<GuideUtilisation> = new Array<GuideUtilisation>();
+  recettes: Array<Recette> = new Array<Recette>();
+  guides: Array<GuideUtilisation> = new Array<GuideUtilisation>();
 
 
   constructor(private http : HttpClient,private appConfigService:AppConfigService) {
-    this.loadVegetal();
-    this.loadGuide();
-    this.loadRecette()
+
   }
 
   findVegetauxWithNom(nom: string): Observable<Array<Vegetal>> {
@@ -41,14 +39,14 @@ export class BarreDeRechercheService {
   }
 
   loadRecette() {
-    this.http.get<Array<Recette>>(this.appConfigService.backEndUrl + "guide/recherche/").subscribe(response => {
-      this.recette = response;
+    this.http.get<Array<Recette>>(this.appConfigService.backEndUrl + "recette/recherche/").subscribe(response => {
+      this.recettes = response;
     }, error => console.log(error));
   }
 
   loadGuide() {
-    this.http.get<Array<GuideUtilisation>>(this.appConfigService.backEndUrl + "recette/recherche/").subscribe(response => {
-      this.guide = response;
+    this.http.get<Array<GuideUtilisation>>(this.appConfigService.backEndUrl + "guide/recherche/").subscribe(response => {
+      this.guides = response;
     }, error => console.log(error));
   }
 }

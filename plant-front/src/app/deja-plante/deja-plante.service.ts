@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Jardin} from "../../../../../../travail/test/Plant-Boot/src/app/model/jardin";
 import {HttpClient} from "@angular/common/http";
 import {AppConfigService} from "../app-config.service";
 import {Observable} from "rxjs";
-import {DejaPlante} from "../../../../../../travail/test/Plant-Boot/src/app/model/dejaPlante";
+import {DejaPlante} from "../model/dejaPlante";
 
 @Injectable({
   providedIn: 'root'

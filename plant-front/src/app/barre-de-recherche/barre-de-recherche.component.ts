@@ -47,7 +47,7 @@ listVegetaux() {
   }
 
   affichage(){
-      this.listVegetaux();
+    this.listVegetaux();
     this.listRecettes();
     this.listGuides();
   }
