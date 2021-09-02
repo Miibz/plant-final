@@ -53,8 +53,21 @@ export class VegetalHttpService {
     }, error => console.log(error));
   }
 
+  modifyReturn(vegetal : Vegetal) {
+    return this.http.put<Vegetal>(this.appConfigService.backEndUrl + "vegetal/" + vegetal.id, vegetal);
+  }
+
   deleteById(id: number): Observable<void> {
     return this.http.delete<void>(this.appConfigService.backEndUrl + "vegetal/" + id);
+  }
+
+  findAffinites1(id:number):Observable<Array<Vegetal>>
+  {
+    return this.http.get<Array<Vegetal>>(this.appConfigService.backEndUrl + "affinite/vegetaux1/" + id);
+  }
+  findAffinites2(id:number):Observable<Array<Vegetal>>
+  {
+    return this.http.get<Array<Vegetal>>(this.appConfigService.backEndUrl + "affinite/vegetaux2/" + id);
   }
 
   load() {

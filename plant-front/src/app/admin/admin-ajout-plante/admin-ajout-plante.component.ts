@@ -7,6 +7,7 @@ import {VegetalHttpService} from "../../vegetal/vegetal-http.service";
 import {NoticeHttpService} from "../../service/notice-http.service";
 import {Affinite} from "../../model/Affinite";
 import {AffiniteService} from "../../service/affinite.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-admin-ajout-plante',
@@ -15,6 +16,8 @@ import {AffiniteService} from "../../service/affinite.service";
 })
 export class AdminAjoutPlanteComponent implements OnInit {
   formulaire:boolean=false;
+  id:number;
+  modifier:boolean=false;
   affinite: Affinite=new Affinite();
   recherche:Recherche=new Recherche();
   vegetal:Vegetal=new Vegetal();
@@ -52,7 +55,7 @@ export class AdminAjoutPlanteComponent implements OnInit {
   opaciteCimetiere=[0.5];
   opaciteUtilitePresentation=[0.5];
 
-  constructor(private noticeService:NoticeHttpService,private appConfig:AppConfigService,private rechercheService:RechercheService,private vegetalService:VegetalHttpService,private affiniteService:AffiniteService) {
+  constructor(private route : ActivatedRoute,private noticeService:NoticeHttpService,private appConfig:AppConfigService,private rechercheService:RechercheService,private vegetalService:VegetalHttpService,private affiniteService:AffiniteService) {
     this.choixMenu[0]=true;
     this.appConfig.findAllNature().subscribe(resp =>{this.natures=resp;});
     this.appConfig.findAllTempsDeVie().subscribe(resp =>{ this.tempsDeVie=resp;});
@@ -322,6 +325,24 @@ export class AdminAjoutPlanteComponent implements OnInit {
       }, error => console.log(error));;
     }
   }
+
+  modifierFun()
+  {
+    if (this.vegetal.id) {
+      this.vegetalService.modify(this.vegetal);
+    } else {
+      this.vegetalService.modify(this.vegetal)
+      this.affinite.vegetal2=new Vegetal();
+      this.affinite.vegetal1=new Vegetal();
+      this.affinite.vegetal1.id=this.vegetal.id;
+      this.affinite.vegetal2.id=this.vegetalAffinite.id;
+      console.log(this.affinite);
+      this.saveAffinite();
+      this.formulaire=false;
+      this.vegetal=new Vegetal();
+      this.vegetal=new Vegetal();
+    }
+  }
   listAffinite()
   {
     return this.affiniteService.findAll();
@@ -333,6 +354,7 @@ export class AdminAjoutPlanteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
 
+  }
 }
+

@@ -19,6 +19,7 @@ import org.springframework.web.server.ResponseStatusException;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import sopra.formation.model.Affinite;
+import sopra.formation.model.Vegetal;
 import sopra.formation.model.Views;
 import sopra.formation.repository.IAffiniteRepository;
 @RestController
@@ -39,6 +40,31 @@ public class AffiniteRestController {
 	public Affinite find(@PathVariable Long id) {
 
 		Optional<Affinite> optAffinite = affiniteRepo.findById(id);
+	
+		if (optAffinite.isPresent()) {
+			return optAffinite.get();
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+		}
+	}
+	
+	@GetMapping("/vegetaux1/{id}")
+	@JsonView(Views.ViewVegetal2.class)
+	public List<Vegetal> findVegetaux1(@PathVariable Long id) {
+
+		Optional<List<Vegetal>> optAffinite = affiniteRepo.findVegetauxById1(id);
+	
+		if (optAffinite.isPresent()) {
+			return optAffinite.get();
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+		}
+	}
+	@GetMapping("/vegetaux2/{id}")
+	@JsonView(Views.ViewVegetal1.class)
+	public List<Vegetal> findVegetaux2(@PathVariable Long id) {
+
+		Optional<List<Vegetal>> optAffinite = affiniteRepo.findVegetauxById2(id);
 	
 		if (optAffinite.isPresent()) {
 			return optAffinite.get();

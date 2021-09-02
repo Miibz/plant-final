@@ -1,1 +1,80 @@
-<p>admin-modifier-plante works!</p>
+<br><br><br>
+<br><br><br><br><br><br>
+<div class="listeChoix">
+  <div class="diffentsChoix" >
+    <div class="choixDetail" *ngFor="let e of natures; index as i;" (click)="menuNature(menuChoixAvant(natures,e,i,'Nature'))" [style.opacity]="opaciteNature[i]"  tabindex="{{i}}" ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
+    <!-- <div  class="choixDetail" *ngFor="let e of natures" style="background-image:url('../../assets/img/<span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span>.jpg');" (click)="menuNature(menuChoixAvant(natures,e,3'))" ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div> -->
+  </div>
+  <!-- [style]="'opacity:'+opacite[i]+';'" -->
+  <div class="diffentsChoix" *ngIf="choixMenu[1]==true">
+    <div [style.opacity]="opaciteTempsDeVie[i]" class="choixDetail" *ngFor="let e of tempsDeVie; index as i;" (click)="menuTempsDeVie(menuChoixAvant(tempsDeVie,e,i,'TempsDeVie'))" ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
+  </div>
+  <div  class="diffentsChoix" *ngIf="choixMenu[2]==true">
+    <div [style.opacity]="opacitePresentationFleur[i]" class="choixDetail" *ngFor="let e of presentation; index as i;" (click)="menuPresentationFleur(menuChoixAvant(presentation,e,i,'PresentationFleur'))" ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
+  </div>
+  <div  class="diffentsChoix" *ngIf="choixMenu[3]==true">
+    <div [style.opacity]="opaciteExposition[i]" class="choixDetail" *ngFor="let e of expositions; index as i;" (click)="menuExposition(menuChoixAvant(expositions,e,i,'Exposition'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
+  </div>
+  <div  class="diffentsChoix" *ngIf="choixMenu[4]==true">
+    <div [style.opacity]="opaciteSol[i]" class="choixDetail" *ngFor="let e of sols; index as i;" (click)="menuSol(menuChoixAvant(sols,e,i,'Sol'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
+  </div>
+  <div  class="diffentsChoix" *ngIf="choixMenu[5]==true">
+    <div [style.opacity]="opaciteComportement[i]" class="choixDetail" *ngFor="let e of comportement; index as i;" (click)="menuComportement(menuChoixAvant(comportement,e,i,'Comportement'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
+  </div>
+  <div  class="diffentsChoix" *ngIf="choixMenu[6]==true">
+    <div [style.opacity]="opaciteCouleur[i]" class="choixDetail" *ngFor="let e of couleur; index as i;" (click)="menuCouleur(menuChoixAvant(couleur,e,i,'Couleur'))" ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
+  </div>
+  <div class="diffentsChoix" *ngIf="choixMenu[7]==true">
+    <div [style.opacity]="opaciteUtilite[i]"  class="choixDetail" *ngFor="let e of utilite; index as i;" (click)="menuUtilite(menuChoixAvant(utilite,e,i,'Utilite'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
+  </div>
+  <div class="diffentsChoix" *ngIf="choixMenu[8]==true">
+    <div [style.opacity]="opaciteTypeDeFeuille[i]"  class="choixDetail" *ngFor="let e of typeDeFeuille; index as i;" (click)="menuTypeDeFeuille(menuChoixAvant(typeDeFeuille,e,i,'TypeDeFeuille'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
+  </div>
+  <div  class="diffentsChoix" *ngIf="choixMenu[9]==true">
+    <div [style.opacity]="opaciteTempsDeFeuille[i]" class="choixDetail" *ngFor="let e of tempsDeFeuille; index as i;" (click)="menuTypeDeFeuille(menuChoixAvant(typeDeFeuille,e,i,'TempsDeFeuille'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
+  </div>
+  <div  class="diffentsChoix" *ngIf="choixMenu[10]==true">
+    <div [style.opacity]="opacitePresentationFleur[i]" class="choixDetail" *ngFor="let e of presentation; index as i;" (click)="menuPresentationArbuste(menuChoixAvant(presentation,e,i,'PresentationArbuste'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
+  </div>
+  <div  class="diffentsChoix" *ngIf="choixMenu[11]==true">
+    <div [style.opacity]="opaciteUtiliteOrnement[i]" class="choixDetail"  *ngFor="let e of utiliteOrnement; index as i;" (click)="menuUtiliteOrnement(menuChoixAvant(utiliteOrnement,e,i,'UtiliteOrnement'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
+  </div>
+  <div  class="diffentsChoix" *ngIf="choixMenu[12]==true">
+    <div [style.opacity]="opaciteUtiliteGastronomie[i]" class="choixDetail" *ngFor="let e of utiliteGastronomie; index as i;" (click)="menuUtiliteGastronomie(menuChoixAvant(utiliteGastronomie,e,i,'UtiliteGastronomie'))"  ><span><img src="img_snow_wide.jpg" alt="{{e}}" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
+  </div>
+  <div  class="diffentsChoix" *ngIf="choixMenu[13]==true">
+    <div [style.opacity]="opaciteUtiliteComposition[i]" class="choixDetail" *ngFor="let e of utiliteComposition; index as i;" (click)="menutiliteComposition(menuChoixAvant(utiliteComposition,e,i,'UtiliteComposition'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
+  </div>
+  <div class="diffentsChoix" *ngIf="choixMenu[14]==true">
+    <div [style.opacity]="opaciteCimetiere[i]" class="choixDetail" *ngFor="let e of utiliteCimetiere; index as i;" (click)="menutiliteCimetiere(menuChoixAvant(utiliteCimetiere,e,i,'UtiliteCimetiere'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
+  </div>
+  <div  class="diffentsChoix" *ngIf="choixMenu[15]==true">
+    <div [style.opacity]="opaciteUtilitePresentation[i]" class="choixDetail" *ngFor="let e of utilitePresentation; index as i;" (click)="menutilitePresentation(menuChoixAvant(natures,e,i,'UtilitePrsentation'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
+  </div>
+</div>
+
+<div class="formulaire" *ngIf="formulaire==true">
+  <fieldset>
+    <legend>
+      Informations générales
+    </legend>
+    <div class="elementForm"> Nom : <input type="text" [(ngModel)]="vegetal.nom"></div>
+    <div class="elementForm">Description : <textarea type="text" [(ngModel)]="vegetal.description" rows="8" cols="80"></textarea></div>
+    <div class="elementForm">Photo : <input type="file"></div>
+    <div class="elementForm">Prix : <input type="number"></div>
+    <div class="elementForm">Prix du fruit : <input type="number"></div>
+  </fieldset>
+  <fieldset>
+    <legend>Informations techniques</legend>
+    <div class="elementForm">Consommation d'eaau : <input type="number"></div>
+    <div class="elementForm">Consommation d'engrais : <input type="number"></div>
+    <div class="elementForm">Affinités :
+      <select class="form-control" id="affinite" [(ngModel)]="vegetalAffinite.id">
+        <option value="">Choisir les plantes avec lequel elle a des affinités</option>
+        <option *ngFor="let veg of listVegetal()" [value]="veg.id">{{veg.nom}}</option>
+      </select>
+    </div>
+    <div class="elementForm">Notice : </div>
+  </fieldset>
+  <button (click)="modifierFun()">Confirmer</button>
+</div>

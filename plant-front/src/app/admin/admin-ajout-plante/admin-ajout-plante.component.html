@@ -76,5 +76,6 @@
     </div>
     <div class="elementForm">Notice : </div>
   </fieldset>
-  <button (click)="send()">Confirmer</button>
+  <button *ngIf="modifier!=true" (click)="send()">Confirmer</button>
+  <button *ngIf="modifier==true" (click)="modifierFun()">Confirmer</button>
 </div>
