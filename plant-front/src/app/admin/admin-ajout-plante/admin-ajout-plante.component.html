@@ -1,5 +1,6 @@
-<br><br><br>
-<br><br><br><br><br><br>
+<div style="background-color: antiquewhite">
+
+
 <div class="listeChoix">
   <div class="diffentsChoix" >
     <div class="choixDetail" *ngFor="let e of natures; index as i;" (click)="menuNature(menuChoixAvant(natures,e,i,'Nature'))" [style.opacity]="opaciteNature[i]"  tabindex="{{i}}" ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
@@ -53,29 +54,53 @@
   </div>
 </div>
 
-<div class="formulaire" *ngIf="formulaire==true">
-  <fieldset>
+<div class="formulaire" style ="width:500px; padding:25px;" *ngIf="formulaire==true">
+
     <legend>
       Informations générales
     </legend>
-    <div class="elementForm"> Nom : <input type="text" [(ngModel)]="vegetal.nom"></div>
-    <div class="elementForm">Description : <textarea type="text" [(ngModel)]="vegetal.description" rows="8" cols="80"></textarea></div>
-    <div class="elementForm">Photo : <input type="file"></div>
-    <div class="elementForm">Prix : <input [(ngModel)]="vegetal.prix" type="number"></div>
-    <div class="elementForm">Prix du fruit : <input [(ngModel)]="vegetal.prixFruit" type="number"></div>
-  </fieldset>
-  <fieldset>
+    <div class="form-group" >
+      <label for="nom">Nom de la recette:</label>
+      <input type="text" class="form-control" id="nom"  placeholder="Entrez le nom du végétal" [(ngModel)]="vegetal.nom">
+      <div class="form-group">
+        <label for="desc">Description :</label>
+        <textarea rows="8" type="text" class="form-control" id="desc" placeholder="Entrez une description de la recette" [(ngModel)]="vegetal.description"></textarea>
+      </div>
+      <div class="form-group">
+      <label for="photo">Photo:</label><br>
+      <input type="file"  id="photo">
+      </div>
+      <div class="form-group">
+        <label for="prix">Prix : </label>
+        <input type="number" class="form-control" id="prix" placeholder="Entrez le prix" [(ngModel)]="vegetal.prix">
+      </div>
+      <div class="form-group">
+        <label for="prixF">Prix du fruit:</label>
+        <input type="number" class="form-control" id="prixF" placeholder="Entrez le prix du fruit" [(ngModel)]="vegetal.prixFruit">
+      </div>
+    </div>
+
     <legend>Informations techniques</legend>
-    <div class="elementForm">Consommation d'eaau : <input [(ngModel)]="vegetal.consomationEau" type="number"></div>
-    <div class="elementForm">Consommation d'engrais : <input [(ngModel)]="vegetal.consomationEngrais" type="number"></div>
+  <div class="form-group" >
+    <div class="form-group">
+      <label for="eau">Consommation d'eau</label>
+      <input type="number" class="form-control" id="eau" placeholder="Entrez la consommation d'eau (en L/jour)" [(ngModel)]="vegetal.consomationEau">
+    </div>
+    <div class="form-group">
+      <label for="engrais">Prix du fruit:</label>
+      <input type="number" class="form-control" id="engrais" placeholder="Entrez la consommation d'engrais (en g/plant)" [(ngModel)]="vegetal.consomationEngrais">
+    </div>
+
+  </div>
     <div class="elementForm">Affinités :
       <select class="form-control" id="affinite" [(ngModel)]="vegetalAffinite.id">
-        <option value="">Choisir les plantes avec lequel elle a des affinités</option>
+        <option value="">Choisir les affinités de ce végétal</option>
         <option *ngFor="let veg of listVegetal()" [value]="veg.id">{{veg.nom}}</option>
        </select>
     </div>
     <div class="elementForm">Notice : </div>
-  </fieldset>
-  <button *ngIf="modifier!=true" (click)="send()">Confirmer</button>
-  <button *ngIf="modifier==true" (click)="modifierFun()">Confirmer</button>
+
+  <button *ngIf="modifier!=true" type="button" class="btn btn-success" (click)="send()">Ajouter le végétal</button>
+  <button *ngIf="modifier==true" type="button" class="btn btn-primary" (click)="modifierFun()">Modifier le végétal</button>
+
 </div>
