@@ -15,32 +15,31 @@
       <h2 class="centre_titre">Les resultats de la recherche :</h2>
       <br/>
       <div class="d-flex">
-    <table class="table table-striped table-hover">
+    <table border style="text-align: center" class="table table-striped table-hover">
       <thead>
       <tr>
-        <th>Nom</th>
-        <th>Image</th>
-        <th>?</th>
-        <th></th>
+        <th style="width:1500px;">Nom</th>
+        <th style="width:1500px;">Image</th>
+        <th style="width:1500px;">Description</th>
       </tr>
       </thead>
-      <div>
+
       <tr *ngFor="let vegetal of vegetaux">
-        <td>{{vegetal.nom}}</td>
-        <td><a [routerLink]="['/vegetal/' + vegetal.id]"><img width="150px" src="../../assets/img/{{vegetal.nom}}.jpg"></a></td>
-        <td></td>
+        <td style="width:1500px;">{{vegetal.nom}}</td>
+        <td style="width:1500px;"><a [routerLink]="['/vegetal/' + vegetal.id]"><img style="width: 150px;" src="../../assets/img/{{vegetal.nom}}.jpg"></a></td>
+        <td style="width:1500px;" class="angular-with-newlines methode">{{vegetal.description}}</td>
       </tr>
       <tr *ngFor="let rec of recettes">
-        <td>{{rec.nom}}</td>
-        <td><a [routerLink]="['/recette/' + rec.id]"><img width="150px" src="../../assets/img/{{rec.nom}}.jpg"></a></td>
-        <td></td>
+        <td style="width:1500px;">{{rec.nom}}</td>
+        <td style="width:1500px;"><a [routerLink]="['/recette/' + rec.id]"><img width="150px" src="../../assets/img/{{rec.nom}}.jpg"></a></td>
+        <td style="width:1500px;" class="angular-with-newlines methode">{{rec.descriptif}}</td>
       </tr>
       <tr *ngFor="let guide of guides">
-        <td>{{guide.nom}}</td>
-        <td><a [routerLink]="['/guide/' + guide.id]"><img width="150px" src="../../assets/img/{{guide.nom}}.jpg"></a></td>
-        <td></td>
+        <td style="width:1500px;">{{guide.nom}}</td>
+        <td style="width:1500px;"><a [routerLink]="['/guide/' + guide.id]"><img width="150px" src="../../assets/img/{{guide.nom}}.jpg"></a></td>
+        <td style="width:1500px;" class="angular-with-newlines methode">{{guide.descriptif}}</td>
       </tr>
-      </div>
+
     </table>
   </div>
   </div>
