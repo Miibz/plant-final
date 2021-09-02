@@ -22,7 +22,6 @@ import {RecetteComponent} from "./recette/recette.component";
 import { AjoutRecetteComponent } from "./ajout-recette/ajout-recette.component";
 import {ConnexionComponent} from "./connexion/connexion.component";
 import {AdminModifierPlanteComponent} from "./admin/admin-modifier-plante/admin-modifier-plante.component";
-import {AffichageDetailPlanteComponent} from "./admin/affichage-detail-plante/affichage-detail-plante.component";
 import {LectureVegetalComponent} from "./lecture-vegetal/lecture-vegetal.component";
 
 
@@ -50,7 +49,6 @@ import {LectureVegetalComponent} from "./lecture-vegetal/lecture-vegetal.compone
     GuideComponent,
     LectureVegetalComponent,
     AdminModifierPlanteComponent,
-    AffichageDetailPlanteComponent
   ],
   imports: [
     BrowserModule,
