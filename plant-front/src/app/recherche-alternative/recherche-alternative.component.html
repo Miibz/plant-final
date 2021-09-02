@@ -1,7 +1,7 @@
-<br>
-<br><br><br><br><br><br><br><br>
+<div style="background-color: antiquewhite">
 
-<div class="listeChoix">
+
+<div class="listeChoix" >
   <div class="diffentsChoix" *ngIf="choixMenu[0]==true">
   <div class="choixDetail" *ngFor="let e of natures; index as i;" (click)="menuNature(menuChoixAvant(natures,e,i,'Nature'))" [style.opacity]="opaciteNature[i]"  tabindex="{{i}}" ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
   <!-- <div  class="choixDetail" *ngFor="let e of natures" style="background-image:url('../../assets/img/<span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span>.jpg');" (click)="menuNature(menuChoixAvant(natures,e,3'))" ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div> -->
@@ -61,4 +61,6 @@
       <tr><img class="imgTab" src="../../assets/img/{{p.nom}}.jpg"></tr>
     </td>
   </table>
+</div>
+
 </div>
