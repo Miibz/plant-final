@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 public class Jardin {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@JsonView(Views.ViewCommon.class)
+	@JsonView({Views.ViewCommon.class,Views.ViewDejaPlante.class})
 	private Long id;
 	@Version
 	@JsonView(Views.ViewCommon.class)

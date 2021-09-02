@@ -231,9 +231,9 @@ export class AdminModifierPlanteComponent implements OnInit {
   {
     switch (res)
     {
-      case 0:this.vegetal.presentation=this.presentation[2];this.menuChoix(4);break;//menuSol
-      case 1:this.vegetal.presentation=this.presentation[3];this.menuChoix(8);break;//menuTypeFeuille
-      case 2:this.vegetal.presentation=this.presentation[4];this.menuChoix(8);break;//menuTypeFeuille
+      case 0:this.vegetal.presentation=this.presentation[0];this.menuChoix(4);break;//menuSol
+      case 1:this.vegetal.presentation=this.presentation[1];this.menuChoix(8);break;//menuTypeFeuille
+      case 2:this.vegetal.presentation=this.presentation[2];this.menuChoix(8);break;//menuTypeFeuille
     }
   }
 
@@ -241,8 +241,8 @@ export class AdminModifierPlanteComponent implements OnInit {
   {
     switch (res)
     {
-      case 0:this.vegetal.utiliteOrnement=this.utiliteOrnement[0];this.enregistrer(this.vegetal);break;//Fin
-      case 1:this.vegetal.utiliteOrnement=this.utiliteOrnement[1];this.enregistrer(this.vegetal);break;//Fin
+      case 0:this.vegetal.utiliteOrnement=this.utiliteOrnement[0];this.menuChoix(3);break;//Fin
+      case 1:this.vegetal.utiliteOrnement=this.utiliteOrnement[1];this.menuChoix(3);break;//Fin
     }
   }
 
@@ -309,7 +309,9 @@ export class AdminModifierPlanteComponent implements OnInit {
 
   modifierFun()
   {
+    console.log(this.vegetal);
       this.vegetalService.modifyReturn(this.vegetal).subscribe(response => {
+        this.vegetal=response;
         this.affinite.vegetal2=new Vegetal();
         this.affinite.vegetal1=new Vegetal();
         this.affinite.vegetal1.id=this.vegetal.id;

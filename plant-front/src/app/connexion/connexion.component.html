@@ -1,19 +1,19 @@
 <div style="background-color: antiquewhite">
-  <div class="position" >
+  <div  class="position"  >
   <h1 style="text-align: center">Mon Super Jardin </h1>
   <h3 style="text-align: center">Connectez-vous pour accéder à tout notre site ! </h3>
   <br>
   <div class="partieConnexion">
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Adresse mail : </label>
+      <label for="exampleInputEmail1" class="form-label" style="font-weight: bold">Adresse mail : </label>
       <input [(ngModel)]="userForm.login" type="email" class="form-control" id="exampleInputEmail1"  placeholder="email@exemple.com" >
     </div>
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Mot de passe :</label>
+      <label for="exampleInputPassword1" class="form-label" style="font-weight: bold">Mot de passe :</label>
       <input [(ngModel)]="userForm.password" type="password" class="form-control" id="exampleInputPassword1" placeholder="****************">
     </div>
   </div>
-  <div class="d-grid gap-2 col-6 mx-auto">
+  <div class="d-grid gap-2 col-5 mx-auto">
     <a class="btn btn-success" type="button" (click)="connexion()" [routerLink]="['/accueil']">Connexion</a>
   </div>
 </div>

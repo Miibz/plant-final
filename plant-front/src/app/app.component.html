@@ -1,13 +1,15 @@
 <div class="topnav" >
   <!-- A gauche -->
   <div *ngIf="isType('Admin')" routerLinkActive="active">
-    <a class="nav-link"  [routerLink]="['/ajout-plantes']">Ajouter<br>Modifier une plante</a>
+    <a class="nav-link"  [routerLink]="['/admin-ajout-plante']">Ajouter<br> un végétal</a>
+    <a class="nav-link" [routerLink]="['/nos-vegetaux']">Modifier <br> un végétal</a>
     <a class="nav-link"  [routerLink]="['/ajout-recette']">Ajouter<br>Modifier une recette</a>
     <a class="nav-link"  [routerLink]="['/ajout-guide']">Ajouter<br>Modifier un guide</a>
   </div>
   <div *ngIf="isType('Utilisateur')" routerLinkActive="active">
     <a class="nav-link" [routerLink]="['/nos-guides']">Nos <br> guides</a>
     <a class="nav-link" [routerLink]="['/nos-recettes']">Nos <br> recettes</a>
+    <a class="nav-link" [routerLink]="['/nos-vegetaux']">Nos <br> vegetaux</a>
   </div>
   <!-- Centrer -->
   <div class="topnav-centered" routerLinkActive="active">
@@ -22,10 +24,10 @@
 <!--    <a class="nav-link" [routerLink]="['/mon-compte']">Mon <br> Compte</a>-->
   </div>
   <div class="topnav-right" *ngIf="!isConnected()" routerLinkActive="active">
-  <a *ngIf="!isConnected()" class="nav-link" [routerLink]="['/creation-compte']">Créer un compte</a>
+  <a *ngIf="!isConnected()" class="nav-link" [routerLink]="['/creation-compte']">Créer<br> un compte</a>
 </div>
   <div class="topnav-right" *ngIf="!isConnected()" routerLinkActive="active">
-    <a *ngIf="!isConnected()"class="nav-link" [routerLink]="['/connexion']">Se Connecter</a>
+    <a *ngIf="!isConnected()"class="nav-link" [routerLink]="['/connexion']">Se<br>Connecter</a>
   </div>
 </div>
 
@@ -69,7 +71,7 @@
 
 
   <div class="text-center p-3" style="background-color: forestgreen;">
-    Fait par : &nbsp; &nbsp;
+    Développé par : &nbsp; &nbsp;
     Samir B. &nbsp; &nbsp;
     Alexandre D. &nbsp; &nbsp;
     Raphaël G. &nbsp; &nbsp;

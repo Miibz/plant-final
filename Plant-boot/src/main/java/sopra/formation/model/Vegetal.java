@@ -18,7 +18,7 @@ import sopra.formation.model.Views.ViewVegetal;
 public class Vegetal {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@JsonView({Views.ViewCommon.class, ViewVegetal.class})
+	@JsonView({Views.ViewCommon.class, ViewVegetal.class,Views.ViewDejaPlante.class})
 	private Long id;
 	@Version
 	@JsonView(Views.ViewCommon.class)
