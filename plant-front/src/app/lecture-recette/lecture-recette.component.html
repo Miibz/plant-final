@@ -2,7 +2,7 @@
 
   <div class=" head">
 
-  <div class=" limage"> <img src="assets/img/Nos-guides.jpg" alt="Image recette" style="width: 470px; height : 300px"></div>
+  <div class=" limage"> <img src="assets/img/{{recette.nom}}.jpg" alt="Image {{recette.nom}}" style="width: 470px; height : 300px"></div>
   <div class="  lenom">{{recette.nom}}</div>
 
 </div>
@@ -18,7 +18,7 @@
     </div>
   </fieldset>
 
-  <fieldset>
+  <fieldset style="margin-bottom: 0px;">
     <legend> La recette pas à pas :</legend>
     <div class="angular-with-newlines methode" >
       <div class="ladiv2">{{recette.methode}}</div>
