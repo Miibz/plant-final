@@ -5,6 +5,7 @@ body{
 //post card styles
 
 .card{
+  display: inline-block;
   border: none;
   transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
   overflow:hidden;
@@ -85,3 +86,8 @@ img{
   height:300px;
   width:300px;
 }
+
+.angular-with-newlines {
+  white-space: pre-wrap;
+}
+

@@ -1,7 +1,6 @@
 <div style="background-color: antiquewhite">
-<div class="ladiv">
   <h1 style="text-align: center"> Voici nos végétaux : </h1>
-  <div class="card-deck" style="margin:0px;">
+  <div class="card-deck" style="margin:0px; display: inline-block">
     <div class="card border border-success shadow-0" style=" max-height: 20%;max-width: 15%; background-color: antiquewhite; border-color: forestgreen;" *ngFor="let plante of list()">
       <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
         <img src="../../assets/img/{{plante.nom}}.jpg" class="img-fluid" /><!-- {{vegetal.nom}}.jpg -->
@@ -12,7 +11,7 @@
       <div style="text-align: center; font-size:20px;" class="card-header">Informations :</div>
       <div class="card-body">
         <h5 class="card-title">{{plante.nom}}</h5><!-- vegetal.nom -->
-        <p class="card-text">
+        <p class="angular-with-newlines methode" class="card-text">
           {{plante.description}}
         </p>
         <button type="button" class="btn btn-success" [routerLink]="['/vegetal/' + plante.id]" >Plus de détails</button>
@@ -20,5 +19,4 @@
       </div>
     </div><!-- nombre  d'éléments vegetal.nom == "tomate" filtre qui porte le nom de tomates dans la liste -->
   </div><!--choix replant -->
-</div>
 </div>

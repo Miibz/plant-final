@@ -16,9 +16,7 @@
   <div  class="diffentsChoix" *ngIf="choixMenu[3]==true">
     <div [style.opacity]="opaciteExposition[i]" class="choixDetail" *ngFor="let e of expositions; index as i;" (click)="menuExposition(menuChoixAvant(expositions,e,i,'Exposition'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
   </div>
-  <div  class="diffentsChoix" *ngIf="choixMenu[4]==true">
-    <div [style.opacity]="opaciteSol[i]" class="choixDetail" *ngFor="let e of sols; index as i;" (click)="menuSol(menuChoixAvant(sols,e,i,'Sol'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
-  </div>
+
   <div  class="diffentsChoix" *ngIf="choixMenu[5]==true">
     <div [style.opacity]="opaciteComportement[i]" class="choixDetail" *ngFor="let e of comportement; index as i;" (click)="menuComportement(menuChoixAvant(comportement,e,i,'Comportement'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
   </div>
@@ -52,15 +50,22 @@
   <div  class="diffentsChoix" *ngIf="choixMenu[15]==true">
     <div [style.opacity]="opaciteUtilitePresentation[i]" class="choixDetail" *ngFor="let e of utilitePresentation; index as i;" (click)="menutilitePresentation(menuChoixAvant(natures,e,i,'UtilitePrsentation'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
   </div>
+  <div  class="diffentsChoix" *ngIf="choixMenu[4]==true">
+    <div [style.opacity]="opaciteSol[i]" class="choixDetail" *ngFor="let e of sols; index as i;" (click)="menuSol(menuChoixAvant(sols,e,i,'Sol'))"  ><span><img src="img_snow_wide.jpg" alt="Snow" style="width:100%;" class="imgRecherche" src="../../assets/img/{{e}}.jpg"></span>  <span class="texteRecherche">{{e}}</span></div>
+  </div>
 </div>
 
-<div class="resultat">
-  <table>
+  <h1 style="color: forestgreen; text-align: center">Résultat(s) de la recherche : </h1>
+
+<div class="resultat" style="transform: translate(500% 0%)">
+
+  <table style="text-align: center">
     <td  *ngFor="let p of this.resultats">
-      <tr>{{p.nom}}</tr>
-      <tr><img class="imgTab" src="../../assets/img/{{p.nom}}.jpg"></tr>
+      <tr style="font-size: 25px; font-weight: bold">{{p.nom}}</tr>
+      <tr><img style="margin : 5px;"class="imgTab" src="../../assets/img/{{p.nom}}.jpg"></tr>
     </td>
   </table>
+
 </div>
 
 </div>
